@@ -1,0 +1,21 @@
+{
+  "name": "devDependencies",
+  "description": "",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Anthony Camacho"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/camachowebworld/zimmyb-site",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-less": "~3.3.4"
+  }
+}

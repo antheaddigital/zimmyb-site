@@ -150,3 +150,22 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Get *number of posts by category
+ */
+function zimmy_get_most_recent_posts($category_name, $num_of_posts) {
+
+	$catID = get_cat_ID($category_name);
+
+	$args=array(
+    'cat' => $catID,
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 2,
+    'caller_get_posts'=> 1
+  );
+
+	return new WP_Query( $args );
+
+}
