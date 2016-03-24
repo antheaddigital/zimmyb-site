@@ -116,9 +116,11 @@ add_action( 'widgets_init', 'underscores_widgets_init' );
 function underscores_scripts() {
 	wp_enqueue_style( 'underscores-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'underscores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'boostrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array(), '3.3.4', true );
 
-	wp_enqueue_script( 'underscores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	//wp_enqueue_script( 'underscores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	//wp_enqueue_script( 'underscores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -162,7 +164,7 @@ function zimmy_get_most_recent_posts($category_name, $num_of_posts) {
     'cat' => $catID,
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 2,
+    'posts_per_page' => $num_of_posts,
     'caller_get_posts'=> 1
   );
 
