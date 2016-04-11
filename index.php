@@ -31,7 +31,7 @@ get_header(); ?>
 									$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 									$thumb_url = $thumb_url_array[0];
 							?>
-								<div class="col-md-6">
+								<div class="col-sm-6">
 									<a href="<?php the_permalink() ?>">
 										<div style="background-image: url('<?php echo $thumb_url; ?>')">
 											<h3><?php the_title(); ?></h3>
@@ -53,7 +53,7 @@ get_header(); ?>
 									$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 									$thumb_url = $thumb_url_array[0];
 							?>
-								<div class="col-md-6">
+								<div class="col-sm-6">
 									<a href="<?php the_permalink() ?>">
 										<div style="background-image: url('<?php echo $thumb_url; ?>')">
 											<h3><?php the_title(); ?></h3>

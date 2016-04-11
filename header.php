@@ -22,7 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'underscores' ); ?></a>
 
 	<header>
 
@@ -30,17 +29,17 @@
 	    <div class="header--logo">
 	      <a href="http://zimmyb.com"><img src="" alt="Zimmy Boooks! Logo" /></a>
 	    </div>
-	    <div class="header--right-content">
+	    <div class="header--right-content hidden-xs">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Books</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
+					<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
+					<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+					<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 				</ul>
 			</div>
 	  </div>
 
-	  <div class="container container-top-level navbar-wrapper">
+	  <div class="container container-top-level navbar-wrapper visible-xs">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -53,11 +52,10 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-	            <li><a href="#">Books</a></li>
-	            <!-- <li><a href="#">Store</a></li> -->
-	            <li><a href="#">Blog</a></li>
-							<li><a href="#">News</a></li>
-	            <li><a href="#">About</a></li>
+	            <li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
+	            <li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
+							<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+	            <li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 	          </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

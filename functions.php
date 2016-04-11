@@ -174,3 +174,12 @@ function zimmy_get_most_recent_posts($category_name, $num_of_posts) {
 	return new WP_Query( $args );
 
 }
+
+/**
+ * Get category url
+ */
+ function get_cat_url($cat_name){
+	 $category_id = get_cat_ID( $cat_name );
+	 $category_link = get_category_link( $category_id );
+	 return $category_link;
+ }
