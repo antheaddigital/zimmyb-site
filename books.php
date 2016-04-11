@@ -8,7 +8,7 @@ $books_array = [
     "hero_mobile" => "",
     "play_store_link" => "",
     "itunes_link" => "",
-    "description" => "",
+    "description1" => "",
   ]
 ];
 

@@ -34,7 +34,7 @@ get_header(); ?>
 
 				// https://codex.wordpress.org/Custom_Fields
 				// https://developer.wordpress.org/reference/functions/get_post_meta/
-				$book_copy_key = get_post_meta($post_id, 'book_copy', true);
+				$book_copy_key = get_post_meta($post_id, 'book_copy_key', true);
 				//echo $book_copy_key;
 
 				// echo '<pre>';

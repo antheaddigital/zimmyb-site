@@ -33,7 +33,6 @@
 	    <div class="header--right-content">
 				<ul class="nav navbar-nav">
 					<li><a href="#">Books</a></li>
-					<!-- <li><a href="#">Store</a></li> -->
 					<li><a href="#">Blog</a></li>
 					<li><a href="#">News</a></li>
 					<li><a href="#">About</a></li>
@@ -42,29 +41,27 @@
 	  </div>
 
 	  <div class="container container-top-level navbar-wrapper">
-	    <nav class="navbar navbar-default">
-	      <div class="container-fluid">
-	        <!-- Mobile Toggle -->
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	        </div>
-	        <!-- Header Navigation -->
-	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
 	            <li><a href="#">Books</a></li>
 	            <!-- <li><a href="#">Store</a></li> -->
 	            <li><a href="#">Blog</a></li>
 							<li><a href="#">News</a></li>
 	            <li><a href="#">About</a></li>
 	          </ul>
-	        </div>
-	      </div>
-	    </nav>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 	  </div>
 
 	</header>
