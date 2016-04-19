@@ -23,15 +23,29 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'underscores' ); ?></p>
-			<?php
-				get_search_form();
 
-		else : ?>
+			<?php // $category = htmlspecialchars($_GET["category"]); //echo $category;  ?>
+
+			<!-- <form role="search" method="get" class="search-form" action="<?php // echo get_site_url(); ?>">
+				<input type="search" class="search-field" placeholder="search entire site" value="<?php // get_search_query(); ?>" name="s" title="" />
+				<input type="submit" class="search-submit" value="Search" />
+			</form> -->
+
+			<!-- get_search_form(); -->
+
+		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'underscores' ); ?></p>
-			<?php
-				get_search_form();
 
-		endif; ?>
+			<?php // $category = htmlspecialchars($_GET["category"]); //echo $category;  ?>
+
+			<!-- <form role="search" method="get" class="search-form" action="<?php // echo get_site_url(); ?>">
+				<input type="search" class="search-field" placeholder="search entire site" value="<?php // get_search_query(); ?>" name="s" title="" />
+				<input type="submit" class="search-submit" value="Search" />
+			</form> -->
+
+			<!-- get_search_form(); -->
+
+		<?php endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

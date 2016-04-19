@@ -6662,3 +6662,9 @@ button.close {
 body {
   background-color: #fff;
 }
+.header--logo {
+  float: left;
+}
+.header--right-content {
+  float: right;
+}

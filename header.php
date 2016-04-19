@@ -23,13 +23,13 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<header>
+	<header class="header">
 
 	  <div class="container container-top-level header--wrapper">
 			<div class="row">
 				<div class="col-md-12">
 			    <div class="header--logo">
-			      <a href="http://zimmyb.com"><img src="" alt="Zimmy Boooks! Logo" /></a>
+			      <a href="/"><img src="" alt="Zimmy Boooks! Logo" /></a>
 			    </div>
 			    <div class="header--right-content hidden-xs">
 						<ul class="nav navbar-nav">
