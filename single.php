@@ -11,6 +11,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
 
 		<?php
 
@@ -67,10 +70,17 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+					</div>
 
+					<div class="col-md-4">
+						<?php include 'sidebar.php'; ?>
+					</div>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
+// get_sidebar();
 get_footer();

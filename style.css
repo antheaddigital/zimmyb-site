@@ -9,6 +9,15 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.padding-reset {
+  padding: 0 !important;
+}
+.padding-left-reset {
+  padding-left: 0 !important;
+}
+.padding-right-reset {
+  padding-right: 0 !important;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

@@ -13,7 +13,18 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php get_search_form(); ?>
+	<?php
+		$category_array = get_the_category();
+		// echo '<pre>';
+		// print_r($category_array);
+		// echo '</pre>'
+	?>
+
+	<form role="search" method="get" class="search-form" action="<?php echo get_site_url() . '/' . $category_array[0]->slug; ?>">
+		<input type="search" class="search-field" placeholder="search" value="<?php get_search_query(); ?>" name="s" title="" />
+		<input type="submit" class="search-submit" value="Search" />
+	</form>
+
 	<?php
 		$category_array = get_the_category();
 		// https://codex.wordpress.org/Function_Reference/wp_get_recent_posts

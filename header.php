@@ -26,16 +26,20 @@
 	<header>
 
 	  <div class="container container-top-level header--wrapper">
-	    <div class="header--logo">
-	      <a href="http://zimmyb.com"><img src="" alt="Zimmy Boooks! Logo" /></a>
-	    </div>
-	    <div class="header--right-content hidden-xs">
-				<ul class="nav navbar-nav">
-					<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
-					<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
-					<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
-					<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-				</ul>
+			<div class="row">
+				<div class="col-md-12">
+			    <div class="header--logo">
+			      <a href="http://zimmyb.com"><img src="" alt="Zimmy Boooks! Logo" /></a>
+			    </div>
+			    <div class="header--right-content hidden-xs">
+						<ul class="nav navbar-nav">
+							<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
+							<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
+							<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+							<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 	  </div>
 
