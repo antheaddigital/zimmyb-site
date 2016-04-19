@@ -29,7 +29,7 @@
 			<div class="row">
 				<div class="col-md-12">
 			    <div class="header--logo">
-			      <a href="/"><img src="" alt="Zimmy Boooks! Logo" /></a>
+			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="" alt="Zimmy Boooks! Logo" /></a>
 			    </div>
 			    <div class="header--right-content hidden-xs">
 						<ul class="nav navbar-nav">

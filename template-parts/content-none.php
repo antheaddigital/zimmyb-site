@@ -9,12 +9,20 @@
 
 ?>
 
+<?php
+	$category = esc_html( $_GET["category"], 'underscores' );
+	echo $category;
+	$search_term = esc_html( $_GET["s"], 'underscores' );
+	echo $search_term;
+?>
+
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'underscores' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
+
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -24,12 +32,10 @@
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'underscores' ); ?></p>
 
-			<?php // $category = htmlspecialchars($_GET["category"]); //echo $category;  ?>
-
-			<!-- <form role="search" method="get" class="search-form" action="<?php // echo get_site_url(); ?>">
-				<input type="search" class="search-field" placeholder="search entire site" value="<?php // get_search_query(); ?>" name="s" title="" />
+			<form role="search" method="get" class="search-form" action="<?php echo get_site_url(); ?>">
+				<input type="search" class="search-field" placeholder="search" value="<?php get_search_query(); ?>" name="s" title="" />
 				<input type="submit" class="search-submit" value="Search" />
-			</form> -->
+			</form>
 
 			<!-- get_search_form(); -->
 
@@ -39,10 +45,10 @@
 
 			<?php // $category = htmlspecialchars($_GET["category"]); //echo $category;  ?>
 
-			<!-- <form role="search" method="get" class="search-form" action="<?php // echo get_site_url(); ?>">
-				<input type="search" class="search-field" placeholder="search entire site" value="<?php // get_search_query(); ?>" name="s" title="" />
+			<form role="search" method="get" class="search-form" action="<?php echo get_site_url(); ?>">
+				<input type="search" class="search-field" placeholder="search" value="<?php get_search_query(); ?>" name="s" title="" />
 				<input type="submit" class="search-submit" value="Search" />
-			</form> -->
+			</form>
 
 			<!-- get_search_form(); -->
 

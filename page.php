@@ -30,7 +30,7 @@ get_header(); ?>
 					?>
 				</div>
 				<div class="col-md-4">
-					<?php include 'sidebar.php'; ?>
+					
 				</div>
 			</div> <!-- row -->
 		</div> <!-- container -->
