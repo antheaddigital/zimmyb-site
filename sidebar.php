@@ -33,32 +33,40 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	?>
 
 	<?php if(isset($category_array[0]->slug)) { ?>
+
 		<form role="search" method="get" class="search-form" action="<?php echo get_site_url() . '/' . $category_array[0]->slug; ?>">
 			<input type="hidden" name="category" value="<?php echo $category_array[0]->slug ?>" />
 			<?php  ?>
 			<!-- <input type="search" class="search-field" placeholder="search <?php // echo $category_array[0]->slug ?>" value="<?php // get_search_query(); ?>" name="s" title="" /> -->
 			<?php $search_box_append = isset($category_array[0]->slug) ? $category_array[0]->slug : '' ?>
-			<input type="search" class="search-field" placeholder="search <?php echo $search_box_append; ?>" value="<?php get_search_query(); ?>" name="s" title="" />
-			<input type="submit" class="search-submit" value="Search" />
+			<div class="input-group">
+				<input type="search" class="search-field form-control" placeholder="search <?php echo $search_box_append; ?>" value="<?php get_search_query(); ?>" name="s" title="" />
+				<span class="input-group-btn">
+					<input type="submit" class="search-submit btn btn-default" value="Search" />
+				</span>
+			</div>
 		</form>
 	<?php } ?>
 
 	<?php
-		// $category_array = get_the_category();
-		// https://codex.wordpress.org/Function_Reference/wp_get_recent_posts
-		$args = array(
-			'numberposts' => 10,
-			'orderby' => 'post_date',
-			'category' => $category_array[0]->cat_ID,
-			'numberposts' => '5',
-			'post_status' => 'publish'
-		);
-		$recent_posts = wp_get_recent_posts( $args );
-		echo '<ul>';
-		foreach( $recent_posts as $recent ){
-		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
-		}
-		echo '</ul>';
+		echo '<div class="recent-releases">';
+			echo '<h3>Recent Releases</h3>';
+			// $category_array = get_the_category();
+			// https://codex.wordpress.org/Function_Reference/wp_get_recent_posts
+			$args = array(
+				'numberposts' => 10,
+				'orderby' => 'post_date',
+				'category' => $category_array[0]->cat_ID,
+				'numberposts' => '5',
+				'post_status' => 'publish'
+			);
+			$recent_posts = wp_get_recent_posts( $args );
+			echo '<ul>';
+			foreach( $recent_posts as $recent ){
+			echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+			}
+			echo '</ul>';
+		echo '</div>';
 	?>
 
 	<?php //dynamic_sidebar( 'sidebar-1' ); ?>

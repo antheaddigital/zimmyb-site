@@ -13,15 +13,25 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 		<div class="container">
 			<div class="row">
+				<div class="col-md-12">
+					<?php $category_array = get_the_category(); ?>
+					<h1><?php echo $category_array[0]->cat_name; ?></h1>
+					<!-- <header class="page-header"> -->
+						<?php
+							//
+							// echo '<pre>';
+							// print_r($category_array);
+							// echo '</pre>';
+							// the_archive_title( '<h1 class="page-title">', '</h1>' );
+							// the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						?>
+					<!-- </header> -->
+				</div>
+			</div> <!-- row -->
+			<div class="row">
 				<div class="col-md-8">
 					<?php
 					if ( have_posts() ) : ?>
-						<header class="page-header">
-							<?php
-								the_archive_title( '<h1 class="page-title">', '</h1>' );
-								the_archive_description( '<div class="taxonomy-description">', '</div>' );
-							?>
-						</header><!-- .page-header -->
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();

@@ -1,11 +1,38 @@
 .header {
 
+  background-color: #47778E;
+
+  &--wrapper {
+    padding: 20px 0;
+    //border-bottom: 1px solid #333;
+  }
+
   &--logo {
     float: left;
   }
 
   &--right-content {
     float: right;
+  }
+
+  .navbar-nav {
+    @media (min-width: 768px){
+      margin-top: 40px;
+    }
+    a {
+      @media (min-width: 768px){
+        margin-left: 40px;
+        padding: 0;
+        color: #fff;
+        letter-spacing: 2px;
+        font-size: 16px;
+        text-transform: capitalize;
+        &:hover {
+          background-color: inherit;
+          color: #333;
+        }
+      }
+    }
   }
 
 }

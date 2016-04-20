@@ -25,19 +25,22 @@
 
 	<header class="header">
 
-	  <div class="container container-top-level header--wrapper">
+	  <div class="container container-top-level">
 			<div class="row">
 				<div class="col-md-12">
-			    <div class="header--logo">
-			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="" alt="Zimmy Boooks! Logo" /></a>
-			    </div>
-			    <div class="header--right-content hidden-xs">
-						<ul class="nav navbar-nav">
-							<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
-							<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
-							<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
-							<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-						</ul>
+					<div class="header--wrapper">
+				    <div class="header--logo">
+				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97100&w=300&h=100" alt="Zimmy Boooks! Logo" /></a>
+				    </div>
+				    <div class="header--right-content hidden-xs">
+							<ul class="nav navbar-nav">
+								<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
+								<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
+								<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+								<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+							</ul>
+						</div>
+						<div class="clear"></div>
 					</div>
 				</div>
 			</div>

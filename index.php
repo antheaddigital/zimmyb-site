@@ -148,8 +148,12 @@ get_header(); ?>
 
 					<div class="col-sm-4 col-md-4">
 						<form role="search" method="get" class="search-form" action="<?php echo get_site_url(); ?>">
-							<input type="search" class="search-field" placeholder="search" value="<?php get_search_query(); ?>" name="s" title="" />
-							<input type="submit" class="search-submit" value="Search" />
+							<div class="input-group">
+								<input type="search" class="search-field form-control" placeholder="search" value="<?php get_search_query(); ?>" name="s" title="" />
+								<span class="input-group-btn">
+									<input type="submit" class="search-submit btn btn-default" value="Search" />
+								</span>
+							</div>
 						</form>
 					</div>
 				</div> <!-- row -->
