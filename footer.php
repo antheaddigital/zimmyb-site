@@ -17,10 +17,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a>
-					<a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">Contact</a>
-					<a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a>
-					<a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a>
+					<div class="footer--site-nav">
+						<ul>
+							<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</li>
+							<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
+							<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
+							<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+							<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+							<li><a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">Contact</a></li>
+							<li><a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a></li>
+							<li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

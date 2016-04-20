@@ -13,12 +13,6 @@
 .padding-reset {
   padding: 0 !important;
 }
-.padding-left-reset {
-  padding-left: 0 !important;
-}
-.padding-right-reset {
-  padding-right: 0 !important;
-}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6668,7 +6662,9 @@ body {
   clear: both;
 }
 .header {
-  background-color: #47778E;
+  height: 140px;
+  background-color: #C4ECFF;
+  border-bottom: 2px solid #A1BCD8;
 }
 .header--wrapper {
   padding: 20px 0;
@@ -6688,18 +6684,23 @@ body {
   .header .navbar-nav a {
     margin-left: 40px;
     padding: 0;
-    color: #fff;
+    color: #3A3B98;
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 18px;
     text-transform: capitalize;
   }
-  .header .navbar-nav a:hover {
+  .header .navbar-nav a:hover,
+  .header .navbar-nav a:active,
+  .header .navbar-nav a:focus {
     background-color: inherit;
     color: #333;
   }
 }
 #content #primary {
   margin: 30px 0;
+}
+aside .recent-releases h3 {
+  margin-bottom: 13px;
 }
 aside .recent-releases ul {
   margin: 0;
@@ -6711,8 +6712,79 @@ aside .recent-releases ul li {
 }
 aside .recent-releases ul li a {
   letter-spacing: 1px;
+  font-size: 16px;
 }
 .footer {
   padding: 50px 0;
   text-align: center;
+  background-color: #4A4A4A;
+}
+.footer--site-nav ul {
+  margin: 0;
+  padding: 0;
+}
+.footer--site-nav ul li {
+  display: inline-block;
+}
+.footer--site-nav ul li a {
+  cursor: pointer;
+}
+.home .owl-carousel--temp {
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .home--post--padding-left-reset {
+    padding: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .home--post--padding-left-reset {
+    padding-left: 0 !important;
+  }
+}
+@media (max-width: 991px) {
+  .home--post--padding-right-reset {
+    padding: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .home--post--padding-right-reset {
+    padding-right: 0 !important;
+  }
+}
+.home--post--block {
+  position: relative;
+}
+.home--post--block--link {
+  display: block;
+}
+.home--post--block--wrapper {
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+}
+.home--post--block--category {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+}
+.home--post--block--divider {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+}
+.home--post--block h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+  display: inline-block;
 }

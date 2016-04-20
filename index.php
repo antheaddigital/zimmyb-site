@@ -21,64 +21,23 @@ get_header(); ?>
 					<div class="col-sm-8 col-md-8">
 
 						<!-- CAROUSEL -->
-						<div class="owl-carousel">
+						<div class="owl-carousel--temp">
+							<a href=""><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" class="img-responsive" /></a>
+						</div>
+						<!-- <div class="owl-carousel">
 							<div class="item">
 								<a href=""><img src="http://cdn.lolwot.com/wp-content/uploads/2015/03/10-of-the-most-expensive-cars-in-the-world-1.jpg" /></a>
 							</div>
 							<div class="item">
 								<a href=""><img src="http://flashymagazine.com/wp-content/uploads/2013/08/best-luxury-cars.jpg" /></a>
 							</div>
-						</div>
-
-						<!-- FEATURED -->
-						<div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'Featured', 'underscores' ); ?></h2></div>
-						<?php
-							$row = 1;
-							$the_query_news = zimmy_get_most_recent_posts('books', 4);
-							while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
-								$thumb_id = get_post_thumbnail_id();
-								$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-								$thumb_url = $thumb_url_array[0];
-								$post_id = get_the_ID();
-								$post_thumb_key = get_post_meta($post_id, 'post_thumb_key', true);
-						?>
-								<?php if($row == 1) { ?>
-									<div class="col-sm-6 col-md-6 padding-left-reset">
-										<a href="<?php the_permalink() ?>">
-											<div style="background-image: url('<?php echo $post_thumb_key; ?>')">
-												<h3><?php the_title(); ?></h3>
-												<!-- <p><?php //the_excerpt(__('(more…)')); ?></p> -->
-											</div>
-										</a>
-									</div>
-								<?php } ?>
-								<?php if($row == 2) { ?>
-									<div class="col-sm-6 col-md-6 padding-right-reset">
-										<ul>
-								<?php } ?>
-
-								<?php if($row > 1) { ?>
-									<li>
-										<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-									</li>
-								<?php } ?>
-
-								<?php if($row == 4) { ?>
-										</ul>
-										<a href="<?php echo get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
-									</div>
-								<?php } ?>
-						<?php
-							++$row;
-							endwhile;
-							wp_reset_postdata();
-						?>
+						</div> -->
 
 						<!-- BLOG -->
-						<div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'Blog', 'underscores' ); ?></h2></div>
+						<!-- <div class="col-sm-12 col-md-12 padding-reset"><h2><?php // esc_html_e( 'Blog', 'underscores' ); ?></h2></div> -->
 						<?php
 							$row = 1;
-							$the_query_news = zimmy_get_most_recent_posts('blog', 2);
+							$the_query_news = zimmy_get_most_recent_posts('blog', 1);
 							while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
 								$thumb_id = get_post_thumbnail_id();
 								$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -87,33 +46,39 @@ get_header(); ?>
 								$post_thumb_key = get_post_meta($post_id, 'post_thumb_key', true);
 						?>
 								<?php
-									if($row == 1) {
-										echo '<div class="col-sm-6 col-md-6 padding-left-reset">';
-									} else {
-										echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
-									}
+									// if($row == 1) {
+									// 	echo '<div class="col-sm-6 col-md-6 padding-left-reset">';
+									// } else {
+									// 	echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
+									// }
 								?>
-								<a href="<?php the_permalink() ?>">
-									<div style="background-image: url('<?php echo $post_thumb_key; ?>')">
-										<h3><?php the_title(); ?></h3>
-										<!-- <p><?php //the_excerpt(__('(more…)')); ?></p> -->
-									</div>
-								</a>
+							<div class="col-md-6 home--post--padding-left-reset">
+								<div class="home--post--block">
+									<a class="home--post--block--link" href="<?php the_permalink() ?>">
+										<!-- <img class="home--post--block--img img-responsive" src="<?php //echo $post_thumb_key; ?>.jpg" /> -->
+										<img class="home--post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+										<div class="home--post--block--wrapper">
+											<span class="home--post--block--category">Blog</span>
+											<span class="home--post--block--divider">|</span>
+											<h3><?php the_title(); ?></h3>
+										</div>
+									</a>
+								</div>
 							</div>
 						<?php
 							++$row;
 							endwhile;
 							wp_reset_postdata();
 						?>
-						<div class="col-sm-12 col-md-12 padding-reset">
-							<a href="<?php echo get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
-						</div>
+						<!-- <div class="col-sm-12 col-md-12 padding-reset">
+							<a href="<?php // echo get_cat_url('blog'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
+						</div> -->
 
 						<!-- NEWS -->
-						<div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'News', 'underscores' ); ?></h2></div>
+						<!-- <div class="col-sm-12 col-md-12 padding-reset"><h2><?php // esc_html_e( 'News', 'underscores' ); ?></h2></div> -->
 						<?php
 							$row = 1;
-							$the_query_news = zimmy_get_most_recent_posts('news', 2);
+							$the_query_news = zimmy_get_most_recent_posts('news', 1);
 							while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
 								$thumb_id = get_post_thumbnail_id();
 								$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -122,27 +87,33 @@ get_header(); ?>
 								$post_thumb_key = get_post_meta($post_id, 'post_thumb_key', true);
 						?>
 								<?php
-									if($row == 1) {
-										echo '<div class="col-sm-6 col-md-6 padding-left-reset">';
-									} else {
-										echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
-									}
+									// if($row == 1) {
+									// 	echo '<div class="col-sm-6 col-md-6 padding-left-reset">';
+									// } else {
+									// 	echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
+									// }
 								?>
-								<a href="<?php the_permalink() ?>">
-									<div style="background-image: url('<?php echo $post_thumb_key; ?>')">
-										<h3><?php the_title(); ?></h3>
-										<!-- <p><?php //the_excerpt(__('(more…)')); ?></p> -->
-									</div>
-								</a>
+							<div class="col-md-6 home--post--padding-right-reset">
+								<div class="home--post--block">
+									<a class="home--post--block--link" href="<?php the_permalink() ?>">
+										<!-- <img class="home--post--block--img img-responsive" src="<?php //echo $post_thumb_key; ?>.jpg" /> -->
+										<img class="home--post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+										<div class="home--post--block--wrapper">
+											<span class="home--post--block--category">News</span>
+											<span class="home--post--block--divider">|</span>
+											<h3><?php the_title(); ?></h3>
+										</div>
+									</a>
+								</div>
 							</div>
 						<?php
 							++$row;
 							endwhile;
 							wp_reset_postdata();
 						?>
-						<div class="col-sm-12 col-md-12 padding-reset">
-							<a href="<?php echo get_cat_url('news'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
-						</div>
+						<!-- <div class="col-sm-12 col-md-12 padding-reset">
+							<a href="<?php // echo get_cat_url('news'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
+						</div> -->
 
 					</div>
 
