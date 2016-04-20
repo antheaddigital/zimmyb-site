@@ -20,6 +20,16 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-sm-8 col-md-8">
 
+						<!-- CAROUSEL -->
+						<div class="owl-carousel">
+							<div class="item">
+								<a href=""><img src="http://cdn.lolwot.com/wp-content/uploads/2015/03/10-of-the-most-expensive-cars-in-the-world-1.jpg" /></a>
+							</div>
+							<div class="item">
+								<a href=""><img src="http://flashymagazine.com/wp-content/uploads/2013/08/best-luxury-cars.jpg" /></a>
+							</div>
+						</div>
+
 						<!-- FEATURED -->
 						<div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'Featured', 'underscores' ); ?></h2></div>
 						<?php
@@ -49,9 +59,7 @@ get_header(); ?>
 
 								<?php if($row > 1) { ?>
 									<li>
-										<a href="<?php the_permalink() ?>">
-											<h5><?php the_title(); ?></h5>
-										</a>
+										<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 									</li>
 								<?php } ?>
 

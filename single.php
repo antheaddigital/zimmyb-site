@@ -35,7 +35,7 @@ get_header(); ?>
 							// echo '<pre>';
 							// print_r($books_array[$book_copy_key]);
 							// echo '</pre>';
-							echo '<h1>' . $books_array[$book_copy_key]['series'] . ' in... ' . $books_array[$book_copy_key]['title'] . '</h1>';
+							echo '<h1>' . $books_array[$book_copy_key]['full_title'] . '</h1>';
 						?>
 					<?php else: ?>
 						<?php
