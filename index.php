@@ -52,14 +52,14 @@ get_header(); ?>
 									// 	echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
 									// }
 								?>
-							<div class="col-md-6 home--post--padding-left-reset">
-								<div class="home--post--block">
-									<a class="home--post--block--link" href="<?php the_permalink() ?>">
+							<div class="col-md-6 home--recent-post--padding-left-reset">
+								<div class="home--recent-post--block">
+									<a class="home--recent-post--block--link" href="<?php the_permalink() ?>">
 										<!-- <img class="home--post--block--img img-responsive" src="<?php //echo $post_thumb_key; ?>.jpg" /> -->
-										<img class="home--post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
-										<div class="home--post--block--wrapper">
-											<span class="home--post--block--category">Blog</span>
-											<span class="home--post--block--divider">|</span>
+										<img class="home--recent-post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+										<div class="home--recent-post--block--wrapper">
+											<span class="home--recent-post--block--category">Blog</span>
+											<span class="home--recent-post--block--divider">|</span>
 											<h3><?php the_title(); ?></h3>
 										</div>
 									</a>
@@ -93,14 +93,14 @@ get_header(); ?>
 									// 	echo '<div class="col-sm-6 col-md-6 padding-right-reset">';
 									// }
 								?>
-							<div class="col-md-6 home--post--padding-right-reset">
-								<div class="home--post--block">
-									<a class="home--post--block--link" href="<?php the_permalink() ?>">
+							<div class="col-md-6 home--recent-post--padding-right-reset">
+								<div class="home--recent-post--block">
+									<a class="home--recent-post--block--link" href="<?php the_permalink() ?>">
 										<!-- <img class="home--post--block--img img-responsive" src="<?php //echo $post_thumb_key; ?>.jpg" /> -->
-										<img class="home--post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
-										<div class="home--post--block--wrapper">
-											<span class="home--post--block--category">News</span>
-											<span class="home--post--block--divider">|</span>
+										<img class="home--recent-post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+										<div class="home--recent-post--block--wrapper">
+											<span class="home--recent-post--block--category">News</span>
+											<span class="home--recent-post--block--divider">|</span>
 											<h3><?php the_title(); ?></h3>
 										</div>
 									</a>
