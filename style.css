@@ -13,6 +13,14 @@
 .padding-reset {
   padding: 0 !important;
 }
+textarea:focus,
+input:focus {
+  outline: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-color: #ccc !important;
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6662,14 +6670,14 @@ body {
   clear: both;
 }
 .header {
-  height: 140px;
-  background-color: #C4ECFF;
-  border-bottom: 2px solid #A1BCD8;
+  background-color: #FAFF38;
+  border-bottom: 2px solid #B5A5A5;
 }
 .header--wrapper {
   padding: 20px 0;
 }
 .header--logo {
+  width: 300px;
   float: left;
 }
 .header--right-content {
@@ -6720,14 +6728,26 @@ aside .recent-releases ul li a {
   background-color: #4A4A4A;
 }
 .footer--site-nav ul {
-  margin: 0;
+  margin: 0 0 15px 0;
   padding: 0;
 }
 .footer--site-nav ul li {
+  margin: 0 10px;
   display: inline-block;
 }
 .footer--site-nav ul li a {
   cursor: pointer;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.footer--mini-logo {
+  width: 60px;
+  margin-top: 15px;
+  display: inline-block;
+}
+.category-books--book {
+  display: inline-block;
+  width: 50%;
 }
 .home .owl-carousel--temp {
   margin-bottom: 30px;
@@ -6773,6 +6793,8 @@ aside .recent-releases ul li a {
   line-height: 24px;
   letter-spacing: 1px;
   color: #3a3a3a;
+  text-transform: lowercase;
+  font-style: italic;
 }
 .home--recent-post--block--divider {
   font-size: 16px;

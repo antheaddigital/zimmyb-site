@@ -30,6 +30,8 @@ get_header(); ?>
 			</div> <!-- row -->
 			<div class="row">
 				<div class="col-md-8">
+					<?php $category_array = get_the_category(); ?>
+					<?php $category_name = $category_array[0]->cat_name; ?>
 					<?php
 					if ( have_posts() ) : ?>
 						<?php
@@ -40,7 +42,14 @@ get_header(); ?>
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
-							get_template_part( 'template-parts/content', get_post_format() );
+							 switch($category_name){
+								 case 'Books':
+								 //echo get_the_title();
+								 echo '<div class="category-books--book"><a href="'.get_permalink().'"><img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" /></a></div>';
+								 //get_template_part( 'template-parts/content', get_post_format() );
+								 break;
+							 }
+
 						endwhile;
 						the_posts_navigation();
 					else :

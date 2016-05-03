@@ -30,7 +30,7 @@
 				<div class="col-md-12">
 					<div class="header--wrapper">
 				    <div class="header--logo">
-				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=300%C3%97100&w=300&h=100" alt="Zimmy Boooks! Logo" /></a>
+				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_site_url(); ?>/wp-content/uploads/2016/05/zimmy-books-logo.png" alt="Zimmy Boooks! Logo" /></a>
 				    </div>
 				    <div class="header--right-content hidden-xs">
 							<ul class="nav navbar-nav">
@@ -47,7 +47,7 @@
 	  </div>
 
 	</header>
-	
+
 	<div class="container container-top-level navbar-wrapper visible-xs">
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
