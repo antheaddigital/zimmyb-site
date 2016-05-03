@@ -6745,9 +6745,28 @@ aside .recent-releases ul li a {
   margin-top: 15px;
   display: inline-block;
 }
-.category-books--book {
-  display: inline-block;
-  width: 50%;
+.archive--results-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.archive--books--book {
+  margin-bottom: 4%;
+  -webkit-flex-basis: 48%;
+  flex-basis: 48%;
 }
 .home .owl-carousel--temp {
   margin-bottom: 30px;

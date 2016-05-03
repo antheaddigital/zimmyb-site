@@ -30,6 +30,7 @@ get_header(); ?>
 			</div> <!-- row -->
 			<div class="row">
 				<div class="col-md-8">
+					<div class="archive--results-wrapper">
 					<?php $category_array = get_the_category(); ?>
 					<?php $category_name = $category_array[0]->cat_name; ?>
 					<?php
@@ -45,7 +46,7 @@ get_header(); ?>
 							 switch($category_name){
 								 case 'Books':
 								 //echo get_the_title();
-								 echo '<div class="category-books--book"><a href="'.get_permalink().'"><img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" /></a></div>';
+								 echo '<div class="archive--books--book"><a href="'.get_permalink().'"><img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" /></a></div>';
 								 //get_template_part( 'template-parts/content', get_post_format() );
 								 break;
 							 }
@@ -56,6 +57,7 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'none' );
 					endif;
 					?>
+					</div>
 				</div>
 				<div class="col-md-4">
 					<?php include 'sidebar.php'; ?>
