@@ -13,8 +13,8 @@ Setup
 ---------------
 
 ```
-	> git clone https://github.com/camachowebworld/zimmyb-site.git
-	> cd zimmyb-site
-	> npm install
-	> grunt
+> git clone https://github.com/camachowebworld/zimmyb-site.git
+> cd zimmyb-site
+> npm install
+> grunt
 ```
