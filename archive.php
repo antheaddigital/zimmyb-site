@@ -11,11 +11,20 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+
+		<?php $category_array = get_the_category(); ?>
+		<div class="page-header--category-<?php echo strtolower($category_array[0]->cat_name); ?>">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1><?php echo $category_array[0]->cat_name; ?></h1>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<?php $category_array = get_the_category(); ?>
-					<h1><?php echo $category_array[0]->cat_name; ?></h1>
 					<!-- <header class="page-header"> -->
 						<?php
 							//
@@ -45,15 +54,13 @@ get_header(); ?>
 							 */
 							 switch($category_name){
 								 case 'Books':
-								 //echo get_the_title();
 									 echo '<div class="archive--book-results--book">
 									 				<a href="'.get_permalink().'">
 														<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" />
 													</a>
 												</div>';
-									 break;
+									 		break;
 								 case 'Blog':
-									 //echo get_the_title();
 									 echo '<div class="archive--blog-results--post">
 									 				<div class="archive--blog-results--post--img">
 										 				<a href="'.get_permalink().'">
@@ -68,8 +75,23 @@ get_header(); ?>
 														</div>
 													</div>
 												</div>';
-									 //get_template_part( 'template-parts/content', get_post_format() );
-									 break;
+									 		break;
+									case 'News':
+										echo '<div class="archive--blog-results--post">
+														<div class="archive--blog-results--post--img">
+															<a href="'.get_permalink().'">
+															<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+														</a>
+													</div>
+													<div class="archive--blog-results--post--description">
+															<a class="archive--blog-results--post--description--title" href="'.get_permalink().'"><h3>'.get_the_title().'</h3></a>
+														<div>
+															<p class="archive--blog-results--post--description--date">'.get_the_date().'</p>
+															<p class="archive--blog-results--post--description--content">'.wp_trim_words( get_the_content(), 25, null ).' <a class="archive--blog-results--post--description--read-more" href="'.get_permalink().'">read more.</a></p>
+														</div>
+													</div>
+												</div>';
+											break;
 							 }
 
 						endwhile;

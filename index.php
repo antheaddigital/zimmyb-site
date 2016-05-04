@@ -16,6 +16,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="page-title-header page-title-header--home">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="page-title-header--header">Books Apps for Kids (iPhone and Android)</h1>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-8">
