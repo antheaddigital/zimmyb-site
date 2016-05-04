@@ -6674,10 +6674,21 @@ body {
 }
 .header--wrapper {
   padding: 20px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header--wrapper {
+    text-align: inherit;
+  }
 }
 .header--logo {
-  width: 340px;
-  float: left;
+  max-width: 340px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .header--logo {
+    float: left;
+  }
 }
 .header--right-content {
   float: right;
@@ -6689,9 +6700,9 @@ body {
 }
 @media (min-width: 768px) {
   .header .navbar-nav a {
-    margin-left: 40px;
+    margin-left: 30px;
     padding: 0;
-    color: #3A3B98;
+    color: #498FF0;
     letter-spacing: 2px;
     font-size: 18px;
     font-weight: bold;
@@ -6703,6 +6714,15 @@ body {
     background-color: inherit;
     color: #333;
   }
+}
+@media (min-width: 992px) {
+  .header .navbar-nav a {
+    margin-left: 40px;
+  }
+}
+.page--sidebar--contact-info {
+  padding: 20px;
+  background-color: #efefef;
 }
 aside .recent-releases h3 {
   margin-bottom: 13px;
@@ -6718,6 +6738,7 @@ aside .recent-releases ul li {
 aside .recent-releases ul li a {
   letter-spacing: 1px;
   font-size: 16px;
+  color: #2F68B5;
 }
 .footer {
   padding: 50px 0;
@@ -6848,6 +6869,41 @@ aside .recent-releases ul li a {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
+.footer-promos {
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: #3f73bb;
+}
+.footer-promos--wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.footer-promos--section {
+  padding: 20px;
+  -webkit-flex-basis: 32%;
+  flex-basis: 32%;
+  background-color: #e8f2ff;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+}
 .home .owl-carousel--temp {
   margin-bottom: 30px;
 }
@@ -6912,24 +6968,62 @@ aside .recent-releases ul li a {
 }
 .page-title-header {
   padding: 30px 0;
-  margin-bottom: 30px;
-  background-color: #1BAD11;
+  background-color: #777;
 }
 .page-title-header--header {
   margin: 0;
   color: #fff;
   font-size: 34px;
   letter-spacing: 1px;
+  line-height: 42px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .page-title-header--header {
+    text-align: left;
+  }
+}
+.page-title-header--search-results {
+  background-color: #3bbb12;
 }
 .page-title-header--home {
-  background-color: #48A5C1;
+  background-color: #498FF0;
 }
 .page-title-header--category-books {
-  background-color: #48A5C1;
+  background-color: #498FF0;
 }
 .page-title-header--category-blog {
-  background-color: #48A5C1;
+  background-color: #498FF0;
 }
 .page-title-header--category-news {
-  background-color: #48A5C1;
+  background-color: #498FF0;
+}
+.page-title-header--page-About {
+  background-color: #e6b547;
+}
+.page-title-header--page-Contact {
+  background-color: #e6b547;
+}
+.page-title-header--page-PrivacyPolicy {
+  background-color: #828282;
+}
+.page-title-header--page-TermsofService {
+  background-color: #828282;
+}
+.breadcrumb {
+  margin: 0;
+  padding: 8px 15px 8px 0;
+  letter-spacing: 1px;
+  background-color: inherit;
+}
+.breadcrumb-wrapper {
+  margin-bottom: 40px;
+  background-color: #ececec;
+}
+.search-form .btn-default:hover,
+.search-form .btn-default:active,
+.search-form .btn-default:focus {
+  background-color: #2F68B5;
+  border-color: #2F68B5;
+  color: #fff;
 }

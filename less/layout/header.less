@@ -8,12 +8,19 @@
 
   &--wrapper {
     padding: 20px 0;
+    text-align: center;
     //border-bottom: 1px solid #333;
+    @media (min-width: 768px){
+      text-align: inherit;
+    }
   }
 
   &--logo {
-    width: 340px;
-    float: left;
+    max-width: 340px;
+    margin: 0 auto;
+    @media (min-width: 768px){
+      float: left;
+    }
   }
 
   &--right-content {
@@ -26,9 +33,9 @@
     }
     a {
       @media (min-width: 768px){
-        margin-left: 40px;
+        margin-left: 30px;
         padding: 0;
-        color: #3A3B98;
+        color: #498FF0;
         letter-spacing: 2px;
         font-size: 18px;
             font-weight: bold;
@@ -37,6 +44,9 @@
           background-color: inherit;
           color: #333;
         }
+      }
+      @media (min-width: 992px){
+        margin-left: 40px;
       }
     }
   }

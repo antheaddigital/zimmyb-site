@@ -13,6 +13,53 @@
 
 	</div><!-- #content -->
 
+	<div class="footer-promos">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="footer-promos--wrapper">
+
+						<div class="footer-promos--section footer-promos--about-social">
+							<h4>Follow Us</h4>
+							<div class="footer-promos--about-social--facebook">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Facebook
+							</div>
+							<div class="footer-promos--about-social--twitter">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Twitter
+							</div>
+							<div class="footer-promos--about-social--youtube">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Youtube
+							</div>
+							<div>
+
+							</div>
+						</div>
+
+						<div class="footer-promos--section footer-promos--twitter-feed">
+							<h4>Recent Tweets</h4>
+							<div>
+								<p><span>2:14px</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
+							</div>
+							<div>
+								<p><span>2:14px</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
+							</div>
+							<div>
+								<p><span>2:14px</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
+							</div>
+						</div>
+						<div class="footer-promos--section footer-promos--newsletter">
+							<h4>Newsletter</h4>
+							<form>
+								<input type="text" />
+								<button type="button">Sign Up</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<footer class="footer">
 		<div class="container">
 			<div class="row">

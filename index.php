@@ -16,6 +16,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+
 			<div class="page-title-header page-title-header--home">
 				<div class="container">
 					<div class="row">
@@ -25,6 +26,19 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
+
+			<div class="breadcrumb-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<ol class="breadcrumb">
+							  <li class="active">Home</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-md-8">

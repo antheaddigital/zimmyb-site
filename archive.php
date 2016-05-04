@@ -31,11 +31,36 @@ get_header(); ?>
 									break;
 							}
 						?>
-
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ol class="breadcrumb">
+							<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+							<?php
+								switch($cat_name) {
+									case 'Books':
+										echo '<li class="active">Books</li>';
+										break;
+									case 'Blog':
+										echo '<li class="active">Blog</li>';
+										break;
+									case 'News':
+										echo '<li class="active">News</li>';
+										break;
+								}
+							?>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
