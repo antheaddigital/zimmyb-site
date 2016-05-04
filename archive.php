@@ -13,11 +13,25 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php $category_array = get_the_category(); ?>
-		<div class="page-header--category-<?php echo strtolower($category_array[0]->cat_name); ?>">
+		<?php $cat_name = $category_array[0]->cat_name; ?>
+		<div class="page-title-header page-title-header--category-<?php echo strtolower($category_array[0]->cat_name); ?>">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1><?php echo $category_array[0]->cat_name; ?></h1>
+						<?php
+							switch($cat_name) {
+								case 'Books':
+									echo '<h1 class="page-title-header--header">Book Apps that Teach Kids to Read</h1>';
+									break;
+								case 'Blog':
+									echo '<h1 class="page-title-header--header">A Blog to Teach Kids</h1>';
+									break;
+								case 'News':
+									echo '<h1 class="page-title-header--header">Zimmy Books in the News</h1>';
+									break;
+							}
+						?>
+
 					</div>
 				</div>
 			</div>

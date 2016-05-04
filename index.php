@@ -20,7 +20,7 @@ get_header(); ?>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="page-title-header--header">Books Apps for Kids (iPhone and Android)</h1>
+							<h1 class="page-title-header--header">Books Apps for Kids on iPhone and Android</h1>
 						</div>
 					</div>
 				</div>

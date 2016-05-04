@@ -6676,7 +6676,7 @@ body {
   padding: 20px 0;
 }
 .header--logo {
-  width: 300px;
+  width: 340px;
   float: left;
 }
 .header--right-content {
@@ -6684,7 +6684,7 @@ body {
 }
 @media (min-width: 768px) {
   .header .navbar-nav {
-    margin-top: 45px;
+    margin-top: 55px;
   }
 }
 @media (min-width: 768px) {
@@ -6919,7 +6919,17 @@ aside .recent-releases ul li a {
   margin: 0;
   color: #fff;
   font-size: 34px;
+  letter-spacing: 1px;
 }
 .page-title-header--home {
+  background-color: #48A5C1;
+}
+.page-title-header--category-books {
+  background-color: #48A5C1;
+}
+.page-title-header--category-blog {
+  background-color: #48A5C1;
+}
+.page-title-header--category-news {
   background-color: #48A5C1;
 }
