@@ -31,7 +31,10 @@
 							<li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a></li>
 						</ul>
 						<div>
-							<a class="footer--mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_site_url(); ?>/wp-content/uploads/2016/05/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
+							<a class="footer--mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
+						</div>
+						<div class="footer--copyright">
+							&copy; <?php echo date("Y"); ?> Zimmy Books<br />property of <a href="http://antheaddigital.com">Anthead Digital</a>
 						</div>
 					</div>
 				</div>

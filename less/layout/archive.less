@@ -1,20 +1,83 @@
+// Flex mixins are provided Lesshat
+// The styles listed covers the category/archive pages for : Books, Blog, and News
+// The results layout for each category/archive page have their own custom layout
+
 .archive {
-  &--results-wrapper {
-    .display(flex);
-    .flex-wrap(wrap);
-    .align-content(center);
-    .justify-content(space-between);
+
+  // Books
+  &.category-books {
+    .archive-results-wrapper {
+      .display(flex);
+      .flex-wrap(wrap);
+      .align-content(center);
+      .justify-content(space-between);
+    }
   }
-  &--books {
+  &--book-results {
     &--book {
       margin-bottom: 4%;
       .flex-basis(48%);
     }
   }
-  &-blog {
 
+  // Blog
+  &.category-books {
+    .archive-results-wrapper {
+      // .display(flex);
+      // //.flex-wrap(wrap);
+      // .align-content(center);
+      // .justify-content(space-between);
+    }
   }
-  &-news {
+  &--blog-results {
+    &--post {
+      margin-bottom: 25px;
+      .display(flex);
+      //.flex-wrap(wrap);
+      .align-content(center);
+      .justify-content(space-between);
+      letter-spacing: 1px;
+      &--img {
+        .flex-basis(30%);
+      }
+      &--description {
+        .flex-basis(66%);
+        &--title {
+          color: @primary_blue;
+          h3 {
+            margin: 0;
+            font-size: 20px;
+            text-transform: uppercase;
+          }
+        }
+        &--date {
+          margin: 2px 0 0 0;
+          font-style: italic;
+          color: #717171;
+          font-size: 11px;
+        }
+        &--content {
+          margin: 10px 0 0 0;
+
+        }
+        &--read-more {
+          color: @primary_blue;
+
+        }
+      }
+    }
+  }
+
+  // News
+  &.category-books {
+    .archive-results-wrapper {
+      .display(flex);
+      .flex-wrap(wrap);
+      .align-content(center);
+      .justify-content(space-between);
+    }
+  }
+  &--news {
 
   }
 }

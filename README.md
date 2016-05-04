@@ -19,3 +19,5 @@ Setup
 
 WP Plugins
 ---------------
+1. Remove Category URL - Version 1.1
+2. bbPress - Version 2.5.9

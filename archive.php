@@ -30,7 +30,7 @@ get_header(); ?>
 			</div> <!-- row -->
 			<div class="row">
 				<div class="col-md-8">
-					<div class="archive--results-wrapper">
+					<div class="archive-results-wrapper">
 					<?php $category_array = get_the_category(); ?>
 					<?php $category_name = $category_array[0]->cat_name; ?>
 					<?php
@@ -46,9 +46,30 @@ get_header(); ?>
 							 switch($category_name){
 								 case 'Books':
 								 //echo get_the_title();
-								 echo '<div class="archive--books--book"><a href="'.get_permalink().'"><img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" /></a></div>';
-								 //get_template_part( 'template-parts/content', get_post_format() );
-								 break;
+									 echo '<div class="archive--book-results--book">
+									 				<a href="'.get_permalink().'">
+														<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" />
+													</a>
+												</div>';
+									 break;
+								 case 'Blog':
+									 //echo get_the_title();
+									 echo '<div class="archive--blog-results--post">
+									 				<div class="archive--blog-results--post--img">
+										 				<a href="'.get_permalink().'">
+															<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+														</a>
+													</div>
+													<div class="archive--blog-results--post--description">
+										 				<a class="archive--blog-results--post--description--title" href="'.get_permalink().'"><h3>'.get_the_title().'</h3></a>
+														<div>
+															<p class="archive--blog-results--post--description--date">'.get_the_date().'</p>
+															<p class="archive--blog-results--post--description--content">'.wp_trim_words( get_the_content(), 25, null ).' <a class="archive--blog-results--post--description--read-more" href="'.get_permalink().'">read more.</a></p>
+														</div>
+													</div>
+												</div>';
+									 //get_template_part( 'template-parts/content', get_post_format() );
+									 break;
 							 }
 
 						endwhile;

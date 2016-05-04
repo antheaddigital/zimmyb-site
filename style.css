@@ -6670,7 +6670,9 @@ body {
   clear: both;
 }
 .header {
-  background-color: #FAFF38;
+  background-color: #ff0;
+  background-image: url('imgs/header-background.png');
+  background-repeat: repeat;
   border-bottom: 2px solid #B5A5A5;
 }
 .header--wrapper {
@@ -6685,7 +6687,7 @@ body {
 }
 @media (min-width: 768px) {
   .header .navbar-nav {
-    margin-top: 40px;
+    margin-top: 45px;
   }
 }
 @media (min-width: 768px) {
@@ -6695,6 +6697,7 @@ body {
     color: #3A3B98;
     letter-spacing: 2px;
     font-size: 18px;
+    font-weight: bold;
     text-transform: capitalize;
   }
   .header .navbar-nav a:hover,
@@ -6738,6 +6741,10 @@ aside .recent-releases ul li a {
 .footer--site-nav ul li a {
   cursor: pointer;
   letter-spacing: 1px;
+  color: #c0c0c0;
+}
+.footer--site-nav ul li a:hover,
+.footer--site-nav ul li a:focus {
   color: #fff;
 }
 .footer--mini-logo {
@@ -6745,7 +6752,23 @@ aside .recent-releases ul li a {
   margin-top: 15px;
   display: inline-block;
 }
-.archive--results-wrapper {
+.footer--copyright {
+  margin-top: 15px;
+  color: #8C8C8C;
+  letter-spacing: 1px;
+  line-height: 22px;
+  font-size: 12px;
+}
+.footer--copyright a {
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: #c0c0c0;
+}
+.footer--copyright a:hover,
+.footer--copyright a:focus {
+  color: #fff;
+}
+.archive.category-books .archive-results-wrapper {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -6763,10 +6786,73 @@ aside .recent-releases ul li a {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.archive--books--book {
+.archive--book-results--book {
   margin-bottom: 4%;
   -webkit-flex-basis: 48%;
   flex-basis: 48%;
+}
+.archive--blog-results--post {
+  margin-bottom: 25px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  letter-spacing: 1px;
+}
+.archive--blog-results--post--img {
+  -webkit-flex-basis: 30%;
+  flex-basis: 30%;
+}
+.archive--blog-results--post--description {
+  -webkit-flex-basis: 66%;
+  flex-basis: 66%;
+}
+.archive--blog-results--post--description--title {
+  color: #2f68b5;
+}
+.archive--blog-results--post--description--title h3 {
+  margin: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.archive--blog-results--post--description--date {
+  margin: 2px 0 0 0;
+  font-style: italic;
+  color: #717171;
+  font-size: 11px;
+}
+.archive--blog-results--post--description--content {
+  margin: 10px 0 0 0;
+}
+.archive--blog-results--post--description--read-more {
+  color: #2f68b5;
+}
+.archive.category-books .archive-results-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .home .owl-carousel--temp {
   margin-bottom: 30px;

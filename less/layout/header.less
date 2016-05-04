@@ -1,6 +1,8 @@
 .header {
   // height: 140px;
-  background-color: #FAFF38;
+  background-color: #ff0;
+  background-image: url('imgs/header-background.png');
+  background-repeat: repeat;
   border-bottom: 2px solid #B5A5A5;
 
   &--wrapper {
@@ -19,7 +21,7 @@
 
   .navbar-nav {
     @media (min-width: 768px){
-      margin-top: 40px;
+      margin-top: 45px;
     }
     a {
       @media (min-width: 768px){
@@ -28,6 +30,7 @@
         color: #3A3B98;
         letter-spacing: 2px;
         font-size: 18px;
+            font-weight: bold;
         text-transform: capitalize;
         &:hover, &:active, &:focus {
           background-color: inherit;
