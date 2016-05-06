@@ -4,6 +4,8 @@
 
 This theme is built on Wordpress Underscores (but does not fully follow it's workflow) : http://underscores.me
 
+Built on Wordpress - Version 4.5.1
+
 Readme Table of Contents:
 1. Setup
 2. WP Plugins
@@ -19,8 +21,9 @@ Setup
 
 WP Plugins
 ---------------
-1. Remove Category URL - Version 1.1
-2. bbPress - Version 2.5.9
+1. Remove Category URL - Version 1.1 - https://wordpress.org/plugins/remove-category-url/developers/
+2. bbPress - Version 2.5.9 - https://wordpress.org/plugins/bbpress/developers/
+3. Wordfence - Version 6.1.5 - https://wordpress.org/plugins/wordfence/developers/
 
 Todo List
 ---------------
