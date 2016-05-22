@@ -14,68 +14,35 @@ get_header(); ?>
 
 		<?php $category_array = get_the_category(); ?>
 		<?php $cat_name = $category_array[0]->cat_name; ?>
-		<div class="page-title-header page-title-header--category-<?php echo strtolower($category_array[0]->cat_name); ?>">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<?php
-							switch($cat_name) {
-								case 'Books':
-									echo '<h1 class="page-title-header--header">Book Apps that Teach Kids to Read</h1>';
-									break;
-								case 'Blog':
-									echo '<h1 class="page-title-header--header">A Blog to Teach Kids</h1>';
-									break;
-								case 'News':
-									echo '<h1 class="page-title-header--header">Zimmy Books in the News</h1>';
-									break;
-							}
-						?>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="breadcrumb-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<ol class="breadcrumb">
-							<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-							<?php
-								switch($cat_name) {
-									case 'Books':
-										echo '<li class="active">Books</li>';
-										break;
-									case 'Blog':
-										echo '<li class="active">Blog</li>';
-										break;
-									case 'News':
-										echo '<li class="active">News</li>';
-										break;
-								}
-							?>
-						</ol>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php
+			switch($cat_name) {
+				case 'Books':
+					$header_text = 'Book Apps that Teach Kids to Read';
+					break;
+				case 'Blog':
+					$header_text = 'A Blog to Teach Kids';
+					break;
+				case 'News':
+					$header_text = 'Zimmy Books in the News';
+					break;
+			}
+		?>
+
+		<!--
+      * Custom page header function located in function.php
+			* @headerPageClass
+      * @headerText
+    -->
+    <?php echo zb_get_page_header('category-'.strtolower($cat_name), $header_text); ?>
+
+		<!--
+      * Custom breadcrumb function located in function.php
+      * @page
+    -->
+    <?php echo zb_get_breadcrumb($cat_name); ?>
 
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<!-- <header class="page-header"> -->
-						<?php
-							//
-							// echo '<pre>';
-							// print_r($category_array);
-							// echo '</pre>';
-							// the_archive_title( '<h1 class="page-title">', '</h1>' );
-							// the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					<!-- </header> -->
-				</div>
-			</div> <!-- row -->
 			<div class="row">
 				<div class="col-md-8">
 					<div class="archive-results-wrapper">

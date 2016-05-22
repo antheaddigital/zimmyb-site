@@ -30,7 +30,6 @@ Todo List
 1. footer promo - clean up, add social icons, create newsletter form, style twitter feeds
 2. about page - needs content
 3. contact page - needs content
-4. contact info on sidebar - needs content and clean up
 4. search pages - needs cleanup
 5. book page - needs content layout and cleanup
 6. blog page - needs content layout and cleanup

@@ -21,14 +21,14 @@
 
 						<div class="footer-promos--section footer-promos--about-social">
 							<h4>Follow Us</h4>
-							<div class="footer-promos--about-social--facebook">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Facebook
+							<div class="footer-promos--about-social footer-promos--about-social--facebook">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
 							</div>
-							<div class="footer-promos--about-social--twitter">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Twitter
+							<div class="footer-promos--about-social footer-promos--about-social--twitter">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
 							</div>
-							<div class="footer-promos--about-social--youtube">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" /> Youtube
+							<div class="footer-promos--about-social footer-promos--about-social--youtube">
+								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
 							</div>
 							<div>
 
@@ -67,9 +67,9 @@
 					<div class="footer--site-nav footer--site-nav">
 						<ul>
 							<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</li>
-							<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
-							<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
-							<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+							<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
+							<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
+							<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
 						</ul>
 						<ul>
 							<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>

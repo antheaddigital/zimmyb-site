@@ -2,7 +2,7 @@
 <div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'Featured', 'underscores' ); ?></h2></div>
 <?php
   $row = 1;
-  $the_query_news = zimmy_get_most_recent_posts('books', 4);
+  $the_query_news = zb_get_most_recent_posts('books', 4);
   while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -33,7 +33,7 @@
 
     <?php if($row == 4) { ?>
         </ul>
-        <a href="<?php echo get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
+        <a href="<?php echo zb_get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
       </div>
     <?php } ?>
 <?php
@@ -46,7 +46,7 @@
 <div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'Blog', 'underscores' ); ?></h2></div>
 <?php
   $row = 1;
-  $the_query_news = zimmy_get_most_recent_posts('blog', 2);
+  $the_query_news = zb_get_most_recent_posts('blog', 2);
   while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -74,14 +74,14 @@
   wp_reset_postdata();
 ?>
 <div class="col-sm-12 col-md-12 padding-reset">
-  <a href="<?php echo get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
+  <a href="<?php echo zb_get_cat_url('blog'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
 </div>
 
 <!-- NEWS -->
 <div class="col-sm-12 col-md-12 padding-reset"><h2><?php esc_html_e( 'News', 'underscores' ); ?></h2></div>
 <?php
   $row = 1;
-  $the_query_news = zimmy_get_most_recent_posts('news', 2);
+  $the_query_news = zb_get_most_recent_posts('news', 2);
   while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -109,5 +109,5 @@
   wp_reset_postdata();
 ?>
 <div class="col-sm-12 col-md-12 padding-reset">
-  <a href="<?php echo get_cat_url('news'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
+  <a href="<?php echo zb_get_cat_url('news'); ?>"><?php esc_html_e( 'more', 'underscores' ); ?></a>
 </div>

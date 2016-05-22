@@ -6904,6 +6904,9 @@ aside .recent-releases ul li a {
   border-radius: 5px;
   background-clip: padding-box;
 }
+.footer-promos--about-social {
+  display: inline-block;
+}
 .home .owl-carousel--temp {
   margin-bottom: 30px;
 }

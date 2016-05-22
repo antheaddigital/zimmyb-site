@@ -34,9 +34,9 @@
 				    </div>
 				    <div class="header--right-content hidden-xs">
 							<ul class="nav navbar-nav">
-								<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
-								<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
-								<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+								<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
+								<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
+								<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
 								<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 							</ul>
 						</div>
@@ -61,9 +61,9 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="<?php echo get_cat_url('books'); ?>">Books</a></li>
-						<li><a href="<?php echo get_cat_url('blog'); ?>">Blog</a></li>
-						<li><a href="<?php echo get_cat_url('news'); ?>">News</a></li>
+						<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
+						<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
+						<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
 						<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->

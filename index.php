@@ -17,27 +17,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="page-title-header page-title-header--home">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="page-title-header--header">Books Apps for Kids on iPhone and Android</h1>
-						</div>
-					</div>
-				</div>
-			</div>
+			<!--
+	      * Custom page header function located in function.php
+	      * @pageClass
+	      * @pageText
+	    -->
+	    <?php echo zb_get_page_header('home', 'Books Apps for Kids on iPhone and Android'); ?>
 
-			<div class="breadcrumb-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<ol class="breadcrumb">
-							  <li class="active">Home</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
+			<!--
+	      * Custom breadcrumb function located in function.php
+	      * @pagesArray
+	    -->
+	    <?php echo zb_get_breadcrumb(); ?>
 
 			<div class="container">
 				<div class="row">
@@ -60,7 +51,7 @@ get_header(); ?>
 						<!-- <div class="col-sm-12 col-md-12 padding-reset"><h2><?php // esc_html_e( 'Blog', 'underscores' ); ?></h2></div> -->
 						<?php
 							$row = 1;
-							$the_query_news = zimmy_get_most_recent_posts('blog', 1);
+							$the_query_news = zb_get_most_recent_posts('blog', 1);
 							while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
 								$thumb_id = get_post_thumbnail_id();
 								$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -94,14 +85,14 @@ get_header(); ?>
 							wp_reset_postdata();
 						?>
 						<!-- <div class="col-sm-12 col-md-12 padding-reset">
-							<a href="<?php // echo get_cat_url('blog'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
+							<a href="<?php // echo zb_get_cat_url('blog'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
 						</div> -->
 
 						<!-- NEWS -->
 						<!-- <div class="col-sm-12 col-md-12 padding-reset"><h2><?php // esc_html_e( 'News', 'underscores' ); ?></h2></div> -->
 						<?php
 							$row = 1;
-							$the_query_news = zimmy_get_most_recent_posts('news', 1);
+							$the_query_news = zb_get_most_recent_posts('news', 1);
 							while ($the_query_news -> have_posts()) : $the_query_news -> the_post();
 								$thumb_id = get_post_thumbnail_id();
 								$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -135,7 +126,7 @@ get_header(); ?>
 							wp_reset_postdata();
 						?>
 						<!-- <div class="col-sm-12 col-md-12 padding-reset">
-							<a href="<?php // echo get_cat_url('news'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
+							<a href="<?php // echo zb_get_cat_url('news'); ?>"><?php // esc_html_e( 'more', 'underscores' ); ?></a>
 						</div> -->
 
 					</div>

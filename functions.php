@@ -165,7 +165,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Get *number of posts by category
  */
-function zimmy_get_most_recent_posts($category_name, $num_of_posts) {
+function zb_get_most_recent_posts($category_name, $num_of_posts) {
 
 	$catID = get_cat_ID($category_name);
 
@@ -184,8 +184,45 @@ function zimmy_get_most_recent_posts($category_name, $num_of_posts) {
 /**
  * Get category url
  */
- function get_cat_url($cat_name){
+ function zb_get_cat_url($cat_name){
 	 $category_id = get_cat_ID( $cat_name );
 	 $category_link = get_category_link( $category_id );
 	 return $category_link;
  }
+
+ /**
+  * Get page header
+  */
+function zb_get_page_header($header_page_class, $header_text){
+	return '<div class="page-title-header page-title-header--'.$header_page_class.'">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-title-header--header">'.$header_text.'</h1>
+				</div>
+			</div>
+		</div>
+	</div>';
+}
+
+/**
+ * Get breadcrumb section
+ */
+function zb_get_breadcrumb($page){
+	if($page == ''){
+		$list_items = '<li class="active">Home</li>';
+	} else {
+		$list_items = '<li><a href="'. home_url( '/' ) .'">Home</a></li>';
+		$list_items .= '<li class="active">'.$page.'</li>';
+	}
+	return '<div class="breadcrumb-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ol class="breadcrumb">'.$list_items.'
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>';
+}
