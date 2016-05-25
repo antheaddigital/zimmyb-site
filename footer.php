@@ -19,19 +19,29 @@
 				<div class="col-md-12">
 					<div class="footer-promos--wrapper">
 
-						<div class="footer-promos--section footer-promos--about-social">
+						<div class="footer-promos--section">
 							<h4>Follow Us</h4>
-							<div class="footer-promos--about-social footer-promos--about-social--facebook">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
-							</div>
-							<div class="footer-promos--about-social footer-promos--about-social--twitter">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
-							</div>
-							<div class="footer-promos--about-social footer-promos--about-social--youtube">
-								<img src="https://placeholdit.imgix.net/~text?txtsize=18&txt=75×75&w=75&h=75" />
-							</div>
-							<div>
-
+							<div class="footer-promos--about-social-wrapper">
+								<div class="footer-promos--about-social footer-promos--about-social--facebook">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" />
+									</a>
+								</div>
+								<div class="footer-promos--about-social footer-promos--about-social--twitter">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" />
+									</a>
+								</div>
+								<div class="footer-promos--about-social footer-promos--about-social--youtube">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-pintrist.png" alt="Zimmy Books on Pintrist" />
+									</a>
+								</div>
+								<div class="footer-promos--about-social footer-promos--about-social--youtube">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-youtube.png" alt="Zimmy Books on Youtube" />
+									</a>
+								</div>
 							</div>
 						</div>
 
@@ -49,9 +59,21 @@
 						</div>
 						<div class="footer-promos--section footer-promos--newsletter">
 							<h4>Newsletter</h4>
+							<p>When will you receive emails from us? Here's a list:</p>
+							<ul>
+								<li>Latest releases</li>
+								<li>New blog posts</li>
+								<li>New content</li>
+							</ul>
+
 							<form>
-								<input type="text" />
-								<button type="button">Sign Up</button>
+								<div class="form-group">
+									<input type="text" class="form-control" name="name" placeholder="Name" />
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" name="email" placeholder="Email" />
+								</div>
+								<button type="submit" class="btn btn-default">Sign up</button>
 							</form>
 						</div>
 					</div>

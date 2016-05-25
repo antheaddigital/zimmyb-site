@@ -208,12 +208,16 @@ function zb_get_page_header($header_page_class, $header_text){
 /**
  * Get breadcrumb section
  */
-function zb_get_breadcrumb($page){
-	if($page == ''){
+function zb_get_breadcrumb($home,$second,$third){
+	if($home == true){
 		$list_items = '<li class="active">Home</li>';
+	} elseif($third == '') {
+		$list_items = '<li><a href="'. home_url( '/' ) .'">Home</a></li>';
+		$list_items .= '<li class="active">'.$second.'</li>';
 	} else {
 		$list_items = '<li><a href="'. home_url( '/' ) .'">Home</a></li>';
-		$list_items .= '<li class="active">'.$page.'</li>';
+		$list_items .= '<li><a href="'. zb_get_cat_url($second) .'">'.$second.'</a></li>';
+		$list_items .= '<li class="active">'.$third.'</li>';
 	}
 	return '<div class="breadcrumb-wrapper">
 		<div class="container">

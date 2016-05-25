@@ -20,7 +20,7 @@
       * Custom breadcrumb function located in function.php
       * @page
     -->
-    <?php echo zb_get_breadcrumb('Terms of Service'); ?>
+    <?php echo zb_get_breadcrumb(false, 'Terms of Service'); ?>
 
  		<div class="container container--page-TermsofService">
  			<div class="row">

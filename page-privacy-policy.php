@@ -20,7 +20,7 @@
       * Custom breadcrumb function located in function.php
       * @page
     -->
-    <?php echo zb_get_breadcrumb('Privacy Policy'); ?>
+    <?php echo zb_get_breadcrumb(false, 'Privacy Policy'); ?>
 
  		<div class="container container--page-PrivacyPolicy">
  			<div class="row">

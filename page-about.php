@@ -20,7 +20,7 @@
       * Custom breadcrumb function located in function.php
       * @page
     -->
-    <?php echo zb_get_breadcrumb('About'); ?>
+    <?php echo zb_get_breadcrumb(false, 'About'); ?>
 
  		<div class="container container--page-About">
  			<div class="row">

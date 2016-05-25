@@ -22,13 +22,13 @@ get_header(); ?>
 	      * @pageClass
 	      * @pageText
 	    -->
-	    <?php echo zb_get_page_header('home', 'Books Apps for Kids on iPhone and Android'); ?>
+	    <?php echo zb_get_page_header('home', 'Sign Language Books for Kids and Toddlers'); ?>
 
 			<!--
 	      * Custom breadcrumb function located in function.php
 	      * @pagesArray
 	    -->
-	    <?php echo zb_get_breadcrumb(); ?>
+	    <?php echo zb_get_breadcrumb(true); ?>
 
 			<div class="container">
 				<div class="row">

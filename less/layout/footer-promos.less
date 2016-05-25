@@ -15,8 +15,21 @@
     //.flex-grow(1);
     background-color: #e8f2ff;
     .border-radius(5px);
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+  }
+  &--about-social-wrapper {
+    .display(flex);
+    .flex-wrap(wrap);
+    .align-content(center);
+    .justify-content(space-between);
   }
   &--about-social {
+    max-width: 70px;
     display: inline-block;
 
   }
@@ -24,6 +37,13 @@
 
   }
   &--newsletter {
-
+    ul {
+      padding-left: 30px;
+      li {
+      }
+    }
+    form {
+      margin-top: 15px;
+    }
   }
 }

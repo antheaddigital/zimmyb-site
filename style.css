@@ -6904,8 +6904,39 @@ aside .recent-releases ul li a {
   border-radius: 5px;
   background-clip: padding-box;
 }
+.footer-promos--section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.footer-promos--about-social-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
 .footer-promos--about-social {
+  max-width: 70px;
   display: inline-block;
+}
+.footer-promos--newsletter ul {
+  padding-left: 30px;
+}
+.footer-promos--newsletter form {
+  margin-top: 15px;
 }
 .home .owl-carousel--temp {
   margin-bottom: 30px;
@@ -6991,6 +7022,15 @@ aside .recent-releases ul li a {
 }
 .page-title-header--home {
   background-color: #498FF0;
+}
+.page-title-header--post-book {
+  background-color: #3BCC3B;
+}
+.page-title-header--post-blog {
+  background-color: #3BCC3B;
+}
+.page-title-header--post-news {
+  background-color: #3BCC3B;
 }
 .page-title-header--category-books {
   background-color: #498FF0;

@@ -20,7 +20,7 @@
       * Custom breadcrumb function located in function.php
       * @page
     -->
-    <?php echo zb_get_breadcrumb('Contact'); ?>
+    <?php echo zb_get_breadcrumb(false, 'Contact'); ?>
 
  		<div class="container container--page-Contact">
  			<div class="row">

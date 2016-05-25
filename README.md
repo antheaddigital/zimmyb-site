@@ -25,6 +25,14 @@ WP Plugins
 2. bbPress - Version 2.5.9 - https://wordpress.org/plugins/bbpress/developers/
 3. Wordfence - Version 6.1.5 - https://wordpress.org/plugins/wordfence/developers/
 
+Upkeep
+---------------
+Navigation and Logo : header.php
+Hompage content : index.php
+Books, Blogs, and News category page : archive.php
+About page : page-about.php
+Footer Marketing section and Footer : footer.php
+
 Todo List
 ---------------
 1. footer promo - clean up, add social icons, create newsletter form, style twitter feeds

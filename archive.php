@@ -40,7 +40,7 @@ get_header(); ?>
       * Custom breadcrumb function located in function.php
       * @page
     -->
-    <?php echo zb_get_breadcrumb($cat_name); ?>
+    <?php echo zb_get_breadcrumb(false, $cat_name); ?>
 
 		<div class="container">
 			<div class="row">
