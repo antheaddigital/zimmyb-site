@@ -25,7 +25,14 @@
  		<div class="container container--page-Contact">
  			<div class="row">
         <div class="col-md-12">
-
+          <div class="contact-form--wrapper">
+            <div class="contact-form--description">
+              <p>So it looks like you would like to contact us. Please be very description with what you would like to contact us about. We are looking forward to you reaching out us. Thank you.
+            </div>
+            <div  class="contact-form--form">
+              <?php echo do_shortcode('[contact-form-7 id="69" title="Contact form 1"]'); ?>
+            </div>
+          </div>
  				</div>
  			</div> <!-- row -->
  		</div> <!-- container -->

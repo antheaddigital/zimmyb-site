@@ -6938,6 +6938,25 @@ aside .recent-releases ul li a {
 .footer-promos--newsletter form {
   margin-top: 15px;
 }
+.page-template-page-contact .contact-form--wrapper {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.page-template-page-contact .contact-form--description {
+  -webkit-flex-basis: 48%;
+  flex-basis: 48%;
+}
+.page-template-page-contact .contact-form--form {
+  -webkit-flex-basis: 48%;
+  flex-basis: 48%;
+}
 .home .owl-carousel--temp {
   margin-bottom: 30px;
 }
@@ -7024,13 +7043,13 @@ aside .recent-releases ul li a {
   background-color: #498FF0;
 }
 .page-title-header--post-book {
-  background-color: #3BCC3B;
+  background-color: #41DA41;
 }
 .page-title-header--post-blog {
-  background-color: #3BCC3B;
+  background-color: #41DA41;
 }
 .page-title-header--post-news {
-  background-color: #3BCC3B;
+  background-color: #41DA41;
 }
 .page-title-header--category-books {
   background-color: #498FF0;

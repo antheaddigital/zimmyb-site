@@ -21,17 +21,24 @@ Setup
 
 WP Plugins
 ---------------
-1. Remove Category URL - Version 1.1 - https://wordpress.org/plugins/remove-category-url/developers/
-2. bbPress - Version 2.5.9 - https://wordpress.org/plugins/bbpress/developers/
-3. Wordfence - Version 6.1.5 - https://wordpress.org/plugins/wordfence/developers/
+1. Remove Category URL - Version 1.1 - https://wordpress.org/plugins/remove-category-url/
+2. bbPress - Version 2.5.9 - https://wordpress.org/plugins/bbpress/
+3. Wordfence - Version 6.1.8 - https://wordpress.org/plugins/wordfence/
+4. Contact Form 7 - Version 4.4.2 - https://wordpress.org/plugins/contact-form-7/
+5. Pagination by BestWebSoft - Version 1.0.4 - https://wordpress.org/plugins/pagination/
 
-Upkeep
+File Locations
 ---------------
 Navigation and Logo : header.php
 Hompage content : index.php
 Books, Blogs, and News category page : archive.php
 About page : page-about.php
 Footer Marketing section and Footer : footer.php
+
+Site Management
+---------------
+Adding a new book:
+1. Admin -> Posts -> New Post. Give post a title
 
 Todo List
 ---------------
