@@ -2,13 +2,15 @@
 
 ===
 
-This theme is built on Wordpress Underscores (but does not fully follow it's workflow) : http://underscores.me
-
-Built on Wordpress - Version 4.5.1
+Site Info
+* This theme is built on Wordpress Underscores (but does not fully follow it's workflow) : http://underscores.me
+* Built on Wordpress - Version 4.5.2.
 
 Readme Table of Contents:
 1. Setup
 2. WP Plugins
+3. File Locations
+4. Site Management
 
 Setup
 ---------------
