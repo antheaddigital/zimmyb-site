@@ -60,6 +60,12 @@ Site Management
 
 ### Site images:
 * All site images are stored in /imgs/
+* Site images include:
+** logo
+** social marketing icons (facebook, twitter, youtube, ect)
+** about page images
+** contact page images
+** ect.
 
 Todo List
 ---------------
