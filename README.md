@@ -69,7 +69,10 @@ Site Management
 
 Todo List
 ---------------
-1. footer promo - clean up, add social icons, create newsletter form, style twitter feeds
+1. footer promo
+  * Social icons make responsive
+  * Sign up to Mail Chimp and setup and newsletter form
+  * Create Twitter and add tweets
 2. about page - needs content
 3. contact page - needs content
 4. search pages - needs cleanup
