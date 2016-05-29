@@ -29,11 +29,11 @@ WP Plugins
 
 File Locations
 ---------------
-Navigation and Logo : header.php
-Hompage content : index.php
-Books, Blogs, and News category page : archive.php
-About page : page-about.php
-Footer Marketing section and Footer : footer.php
+* Navigation and Logo : header.php
+* Hompage content : index.php
+* Books, Blogs, and News category page : archive.php
+* About page : page-about.php
+* Footer Marketing section and Footer : footer.php
 
 
 Site Management
