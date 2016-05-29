@@ -39,9 +39,10 @@ Site Management
 ---------------
 Adding a new book:
 1. Admin -> Posts -> New Post. Give post a title
-2. Add array to file : books/_books.php
+2. In the post create a new custom field for book_copy_key
+3. Add array to file : /books/_books.php
 ```
-"[book_copy_key]" => [
+"[book_copy_key value]" => [
   "series" => "[series name]",
   "title" => "[book title]",
   "full_title" => "[book full title]",
@@ -52,6 +53,7 @@ Adding a new book:
   "description1" => "",
 ]
 ```
+4. Create php page file in /books/_books.php and name it the book_copy_key value.
 
 Todo List
 ---------------
