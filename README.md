@@ -39,10 +39,9 @@ File Locations
 Site Management
 ---------------
 ### Adding a new book:
-1. Admin -> Posts -> New Post. Give post a title
-2. In the post create a new custom field for book_copy_key
-3. Add book info to books array : /books/_books.php
-4. Create php page file in /books/_books.php and name it the book_copy_key value.
+1. Admin -> Posts -> New Post. Give post a title (note that the title of the post doesn't matter for books). Create a new custom field for book_copy_key.
+2. Add book info to books array : /books/_books.php
+3. Create php page file in /books/_books.php and name it the book_copy_key value.
 ```php
 // Example of array node that gets added to the books array
 "[book_copy_key value]" => [
