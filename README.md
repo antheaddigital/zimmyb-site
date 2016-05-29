@@ -39,6 +39,19 @@ Site Management
 ---------------
 Adding a new book:
 1. Admin -> Posts -> New Post. Give post a title
+2. Add array to file : books/_books.php
+```
+"[book_copy_key]" => [
+  "series" => "[series name]",
+  "title" => "[book title]",
+  "full_title" => "[book full title]",
+  "hero_desktop" => "",
+  "hero_mobile" => "",
+  "play_store_link" => "",
+  "itunes_link" => "",
+  "description1" => "",
+]
+```
 
 Todo List
 ---------------
