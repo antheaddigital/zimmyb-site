@@ -44,9 +44,7 @@ Site Management
 ---------------
 ### Adding a new book:
 1. Admin -> Posts -> New Post. Give post a title
-
 2. In the post create a new custom field for book_copy_key
-
 3. Add book info to books array : /books/_books.php
 ```php
 "[book_copy_key value]" => [
@@ -60,7 +58,6 @@ Site Management
   "description1" => "",
 ]
 ```
-
 4. Create php page file in /books/_books.php and name it the book_copy_key value.
 
 Todo List
