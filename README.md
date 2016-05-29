@@ -30,18 +30,25 @@ WP Plugins
 File Locations
 ---------------
 Navigation and Logo : header.php
+
 Hompage content : index.php
+
 Books, Blogs, and News category page : archive.php
+
 About page : page-about.php
+
 Footer Marketing section and Footer : footer.php
+
 
 Site Management
 ---------------
-Adding a new book:
+### Adding a new book:
 1. Admin -> Posts -> New Post. Give post a title
+
 2. In the post create a new custom field for book_copy_key
+
 3. Add array to file : /books/_books.php
-```
+```php
 "[book_copy_key value]" => [
   "series" => "[series name]",
   "title" => "[book title]",
@@ -53,6 +60,7 @@ Adding a new book:
   "description1" => "",
 ]
 ```
+
 4. Create php page file in /books/_books.php and name it the book_copy_key value.
 
 Todo List
