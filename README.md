@@ -42,6 +42,8 @@ Site Management
 1. Admin -> Posts -> New Post. Give post a title
 2. In the post create a new custom field for book_copy_key
 3. Add book info to books array : /books/_books.php
+4. Create php page file in /books/_books.php and name it the book_copy_key value.
+Example of array node that gets added to the books array
 ```php
 "[book_copy_key value]" => [
   "series" => "[series name]",
@@ -54,7 +56,7 @@ Site Management
   "description1" => "",
 ]
 ```
-4. Create php page file in /books/_books.php and name it the book_copy_key value.
+
 
 Todo List
 ---------------
