@@ -1,7 +1,5 @@
 # zimmyb-site
 
-===
-
 Site Info
 ---------------
 * This theme is built on Wordpress Underscores (but does not fully follow it's workflow) : http://underscores.me
