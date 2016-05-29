@@ -5,7 +5,7 @@ Site Info
 * This theme is built on Wordpress Underscores (but does not fully follow it's workflow) : http://underscores.me
 * Built on Wordpress - Version 4.5.2.
 
-Readme Table of Contents:
+Table of Contents:
 ---------------
 1. Setup
 2. WP Plugins
@@ -43,7 +43,7 @@ Site Management
 ### Adding a new book:
 1. Admin -> Posts -> New Post. Give post a title. Under Custom Fields create a new custom field for book_copy_key.
 2. Add book info to books array : /books/_books.php
-3. Create php page file in /books/_books.php and name it the book_copy_key value.
+3. Create php page file in /books/_books.php and name it the book_copy_key value. All content for the book page is managed on the created book php file. All images are store in /books/imgs/.
 ```php
 // Example of array node that gets added to the books array
 "[book_copy_key value]" => [
@@ -58,6 +58,8 @@ Site Management
 ]
 ```
 
+### Site images:
+* All site images are stored in /imgs/
 
 Todo List
 ---------------
