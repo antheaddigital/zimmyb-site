@@ -28,6 +28,7 @@ WP Plugins
 3. Wordfence - Version 6.1.8 - https://wordpress.org/plugins/wordfence/
 4. Contact Form 7 - Version 4.4.2 - https://wordpress.org/plugins/contact-form-7/
 5. Pagination by BestWebSoft - Version 1.0.4 - https://wordpress.org/plugins/pagination/
+6. Disqus Comment System - Version 2.85 - https://wordpress.org/plugins/disqus-comment-system/
 
 File Locations
 ---------------
@@ -70,12 +71,14 @@ Site Management
 Todo List
 ---------------
 1. footer promo
+  * Make blocks responsive
   * Social icons make responsive
   * Sign up to Mail Chimp and setup and newsletter form
   * Create Twitter and add tweets
 2. about page - needs content
 3. contact page - needs content
 4. search pages - needs cleanup
-5. book page - needs content layout and cleanup
+5. book page
+  * Create page for Bayme Pants in The sun is broken
 6. blog page - needs content layout and cleanup
 7. news page - needs content layout and cleanup
