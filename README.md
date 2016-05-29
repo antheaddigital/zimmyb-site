@@ -47,7 +47,8 @@ Site Management
 
 2. In the post create a new custom field for book_copy_key
 
-3. Add book info to books array : /books/_books.php ```php
+3. Add book info to books array : /books/_books.php
+...```php
 "[book_copy_key value]" => [
   "series" => "[series name]",
   "title" => "[book title]",
