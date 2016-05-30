@@ -58,19 +58,22 @@ get_header(); ?>
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
+							 $post_id = get_the_ID();
 							 switch($category_name){
 								 case 'Books':
-									 echo '<div class="archive--book-results--book">
+								 		$book_featured_img_key = get_post_meta($post_id, 'book_featured_img_key', true);
+										echo '<div class="archive--book-results--book">
 									 				<a href="'.get_permalink().'">
-														<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=700%C3%97750&w=700&h=750" />
+														<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/posts/news/' . $post_featured_img_key . '.jpg" />
 													</a>
 												</div>';
 									 		break;
 								 case 'Blog':
+								 	 $post_featured_img_key = get_post_meta($post_id, 'post_featured_img_key', true);
 									 echo '<div class="archive--blog-results--post">
 									 				<div class="archive--blog-results--post--img">
 										 				<a href="'.get_permalink().'">
-															<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+															<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/posts/blog/' . $post_featured_img_key . '.jpg" />
 														</a>
 													</div>
 													<div class="archive--blog-results--post--description">
@@ -83,10 +86,11 @@ get_header(); ?>
 												</div>';
 									 		break;
 									case 'News':
+										$post_featured_img_key = get_post_meta($post_id, 'post_featured_img_key', true);
 										echo '<div class="archive--blog-results--post">
 														<div class="archive--blog-results--post--img">
 															<a href="'.get_permalink().'">
-															<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" />
+															<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/posts/news/' . $post_featured_img_key . '.jpg" />
 														</a>
 													</div>
 													<div class="archive--blog-results--post--description">

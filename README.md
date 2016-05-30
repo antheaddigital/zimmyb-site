@@ -43,11 +43,11 @@ Site Management
 ---------------
 ### Adding a new book:
 1. Admin -> Posts -> New Post.
-  * Give post a title.
-  * Under Custom Fields create a new custom field for book_copy_key.
-  * Set category to Books.
+  * Post title.
+  * Custom Fields : book_copy_key and book_thumb_key.
+  * Category -> Books.
 2. Add book info to books array : /books/_books.php
-3. Create php page file in /books/_books.php and name it the book_copy_key value. All content for the book page is managed on the created book php file. All images are store in /books/imgs/.
+3. Create php page file in /books/_books.php and name it the book_copy_key value. All content for the book page is managed on the created book php file. All images are store in /imgs/books/.
 ```php
 // Example of array node that gets added to the books array
 "[book_copy_key value]" => [
@@ -62,8 +62,20 @@ Site Management
 ]
 ```
 
+### Adding a Blog or News post:
+1. Admin -> Posts -> New Post.
+  * Post title
+  * Custom Fields : post_featured_img_key
+  * All images in post are stored in /imgs/posts/blog/ or /imgs/posts/news/
+```html
+// Example of how image tags should be created in post_id
+<img src="[path to images]/[file name].jpg" alt="" />
+//For example:
+<img src="/zimmyb/wp-content/themes/underscores/imgs/posts/blog/blog_post_3.jpg" alt="Blog post 3 image of lion" />
+```
+
 ### Site images:
-* All site images are stored in /imgs/
+* All site images are stored in /imgs/site/
 * Site images include:
   * logo
   * social marketing icons (facebook, twitter, youtube, ect)
