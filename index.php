@@ -58,6 +58,7 @@ get_header(); ?>
 								// $thumb_url = $thumb_url_array[0];
 								$post_id = get_the_ID();
 								$post_featured_img_key = get_post_meta($post_id, 'post_featured_img_key', true);
+								$post_featured_img_alt_key = get_post_meta($post_id, 'post_featured_img_alt_key', true);
 						?>
 								<?php
 									// if($row == 1) {
@@ -69,7 +70,7 @@ get_header(); ?>
 							<div class="col-md-6 home--recent-post--padding-left-reset">
 								<div class="home--recent-post--block">
 									<a class="home--recent-post--block--link" href="<?php the_permalink() ?>">
-										<img class="home--post--block--img img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/posts/blog/<?php echo $post_featured_img_key; ?>.jpg" />
+										<img class="home--post--block--img img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/posts/blog/<?php echo $post_featured_img_key; ?>.jpg" alt="<?php echo $post_featured_img_alt_key; ?>" />
 										<!-- <img class="home--recent-post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" /> -->
 										<div class="home--recent-post--block--wrapper">
 											<span class="home--recent-post--block--category">Blog</span>
@@ -99,6 +100,7 @@ get_header(); ?>
 								// $thumb_url = $thumb_url_array[0];
 								$post_id = get_the_ID();
 								$post_featured_img_key = get_post_meta($post_id, 'post_featured_img_key', true);
+								$post_featured_img_alt_key = get_post_meta($post_id, 'post_featured_img_alt_key', true);
 						?>
 								<?php
 									// if($row == 1) {
@@ -110,7 +112,7 @@ get_header(); ?>
 							<div class="col-md-6 home--recent-post--padding-right-reset">
 								<div class="home--recent-post--block">
 									<a class="home--recent-post--block--link" href="<?php the_permalink() ?>">
-										<img class="home--post--block--img img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/posts/news/<?php echo $post_featured_img_key; ?>.jpg" />
+										<img class="home--post--block--img img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/posts/news/<?php echo $post_featured_img_key; ?>.jpg" alt="<?php echo $post_featured_img_alt_key; ?>" />
 										<!-- <img class="home--recent-post--block--img img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" /> -->
 										<div class="home--recent-post--block--wrapper">
 											<span class="home--recent-post--block--category">News</span>

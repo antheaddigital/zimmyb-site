@@ -6730,17 +6730,20 @@ body {
 .single-post article header h1 {
   display: none;
 }
-.single-post article header .entry-meta {
+.single-post article .entry-meta {
   margin-bottom: 10px;
 }
-.single-post article header .entry-meta .published {
+.single-post article .entry-meta .published {
   display: none;
 }
-.single-post article header .entry-meta .updated {
+.single-post article .entry-meta .updated {
   display: inline;
 }
-.single-post article header .entry-meta .byline {
+.single-post article .entry-meta .byline {
   display: none;
+}
+.single-post article .feature-image-wrapper {
+  margin-bottom: 10px;
 }
 .single-post article .entry-footer {
   display: none;

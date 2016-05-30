@@ -65,13 +65,13 @@ Site Management
 ### Adding a Blog or News post:
 1. Admin -> Posts -> New Post.
   * Post title
-  * Custom Fields : post_featured_img_key
+  * Custom Fields : post_featured_img_key and post_featured_img_alt_key
   * All images in post are stored in /imgs/posts/blog/ or /imgs/posts/news/
 ```html
 // Example of how image tags should be created in post_id
-<img src="[path to images]/[file name].jpg" alt="" />
+<img class="img-responsive" src="[path to images]/[file name].jpg" alt="[give description of image]" />
 //For example:
-<img src="/zimmyb/wp-content/themes/underscores/imgs/posts/blog/blog_post_3.jpg" alt="Blog post 3 image of lion" />
+<img class="img-responsive" src="/zimmyb/wp-content/themes/underscores/imgs/posts/blog/blog_post_3.jpg" alt="Blog post 3 image of lion" />
 ```
 
 ### Site images:
