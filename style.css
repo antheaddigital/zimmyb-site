@@ -6724,6 +6724,30 @@ body {
   padding: 20px;
   background-color: #efefef;
 }
+.single-post article {
+  letter-spacing: 1px;
+}
+.single-post article header h1 {
+  display: none;
+}
+.single-post article header .entry-meta {
+  margin-bottom: 10px;
+}
+.single-post article header .entry-meta .published {
+  display: none;
+}
+.single-post article header .entry-meta .updated {
+  display: inline;
+}
+.single-post article header .entry-meta .byline {
+  display: none;
+}
+.single-post article .entry-footer {
+  display: none;
+}
+.single-post .post-navigation {
+  display: none;
+}
 aside .recent-releases h3 {
   margin-bottom: 13px;
 }
@@ -6994,13 +7018,13 @@ aside .recent-releases ul li a {
   left: 0;
   bottom: 0;
   display: block;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
 }
 .home--recent-post--block--category {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 1px;
-  color: #3a3a3a;
+  color: #aaa;
   text-transform: lowercase;
   font-style: italic;
 }
@@ -7008,7 +7032,7 @@ aside .recent-releases ul li a {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 1px;
-  color: #3a3a3a;
+  color: #aaa;
 }
 .home--recent-post--block h3 {
   margin: 0;
@@ -7016,7 +7040,7 @@ aside .recent-releases ul li a {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 1px;
-  color: #3a3a3a;
+  color: #fff;
   display: inline;
 }
 .page-title-header {

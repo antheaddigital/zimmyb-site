@@ -24,22 +24,22 @@
 							<div class="footer-promos--about-social-wrapper">
 								<div class="footer-promos--about-social footer-promos--about-social--facebook">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" />
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" />
 									</a>
 								</div>
 								<div class="footer-promos--about-social footer-promos--about-social--twitter">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" />
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" />
 									</a>
 								</div>
 								<div class="footer-promos--about-social footer-promos--about-social--youtube">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-pintrist.png" alt="Zimmy Books on Pintrist" />
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-pintrist.png" alt="Zimmy Books on Pintrist" />
 									</a>
 								</div>
 								<div class="footer-promos--about-social footer-promos--about-social--youtube">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmybooks-youtube.png" alt="Zimmy Books on Youtube" />
+										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-youtube.png" alt="Zimmy Books on Youtube" />
 									</a>
 								</div>
 							</div>
@@ -100,7 +100,7 @@
 							<li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a></li>
 						</ul>
 						<div>
-							<a class="footer--mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
+							<a class="footer--mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
 						</div>
 						<div class="footer--copyright">
 							&copy; <?php echo date("Y"); ?> Zimmy Books<br />property of <a href="http://antheaddigital.com">Anthead Digital</a>

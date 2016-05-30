@@ -30,7 +30,7 @@
 				<div class="col-md-12">
 					<div class="header--wrapper">
 				    <div class="header--logo">
-				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/zimmy-books-logo.png" alt="Zimmy Books Logo" /></a>
+				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo.png" alt="Zimmy Books Logo" /></a>
 				    </div>
 				    <div class="header--right-content hidden-xs">
 							<ul class="nav navbar-nav">
