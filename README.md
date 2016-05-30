@@ -44,8 +44,8 @@ Site Management
 ### Adding a new book:
 1. Admin -> Posts -> New Post.
   * Post title.
-  * Custom Fields : book_copy_key and book_thumb_key.
   * Category -> Books.
+  * Custom Fields : book_copy_key and book_thumb_key.
 2. Add book info to books array : /books/_books.php
 3. Create php page file in /books/_books.php and name it the book_copy_key value. All content for the book page is managed on the created book php file. All images are store in /imgs/books/.
 ```php
@@ -65,6 +65,7 @@ Site Management
 ### Adding a Blog or News post:
 1. Admin -> Posts -> New Post.
   * Post title
+  * Category -> Books or Category -> News.
   * Custom Fields : post_featured_img_key and post_featured_img_alt_key
   * All images in post are stored in /imgs/posts/blog/ or /imgs/posts/news/
 ```html

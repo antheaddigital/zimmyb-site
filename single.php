@@ -82,7 +82,6 @@ get_header(); ?>
 							// echo '</pre>';
 							//echo '<h1>' . $books_array[$book_copy_key]['full_title'] . '</h1>';
 							include 'books/'.$book_copy_key.'.php';
-
 						?>
 					<?php else: ?>
 						<?php
