@@ -61,10 +61,10 @@ get_header(); ?>
 							 $post_id = get_the_ID();
 							 switch($category_name){
 								 case 'Books':
-								 		$book_featured_img_key = get_post_meta($post_id, 'book_featured_img_key', true);
+								 		$book_thumb_img_key = get_post_meta($post_id, 'book_thumb_img_key', true);
 										echo '<div class="archive--book-results--book">
 									 				<a href="'.get_permalink().'">
-														<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/posts/news/' . $post_featured_img_key . '.jpg" />
+														<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/books/' . $book_thumb_img_key . '.jpg" />
 													</a>
 												</div>';
 									 		break;

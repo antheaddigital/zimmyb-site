@@ -35,17 +35,20 @@ get_header(); ?>
 					<div class="col-sm-8 col-md-8">
 
 						<!-- CAROUSEL -->
-						<div class="owl-carousel--temp">
-							<a href=""><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=800%C3%97500&w=800&h=500" class="img-responsive" /></a>
-						</div>
-						<!-- <div class="owl-carousel">
-							<div class="item">
-								<a href=""><img src="http://cdn.lolwot.com/wp-content/uploads/2015/03/10-of-the-most-expensive-cars-in-the-world-1.jpg" /></a>
-							</div>
-							<div class="item">
-								<a href=""><img src="http://flashymagazine.com/wp-content/uploads/2013/08/best-luxury-cars.jpg" /></a>
-							</div>
+						<!-- <div class="owl-carousel--temp">
+							<a href=""><img src="<?php //echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-01.jpg" class="img-responsive" /></a>
 						</div> -->
+						<div class="homepage-slick-carousel">
+							<div class="item">
+								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-01.jpg" class="img-responsive" /></a>
+							</div>
+							<div class="item">
+								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-02.jpg" class="img-responsive" /></a>
+							</div>
+							<div class="item">
+								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-03.jpg" class="img-responsive" /></a>
+							</div>
+						</div>
 
 						<!-- BLOG -->
 						<!-- <div class="col-sm-12 col-md-12 padding-reset"><h2><?php // esc_html_e( 'Blog', 'underscores' ); ?></h2></div> -->

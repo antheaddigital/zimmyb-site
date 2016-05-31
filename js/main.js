@@ -1,11 +1,5 @@
-// http://www.owlcarousel.owlgraphic.com/demos/responsive.html
-$('.owl-carousel').owlCarousel({
-  loop: true,
-  margin: 10,
-  responsiveClass: true,
-  responsive: {
-    0: {
-      items: 1
-    }
-  }
+// http://kenwheeler.github.io/slick/
+$('.homepage-slick-carousel').slick({
+  infinite: true,
+  dots: true,
 });
