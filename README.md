@@ -86,15 +86,14 @@ Site Management
 
 Todo List
 ---------------
-1. footer promo
+1. Footer promo
   * Make blocks responsive
   * Social icons make responsive
   * Sign up to Mail Chimp and setup and newsletter form
   * Create Twitter and add tweets
-2. about page - needs content
-3. contact page - needs content
-4. search pages - needs cleanup
-5. book page
+2. About page - needs content
+3. Contact page - needs content
+4. Search pages - needs cleanup
+5. Book page
   * Create page for Bayme Pants in The sun is broken
-6. blog page - needs content layout and cleanup
-7. news page - needs content layout and cleanup
+6. Terms of Service / Privacy Policy - clean up page

@@ -14,7 +14,7 @@
       * @headerPageClass
       * @headerText
     -->
-    <?php echo zb_get_page_header('page-About', 'About'); ?>
+    <?php echo zb_get_page_header('page-About', 'About Zimmy Books'); ?>
 
     <!--
       * Custom breadcrumb function located in function.php

@@ -18,13 +18,13 @@ get_header(); ?>
 		<?php
 			switch($cat_name) {
 				case 'Books':
-					$header_text = 'Book Apps that Teach Kids to Read';
+					$header_text = 'Book Apps that Teach Kids Sign Language';
 					break;
 				case 'Blog':
-					$header_text = 'A Blog to Teach Kids';
+					$header_text = 'Blog to Teach Kids Sign Language';
 					break;
 				case 'News':
-					$header_text = 'Zimmy Books in the News';
+					$header_text = 'News in the Zimmy Books World';
 					break;
 			}
 		?>
@@ -62,9 +62,11 @@ get_header(); ?>
 							 switch($category_name){
 								 case 'Books':
 								 		$book_thumb_img_key = get_post_meta($post_id, 'book_thumb_img_key', true);
+								 		$book_thumb_img_alt_key = get_post_meta($post_id, 'book_thumb_img_alt_key', true);
+
 										echo '<div class="archive--book-results--book">
 									 				<a href="'.get_permalink().'">
-														<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/books/' . $book_thumb_img_key . '.jpg" />
+														<img class="img-responsive" src="' . get_template_directory_uri() . '/imgs/books/' . $book_thumb_img_key . '.jpg" alt="'. $book_thumb_img_alt_key .'" />
 													</a>
 												</div>';
 									 		break;
@@ -105,7 +107,7 @@ get_header(); ?>
 							 }
 
 						endwhile;
-						the_posts_navigation();
+						// the_posts_navigation();
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 					endif;
