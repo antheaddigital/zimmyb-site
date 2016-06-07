@@ -15,8 +15,12 @@
   }
   &--book-results {
     &--book {
-      margin-bottom: 4%;
-      .flex-basis(48%);
+      margin-bottom: 6%;
+      .flex-basis(100%);
+      @media (min-width: 360px) {
+        margin-bottom: 4%;
+        .flex-basis(48%);
+      }
     }
   }
 
@@ -33,15 +37,23 @@
     &--post {
       margin-bottom: 25px;
       .display(flex);
-      //.flex-wrap(wrap);
+      .flex-wrap(wrap);
       .align-content(center);
       .justify-content(space-between);
       letter-spacing: 1px;
       &--img {
-        .flex-basis(30%);
+        margin-bottom: 15px;
+        .flex-basis(100%);
+        @media (min-width: 600px){
+          margin-bottom: 0;
+          .flex-basis(30%);
+        }
       }
       &--description {
-        .flex-basis(66%);
+        .flex-basis(100%);
+        @media (min-width: 600px){
+          .flex-basis(66%);
+        }
         &--title {
           color: @primary_blue;
           h3 {

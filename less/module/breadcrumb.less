@@ -7,4 +7,12 @@
     margin-bottom: 40px;
     background-color: #ececec;
   }
+  @media (max-width: 480px){
+    li:last-child {
+      display: block;
+      &::before {
+        content: none;
+      }
+    }
+  }
 }

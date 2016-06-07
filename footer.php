@@ -23,17 +23,17 @@
 							<h4>Follow Us</h4>
 							<div class="footer-promos--about-social-wrapper">
 								<div class="footer-promos--about-social footer-promos--about-social--facebook">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<a href="https://www.facebook.com/zimmybooks" target="_blank">
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" />
 									</a>
 								</div>
 								<div class="footer-promos--about-social footer-promos--about-social--twitter">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<a href="https://twitter.com/ZimmyBooks" target="_blank">
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" />
 									</a>
 								</div>
 								<div class="footer-promos--about-social footer-promos--about-social--youtube">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<a href="https://www.youtube.com/channel/UCW-9HVWTxsp2ZzszL8p5Wcw" target="_blank">
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-pintrist.png" alt="Zimmy Books on Pintrist" />
 									</a>
 								</div>
