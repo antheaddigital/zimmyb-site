@@ -87,8 +87,6 @@ Site Management
 Todo List
 ---------------
 1. Footer promo
-  * Make blocks responsive
-  * Social icons make responsive
   * Sign up to Mail Chimp and setup and newsletter form
   * Create Twitter and add tweets
 2. About page - needs content

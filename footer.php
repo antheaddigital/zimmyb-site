@@ -32,13 +32,13 @@
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" />
 									</a>
 								</div>
-								<div class="footer-promos--about-social footer-promos--about-social--youtube">
-									<a href="https://www.youtube.com/channel/UCW-9HVWTxsp2ZzszL8p5Wcw" target="_blank">
+								<!-- <div class="footer-promos--about-social footer-promos--about-social--pintrist">
+									<a href="" target="_blank">
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-pintrist.png" alt="Zimmy Books on Pintrist" />
 									</a>
-								</div>
+								</div> -->
 								<div class="footer-promos--about-social footer-promos--about-social--youtube">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<a href="https://www.youtube.com/channel/UCW-9HVWTxsp2ZzszL8p5Wcw" target="_blank">
 										<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-youtube.png" alt="Zimmy Books on Youtube" />
 									</a>
 								</div>
@@ -47,7 +47,7 @@
 
 						<div class="footer-promos--section footer-promos--twitter-feed">
 							<h4>Recent Tweets</h4>
-							<div>
+							<!-- <div>
 								<p><span>2:14px</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
 							</div>
 							<div>
@@ -55,7 +55,7 @@
 							</div>
 							<div>
 								<p><span>2:14px</span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
-							</div>
+							</div> -->
 						</div>
 						<div class="footer-promos--section footer-promos--newsletter">
 							<h4>Newsletter</h4>
@@ -94,9 +94,9 @@
 							<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
 						</ul>
 						<ul>
-							<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-							<li><a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">Contact</a></li>
-							<li><a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a></li>
+							<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+							<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'contact' ) ); ?>">Contact</a></li>
+							<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a></li>
 							<li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a></li>
 						</ul>
 						<div>

@@ -37,7 +37,7 @@
 								<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
 								<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
 								<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
-								<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+								<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 							</ul>
 						</div>
 						<div class="clear"></div>
@@ -64,7 +64,7 @@
 						<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
 						<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
 						<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
-						<li><a href="<?php echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
+						<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->

@@ -39,15 +39,15 @@ get_header(); ?>
 							<a href=""><img src="<?php //echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-01.jpg" class="img-responsive" /></a>
 						</div> -->
 						<div class="homepage-slick-carousel">
-							<div class="item">
+							<!-- <div class="item">
 								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-01.jpg" class="img-responsive" /></a>
-							</div>
-							<div class="item">
+							</div> -->
+							<!-- <div class="item">
 								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-02.jpg" class="img-responsive" /></a>
 							</div>
 							<div class="item">
 								<a href=""><img src="<?php echo get_template_directory_uri(); ?>/imgs/site/homepage-carousel-test-img-03.jpg" class="img-responsive" /></a>
-							</div>
+							</div> -->
 						</div>
 
 						<!-- BLOG -->
