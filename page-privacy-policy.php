@@ -26,8 +26,8 @@
  			<div class="row">
         <div class="col-md-12">
 
-          <h2>Zimmy Books Privacy Policy</h2>
-          <p>Your privacy is important to us, and it is Zimmy Books's policy to respect your privacy regarding any information we may collect while operating our websites. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.</p>
+          <h2>Zimmy Books Website and Applications Privacy Policy</h2>
+          <p>Your privacy is important to us, and it is Zimmy Books's policy to respect your privacy regarding any information we may collect while operating our websites and applications. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.</p>
           <ul>
            	<li>Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.</li>
            	<li>We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.</li>
