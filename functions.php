@@ -7,6 +7,13 @@
  * @package underscores
  */
 
+function session_init() {
+	if(!session_id()) {
+   	session_start();
+ 	}
+}
+add_action('init', 'session_init', 1);
+
 if ( ! function_exists( 'underscores_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -111,26 +118,22 @@ function underscores_widgets_init() {
 add_action( 'widgets_init', 'underscores_widgets_init' );
 
 /**
+ * Mangae jQuery
+ */
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function underscores_scripts() {
 	wp_enqueue_style( 'underscores-style', get_stylesheet_uri() );
-	wp_enqueue_style('slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css');
-	wp_enqueue_style('slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css');
-
-	wp_deregister_script( 'jquery' );
-	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-2.2.3.min.js', array(), '2.2.3', true );
-
-	wp_enqueue_script( 'boostrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js', array('jquery'), '3.3.4', true );
-
-	wp_enqueue_script( 'slick-min', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), '1.6.0', true );
-
+	wp_enqueue_script( 'joint-libs', get_template_directory_uri() . '/js/libs.js', array('jquery'), '20161110', true );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), false, true );
-
-	//wp_enqueue_script( 'underscores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	//wp_enqueue_script( 'underscores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -138,29 +141,76 @@ function underscores_scripts() {
 add_action( 'wp_enqueue_scripts', 'underscores_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * WP_head cleanup
  */
-require get_template_directory() . '/inc/custom-header.php';
+add_action('after_setup_theme','start_cleanup');
+function start_cleanup() {
+  // Initialize the cleanup
+  add_action('init', 'cleanup_head');
+}
+// WordPress cleanup function
+function cleanup_head() {
+
+  // EditURI link
+  remove_action( 'wp_head', 'rsd_link' );
+
+  // Category feed links
+  remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+  // Post and comment feed links
+  remove_action( 'wp_head', 'feed_links', 2 );
+
+  // Windows Live Writer
+  remove_action( 'wp_head', 'wlwmanifest_link' );
+
+  // Index link
+  // remove_action( 'wp_head', 'index_rel_link' );
+
+  // Previous link
+  // remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+
+  // Start link
+  // remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+
+  // Canonical
+  // remove_action('wp_head', 'rel_canonical', 10, 0 );
+
+  // DNS Prefetch
+  remove_action( 'wp_head', 'wp_resource_hints', 2 );
+
+  // Shortlink
+  // remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+
+  // Links for adjacent posts
+  // remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+	// WP json api
+	remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+
+  // WP version
+  remove_action( 'wp_head', 'wp_generator' );
+
+	// WP emoji
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+}
 
 /**
- * Custom template tags for this theme.
+ * Customer redirect
  */
-require get_template_directory() . '/inc/template-tags.php';
+add_action('init', 'do_output_buffer');
+function do_output_buffer() {
+	ob_start();
+}
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+function get_link_by_slug($slug, $type = 'post'){
+  $post = get_page_by_path($slug, OBJECT, $type);
+  return get_permalink($post->ID);
+}
 
 /**
  * Get *number of posts by category

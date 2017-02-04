@@ -1,0 +1,132 @@
+
+(function($){
+  $(document).ready(function(){
+
+    window.playerStats = {
+
+      playerLevel: 1,
+      pointsPerHit: 500,
+      playerScore: 0,
+      scoreStreak: 0,
+      durationIncrementor: .02,
+      durationIncrementorThrottle: .09,
+      durationMin: 1000, // min is the fastest speed
+      durationMax: 5000,
+
+      getPlayerScore: function(){
+        return window.playerStats.pointsPerHit + (window.playerStats.scoreStreak * 100);
+      }
+
+    };
+
+    window.gameEngine = {
+
+      defaults: {
+        $letterBox: $('.letter-box'),
+        lookup: {
+          // Ranges calculated from data found at
+          // http://en.wikipedia.org/wiki/Letter_frequency
+          a: 8167,  b: 9659,  c: 12441, d: 16694,
+          e: 29396, f: 31624, g: 33639, h: 39733,
+          i: 46699, j: 46852, k: 47624, l: 51649,
+          m: 54055, n: 60804, o: 68311, p: 70240,
+          q: 70335, r: 76322, s: 82649, t: 91705,
+          u: 94463, v: 95441, w: 97801, x: 97951,
+          y: 99925, z: 100000
+        }
+      },
+
+      init: function(){
+        this.nextLetterBegin();
+      },
+
+      nextLetterBegin: function(){
+        var letter = this.getLetter();
+        var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
+        this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/'+letter+'.png');
+        this.resetLetterBoxPosition(this.defaults.$letterBox);
+        this.bindKeyboard(letter);
+        this.defaults.$letterBox.velocity('fadeIn', 'slow', function(){
+          window.gameEngine.letterBoxMove(window.gameEngine.defaults.$letterBox);
+        });
+      },
+
+      bindKeyboard: function(letter){
+        $('body').unbind().bind('keydown', function(e) {
+          var letterPressed = String.fromCharCode(e.which);
+          // console.log('letter = '+letter);
+          // console.log('letterPressed = '+letterPressed);
+          if(letterPressed.toLowerCase() == letter.toLowerCase()){
+            // player stats
+            window.playerStats.durationIncrementor = window.playerStats.durationIncrementor + (window.playerStats.durationIncrementor * window.playerStats.durationIncrementorThrottle);
+            console.log(window.playerStats.durationIncrementor);
+
+            if(window.playerStats.durationMin < window.playerStats.durationMax) {
+              window.playerStats.durationMax = window.playerStats.durationMax - (window.playerStats.durationMax * window.playerStats.durationIncrementor);
+            }
+            console.log(window.playerStats.durationMax);
+
+            ++window.playerStats.scoreStreak;
+            console.log(window.playerStats.scoreStreak);
+
+            window.playerStats.playerScore = window.playerStats.playerScore + window.playerStats.getPlayerScore();
+            console.log(window.playerStats.playerScore);
+            $('.player-score').html(window.playerStats.playerScore);
+
+            // next block
+            window.gameEngine.defaults.$letterBox.velocity('stop');
+            window.gameEngine.defaults.$letterBox.velocity('fadeOut', 'slow', function(){
+              window.gameEngine.nextLetterBegin();
+            });
+          } else {
+            console.log('no');
+          }
+        });
+      },
+
+      getLetter: function(){
+        var random = Math.random() * 100000,
+            letter;
+        for (letter in this.defaults.lookup) {
+          if (random < this.defaults.lookup[letter]) {
+            return letter;
+          }
+        }
+      },
+
+      resetLetterBoxPosition: function($letterBox){
+        $letterBox.hide().css({
+          'left': 0
+        });
+      },
+
+      letterBoxMove: function($letterBox){
+        $letterBox.velocity({
+          left: '700px'
+        }, {
+          duration: window.playerStats.durationMax,
+          easing: 'linear',
+          complete: function() {
+            console.log('complete');
+            // player stats
+            window.playerStats.durationIncrementor = .02;
+            window.playerStats.durationIncrementorThrottle = .09;
+            window.playerStats.durationMax = window.playerStats.durationMax + (window.playerStats.durationMax / 2);
+            window.playerStats.scoreStreak = 0;
+            // next block
+            window.gameEngine.defaults.$letterBox.velocity('stop');
+            window.gameEngine.defaults.$letterBox.velocity('fadeOut', 'slow', function(){
+              window.gameEngine.nextLetterBegin();
+            });
+          }
+        });
+      }
+
+    };
+
+    $('.start-game').on('click', function(e){
+      window.gameEngine.init();
+    });
+
+  });
+})(jQuery);

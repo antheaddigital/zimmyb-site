@@ -1,74 +1,37 @@
-<?php
-/**
- * The header for our theme.
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package underscores
- */
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes">
+<?php //require_once( get_template_directory() . '/template-parts/module-page-checks-settings.php'); ?>
 <?php wp_head(); ?>
 </head>
+<?php
+/*
+ * Error reporting
+ */
+// $wpdb->show_errors();
+// $wpdb->print_error();
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+?>
+<?php
+require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
+$device_type = Detect::deviceType();
+?>
+<body <?php body_class($device_type); ?>>
+<header class="header"><?php require_once( get_template_directory() . '/template-parts/main-nav.php'); ?></header>
+<div class="site-wrapper">
+<div class="site-content">
+	<!--
+		* Custom page header function located in function.php
+		* @pageClass
+		* @pageText
+	-->
+	<?php echo zb_get_page_header('home', 'Sign Language Books for Kids and Toddlers'); ?>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-
-	<header class="header">
-
-	  <div class="container container-top-level">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="header--wrapper">
-				    <div class="header--logo">
-				      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo.png" alt="Zimmy Books Logo" /></a>
-				    </div>
-				    <div class="header--right-content hidden-xs">
-							<ul class="nav navbar-nav">
-								<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
-								<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
-								<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
-								<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-							</ul>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-			</div>
-	  </div>
-
-	</header>
-
-	<div class="container container-top-level navbar-wrapper visible-xs">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li><a href="<?php echo zb_get_cat_url('books'); ?>">Books</a></li>
-						<li><a href="<?php echo zb_get_cat_url('blog'); ?>">Blog</a></li>
-						<li><a href="<?php echo zb_get_cat_url('news'); ?>">News</a></li>
-						<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div><!--/.container-fluid -->
-		</nav>
-	</div>
-
-	<div id="content" class="site-content">
+	<!--
+		* Custom breadcrumb function located in function.php
+		* @pagesArray
+	-->
+	<?php //echo zb_get_breadcrumb(true); ?>
