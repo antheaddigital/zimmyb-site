@@ -11,7 +11,8 @@
 
 ?>
 
-	</div><!-- #content -->
+		</div><!-- #site-content -->
+	</div><!-- #site-content-border -->
 
 	<div class="footer-promos">
 		<div class="container">
@@ -110,7 +111,8 @@
 			</div>
 		</div>
 	</footer>
-</div><!-- #page -->
+	
+</div><!-- #site-wrapper -->
 
 <?php wp_footer(); ?>
 

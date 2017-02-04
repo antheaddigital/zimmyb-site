@@ -1,11 +1,28 @@
 <?php /* Template Name: Game */ ?>
-<?php require_once( get_template_directory() . '/header-game.php'); ?>
 
 <?php
+global $post;
+$post_slug = $post->post_name;
+?>
 
-  global $post;
-  $post_slug = $post->post_name;
+<?php
+// header libs
+switch ($post_slug) {
+  case 'save-the-pig':
+    $header_libs = [
+      'font-awesome',
+      'magnific-popup'
+    ];
+    $css_file = 'save-the-pig';
+    break;
+  default:
+    break;
+}
+require_once( get_template_directory() . '/header-game.php');
+?>
 
+<?php
+// game page
   switch ($post_slug) {
     case 'save-the-pig':
       require_once( get_template_directory() . '/pages/save-the-pig.php' );
@@ -13,7 +30,20 @@
     default:
       break;
   }
-
 ?>
 
-<?php require_once( get_template_directory() . '/footer-game.php');
+<?php
+// footer libs
+switch ($post_slug) {
+  case 'save-the-pig':
+    $header_libs = [
+      'jquery',
+      'magnific-popup',
+      'velocity'
+    ];
+    $js_file = 'save-the-pig';
+    break;
+  default:
+    break;
+}
+require_once( get_template_directory() . '/footer-game.php');

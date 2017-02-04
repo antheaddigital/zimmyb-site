@@ -1,3 +1,12 @@
+<?php
+/*
+ * Error reporting
+ */
+// $wpdb->show_errors();
+// $wpdb->print_error();
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,11 +17,28 @@
   <title></title>
   <meta name="description" content="">
   <!-- CSS Libs -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+  <?php
+    foreach ($header_libs as $lib) {
+      switch($lib){
+        case 'font-awesome':
+          echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">';
+          break;
+        case 'magnific-popup':
+          echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>';
+          break;
+      }
+    }
+  ?>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/save-the-pig.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo $css_file; ?>.css">
 </head>
-<body>
+<?php
+require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
+$device_type = Detect::deviceType();
+?>
+<body <?php body_class($device_type); ?>>
 <input type="hidden" class="template-directory-uri-value" data-template-directory-uri="<?php echo get_template_directory_uri(); ?>" />
+<header class="header"><?php //require_once( get_template_directory() . '/template-parts/main-nav.php'); ?></header>
+<div class="site-wrapper">
+<div class="site-content-border">
+<div class="site-content">

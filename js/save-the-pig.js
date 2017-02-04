@@ -54,6 +54,7 @@
       bindKeyboard: function(letter){
         $('body').unbind().bind('keydown', function(e) {
           var letterPressed = String.fromCharCode(e.which);
+          $('.keys-row span[data-key="'+letterPressed.toLowerCase()+'"]').addClass('active');
           // console.log('letter = '+letter);
           // console.log('letterPressed = '+letterPressed);
           if(letterPressed.toLowerCase() == letter.toLowerCase()){
@@ -81,6 +82,8 @@
           } else {
             console.log('no');
           }
+        }).bind('keyup', function(e) {
+          $('.keys-row span').removeClass('active');
         });
       },
 
