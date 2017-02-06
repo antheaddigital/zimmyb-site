@@ -24,8 +24,8 @@
            {
              position: "bottom",
              content: [
-               '<a class="mobile-nav-getafreequote" href="#/">GET A FREE QUOTE</a>',
-               '<a class="" href="#/">CALL 877-850-0998</a>'
+               '<a class="" href="#/"></a>',
+               '<a class="" href="#/"></a>'
              ]
            }
          ]

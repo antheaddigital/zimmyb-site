@@ -38,7 +38,9 @@ $device_type = Detect::deviceType();
 ?>
 <body <?php body_class($device_type); ?>>
 <input type="hidden" class="template-directory-uri-value" data-template-directory-uri="<?php echo get_template_directory_uri(); ?>" />
-<header class="header"><?php //require_once( get_template_directory() . '/template-parts/main-nav.php'); ?></header>
+<!-- header-nav -->
+<?php require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
+<!-- header-nav - end -->
 <div class="site-wrapper">
 <div class="site-content-border">
 <div class="site-content">

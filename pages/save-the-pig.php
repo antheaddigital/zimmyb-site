@@ -1,7 +1,6 @@
-<section class="page-save-the-pig">
-
+<!-- page-save-the-pig -->
+<section class="page-save-the-pig save-the-pig-game">
   <div class="wrapper">
-
     <div class="stage">
       <div class="player-score">0</div>
       <button class="start-game">start</button>
@@ -43,9 +42,46 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<!-- page-save-the-pig - end -->
 
+<!-- game-description -->
+<section class="site-promos">
 
+  <h1>Save the Pig</h1>
 
+  <p class="game-description"></p>
+
+  <h2>Requirements:</h2>
+  <ul class="requirements-list">
+    <li>Desktop only</li>
+    <li>Keyboard</li>
+  </ul>
+
+  <h2>Share:</h2>
+  <ul class="share-list">
+    <li><a href=""><img src="" /></a></li>
+    <li><a href=""><img src="" /></a></li>
+  </ul>
+
+</section>
+<!-- game-description - end -->
+
+<!-- site-promos -->
+<section class="site-promos">
+
+  <div>
+    <h2>Learning Material</h2>
+  </div>
+
+  <div>
+    <h2>Books</h2>
+  </div>
+
+  <div>
+    <h2>Games</h2>
   </div>
 
 </section>
+<!-- site-promos - end -->
