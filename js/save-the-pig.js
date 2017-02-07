@@ -23,6 +23,7 @@
 
       defaults: {
         $letterBox: $('.letter-box'),
+        $pigBox: $('.pig-box'),
         lookup: {
           // Ranges calculated from data found at
           // http://en.wikipedia.org/wiki/Letter_frequency
@@ -42,12 +43,14 @@
 
       nextLetterBegin: function(){
         var letter = this.getLetter();
+        var pig = this.getPig();
         var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
-        this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/'+letter+'.png');
-        this.resetLetterBoxPosition(this.defaults.$letterBox);
+        //this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/'+letter+'.png');
+        this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/Frame.png');
+        this.resetPigBoxPosition(this.defaults.$pigBox);
         this.bindKeyboard(letter);
-        this.defaults.$letterBox.velocity('fadeIn', 'slow', function(){
-          window.gameEngine.letterBoxMove(window.gameEngine.defaults.$letterBox);
+        this.defaults.$pigBox.velocity('fadeIn', 'slow', function(){
+          window.gameEngine.pigBoxMove(window.gameEngine.defaults.$pigBox);
         });
       },
 
@@ -75,8 +78,8 @@
             $('.player-score').html(window.playerStats.playerScore);
 
             // next block
-            window.gameEngine.defaults.$letterBox.velocity('stop');
-            window.gameEngine.defaults.$letterBox.velocity('fadeOut', 'slow', function(){
+            window.gameEngine.defaults.$pigBox.velocity('stop');
+            window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
               window.gameEngine.nextLetterBegin();
             });
           } else {
@@ -97,14 +100,18 @@
         }
       },
 
-      resetLetterBoxPosition: function($letterBox){
-        $letterBox.hide().css({
+      getPig: function(){
+
+      },
+
+      resetPigBoxPosition: function($pigBox){
+        $pigBox.hide().css({
           'left': 0
         });
       },
 
-      letterBoxMove: function($letterBox){
-        $letterBox.velocity({
+      pigBoxMove: function($pigBox){
+        $pigBox.velocity({
           left: '700px'
         }, {
           duration: window.playerStats.durationMax,
@@ -117,8 +124,8 @@
             window.playerStats.durationMax = window.playerStats.durationMax + (window.playerStats.durationMax / 2);
             window.playerStats.scoreStreak = 0;
             // next block
-            window.gameEngine.defaults.$letterBox.velocity('stop');
-            window.gameEngine.defaults.$letterBox.velocity('fadeOut', 'slow', function(){
+            window.gameEngine.defaults.$pigBox.velocity('stop');
+            window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
               window.gameEngine.nextLetterBegin();
             });
           }
