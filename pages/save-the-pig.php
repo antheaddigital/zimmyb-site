@@ -8,7 +8,9 @@
         <button class="start-game">start</button>
         <div class="hidden-track">
           <div class="pig-box">
-            <img class="letter-box" />
+            <div class="letter-box">
+              <div class="a"></div>
+            </div>
           </div>
         </div>
         <div class="keyboard-wrapper">

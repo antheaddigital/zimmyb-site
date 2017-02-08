@@ -22,7 +22,7 @@
     window.gameEngine = {
 
       defaults: {
-        $letterBox: $('.letter-box'),
+        $letterBoxDiv: $('.letter-box div'),
         $pigBox: $('.pig-box'),
         lookup: {
           // Ranges calculated from data found at
@@ -45,8 +45,7 @@
         var letter = this.getLetter();
         var pig = this.getPig();
         var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
-        //this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/'+letter+'.png');
-        this.defaults.$letterBox.attr('src', templateDirectoryURI+'/imgs/games/save-the-pig/Frame.png');
+        this.defaults.$letterBoxDiv.addClass(letter);
         this.resetPigBoxPosition(this.defaults.$pigBox);
         this.bindKeyboard(letter);
         this.defaults.$pigBox.velocity('fadeIn', 'slow', function(){
@@ -80,6 +79,7 @@
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
+              window.gameEngine.defaults.$letterBoxDiv.removeClass();
               window.gameEngine.nextLetterBegin();
             });
           } else {
@@ -91,6 +91,7 @@
       },
 
       getLetter: function(){
+        // http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
         var random = Math.random() * 100000,
             letter;
         for (letter in this.defaults.lookup) {
@@ -126,6 +127,7 @@
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
+              window.gameEngine.defaults.$letterBoxDiv.removeClass();
               window.gameEngine.nextLetterBegin();
             });
           }
