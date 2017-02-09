@@ -3,21 +3,28 @@
   $(document).ready(function(){
 
     window.playerStats = {
-
-      playerLevel: 1,
       pointsPerHit: 500,
       playerScore: 0,
       scoreStreak: 0,
+      strikes: 0,
       durationIncrementor: .02,
       durationIncrementorThrottle: .09,
       durationMin: 1000, // min is the fastest speed
       durationMax: 5000,
-
       getPlayerScore: function(){
         return window.playerStats.pointsPerHit + (window.playerStats.scoreStreak * 100);
       }
-
     };
+
+    window.gameDefaults = {
+      playerScore: 0,
+      scoreStreak: 0,
+      strikes: 0,
+      durationIncrementor: .02,
+      durationIncrementorThrottle: .09,
+      durationMin: 1000, // min is the fastest speed
+      durationMax: 5000
+    },
 
     window.gameEngine = {
 
@@ -44,8 +51,15 @@
       nextLetterBegin: function(){
         var letter = this.getLetter();
         var pig = this.getPig();
-        var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
-        this.defaults.$letterBoxDiv.addClass(letter);
+        switch(window.gamePresets.mode) {
+          case 'sign':
+            this.defaults.$letterBoxDiv.addClass(letter);
+            break;
+          case 'character':
+            console.log(letter);
+            this.defaults.$letterBoxDiv.html(letter);
+            break;
+        }
         this.resetPigBoxPosition(this.defaults.$pigBox);
         this.bindKeyboard(letter);
         this.defaults.$pigBox.velocity('fadeIn', 'slow', function(){
@@ -79,6 +93,14 @@
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
+              switch(window.gamePresets.mode) {
+                case 'sign':
+                  window.gameEngine.defaults.$letterBoxDiv.removeClass(letter);
+                  break;
+                case 'character':
+                  window.gameEngine.defaults.$letterBoxDiv.html('');
+                  break;
+              }
               window.gameEngine.defaults.$letterBoxDiv.removeClass();
               window.gameEngine.nextLetterBegin();
             });
@@ -118,7 +140,6 @@
           duration: window.playerStats.durationMax,
           easing: 'linear',
           complete: function() {
-            console.log('complete');
             // player stats
             window.playerStats.durationIncrementor = .02;
             window.playerStats.durationIncrementorThrottle = .09;
@@ -127,17 +148,92 @@
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
-              window.gameEngine.defaults.$letterBoxDiv.removeClass();
+              switch(window.gamePresets.mode) {
+                case 'sign':
+                  window.gameEngine.defaults.$letterBoxDiv.removeClass();
+                  break;
+                case 'character':
+                  window.gameEngine.defaults.$letterBoxDiv.html('');
+                  break;
+              }
               window.gameEngine.nextLetterBegin();
             });
           }
         });
+      },
+
+      gameStop: function(){
+        var $pigBox = this.defaults.$pigBox;
+        $pigBox.velocity("stop");
+        $pigBox.velocity('fadeOut', 'slow', function(){
+          window.gameEngine.resetGameDefaults();
+          switch(window.gamePresets.mode) {
+            case 'sign':
+              window.gameEngine.defaults.$letterBoxDiv.removeClass();
+              break;
+            case 'character':
+              window.gameEngine.defaults.$letterBoxDiv.html('');
+              break;
+          }
+        });
+      },
+
+      resetGameDefaults: function(){
+        window.playerStats.playerScore = window.gameDefaults.playerScore;
+        window.playerStats.scoreStreak = window.gameDefaults.scoreStreak;
+        window.playerStats.strikes = window.gameDefaults.strikes;
+        window.playerStats.durationIncrementor = window.gameDefaults.durationIncrementor;
+        window.playerStats.durationIncrementorThrottle = window.gameDefaults.durationIncrementorThrottle;
+        window.playerStats.durationMin = window.gameDefaults.durationMin;
+        window.playerStats.durationMax = window.gameDefaults.durationMax;
       }
 
     };
 
+    window.gamePresets = {
+      mode: 'sign',
+      speed: 5,
+      strikes: 0
+    };
+
+    $('.mode a').on('click', function(e){
+      e.preventDefault();
+      $('.mode a').removeClass();
+      $(this).addClass('active');
+      window.gamePresets.mode = $(this).attr('data-mode');
+      switch (window.gamePresets.mode) {
+        case 'sign':
+          $('.letter-box').removeClass('character');
+          $('.letter-box').addClass('sign');
+          break;
+        case 'character':
+          $('.letter-box').removeClass('sign');
+          $('.letter-box').addClass('character');
+          break;
+      }
+      console.log(window.gamePresets.mode);
+    });
+
+    $('.speed').on('change', function(){
+      var speed = $(this).val();
+      window.gamePresets.speed = speed;
+      console.log(window.gamePresets.speed);
+    });
+
+    $('.strikes').on('change', function(){
+      var strikes = $(this).val();
+      window.gamePresets.strikes = strikes;
+      console.log(window.gamePresets.strikes);
+    });
+
     $('.start-game').on('click', function(e){
-      window.gameEngine.init();
+      e.preventDefault();
+      window.gameEngine.init(window.gamePresets);
+    });
+
+    $('.stop-game').on('click', function(e){
+      e.preventDefault();
+      window.gameEngine.gameStop();
     });
 
   });

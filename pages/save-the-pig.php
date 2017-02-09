@@ -5,11 +5,34 @@
     <div class="wrapper">
       <div class="stage">
         <div class="player-score">0</div>
-        <button class="start-game">start</button>
+        <div class="game-control-board">
+          <div class="controls">
+            <button class="start-game">start</button>
+            <button class="stop-game">stop</button>
+          </div>
+          <div class="mode">
+            <span>Pick a mode</span>
+            <a href="#" class="active" data-mode="sign">sign</a>
+            <a href="#" class="" data-mode="character">character</a>
+          </div>
+          <div class="inputs">
+            <div class="input-wrapper">
+              <label for="speed">Speed</label>
+              <input type="number" id="speed" class="speed" name="speed" value="5" min="0" max="10" />
+              <span>min = 0<br />max = 10<br />default = 5</span>
+            </div>
+            <div class="input-wrapper">
+              <label for="strikes">Strikes</label>
+              <input type="number" id="strikes" class="strikes" name="strikes" value="0" min="0" max="10" />
+              <span>max = 5<br />infinite = 0<br />default = 0</span>
+            </div>
+          </div>
+        </div>
         <div class="hidden-track">
           <div class="pig-box">
-            <div class="letter-box">
-              <div class="a"></div>
+            <div class="letter-box sign">
+              <div class=""></div>
+
             </div>
           </div>
         </div>
