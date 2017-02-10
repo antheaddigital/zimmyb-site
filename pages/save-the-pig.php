@@ -36,6 +36,7 @@
             </div>
           </div>
         </div>
+        <div class="kid-dog-announcer"></div>
         <div class="keyboard-wrapper">
           <div class="keys-row-1 keys-row">
             <span data-key="q">q</span>
