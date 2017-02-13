@@ -1,6 +1,17 @@
 /***********************************************************************************
  * Sitewide functionality
  ***********************************************************************************/
+(function($) {
+ $('document').ready(function(){
+   $(window).scroll(function() {
+       if ($(this).scrollTop()) {
+           $('.back-to-top').fadeIn();
+       } else {
+           $('.back-to-top').fadeOut();
+       }
+     });
+  });
+})(jQuery);
 
  // mmenu
  // http://mmenu.frebsite.nl/

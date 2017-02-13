@@ -4,27 +4,34 @@
   <section class="save-the-pig-game">
     <div class="wrapper">
       <div class="stage">
-        <div class="player-score">0</div>
-        <div class="game-control-board">
-          <div class="controls">
-            <button class="start-game">start</button>
-            <button class="stop-game">stop</button>
-          </div>
-          <div class="mode">
-            <span>Pick a mode</span>
-            <a href="#" class="active" data-mode="sign">sign</a>
-            <a href="#" class="" data-mode="character">character</a>
-          </div>
-          <div class="inputs">
-            <div class="input-wrapper">
-              <label for="speed">Speed</label>
-              <input type="number" id="speed" class="speed" name="speed" value="5" min="0" max="10" />
-              <span>min = 0<br />max = 10<br />default = 5</span>
+        <div class="game-head-board">
+          <div class="game-logo-sign">SAVE THE PIG!</div>
+          <div class="game-control-board">
+            <div class="player-score-board">
+              <div class="player-score"><span class="score-label">score</span><span class="score">0</span></div>
+              <div class="player-streak"><span class="streak-label">streak</span><span class="streak">0</span></div>
+              <div class="clear"></div>
             </div>
-            <div class="input-wrapper">
-              <label for="strikes">Strikes</label>
-              <input type="number" id="strikes" class="strikes" name="strikes" value="0" min="0" max="10" />
-              <span>max = 5<br />infinite = 0<br />default = 0</span>
+            <div class="controls">
+              <button class="start-game">start</button>
+              <button class="stop-game active">stop</button>
+            </div>
+            <div class="mode">
+              <span>Mode</span>
+              <a href="#" class="active" data-mode="sign">sign</a>
+              <a href="#" class="" data-mode="character">character</a>
+            </div>
+            <div class="inputs">
+              <div class="input-wrapper">
+                <label for="speed">Speed</label>
+                <input type="number" id="speed" class="speed" name="speed" value="5" min="0" max="10" />
+                <span>min = 0<br />max = 10<br />default = 5</span>
+              </div>
+              <div class="input-wrapper">
+                <label for="strikes">Strikes</label>
+                <input type="number" id="strikes" class="strikes" name="strikes" value="0" min="0" max="10" />
+                <span>max = 5<br />infinite = 0<br />default = 0</span>
+              </div>
             </div>
           </div>
         </div>
@@ -32,7 +39,6 @@
           <div class="pig-box">
             <div class="letter-box sign">
               <div class=""></div>
-
             </div>
           </div>
         </div>
@@ -69,6 +75,12 @@
             <span data-key="b">b</span>
             <span data-key="n">n</span>
             <span data-key="m">m</span>
+          </div>
+        </div>
+        <div class="water-barrel-wrapper">
+          <div class="zimmy"></div>
+          <div class="water-barrel">
+            <div class="water-barrel-ad"></div>
           </div>
         </div>
       </div>

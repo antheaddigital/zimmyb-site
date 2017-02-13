@@ -10,6 +10,8 @@
     	<?php require_once( get_template_directory() . '/template-parts/footer-nav.php'); ?>
     	<!-- footer-nav - end -->
 
+      <div class="back-to-top">Back to Top</div>
+
     </div><!-- #site-content -->
   </div><!-- #site-content-border -->
 

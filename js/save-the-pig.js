@@ -1,3 +1,15 @@
+(function($) {
+ $('document').ready(function(){
+   $(window).scroll(function() {
+       if ($(this).scrollTop()) {
+           $('.back-to-top').fadeIn();
+       } else {
+           $('.back-to-top').fadeOut();
+       }
+     });
+  });
+})(jQuery);
+
 
 (function($){
   $(document).ready(function(){
@@ -88,7 +100,8 @@
 
             window.playerStats.playerScore = window.playerStats.playerScore + window.playerStats.getPlayerScore();
             console.log(window.playerStats.playerScore);
-            $('.player-score').html(window.playerStats.playerScore);
+            $('.player-score .score').html(window.playerStats.playerScore);
+            $('.player-streak .streak').html(window.playerStats.scoreStreak);
 
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
@@ -145,6 +158,7 @@
             window.playerStats.durationIncrementorThrottle = .09;
             window.playerStats.durationMax = window.playerStats.durationMax + (window.playerStats.durationMax / 2);
             window.playerStats.scoreStreak = 0;
+            $('.player-streak .streak').html('0');
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
@@ -228,11 +242,15 @@
 
     $('.start-game').on('click', function(e){
       e.preventDefault();
+      $('.controls button').removeClass('active');
+      $(this).addClass('active');
       window.gameEngine.init(window.gamePresets);
     });
 
     $('.stop-game').on('click', function(e){
       e.preventDefault();
+      $('.controls button').removeClass('active');
+      $(this).addClass('active');
       window.gameEngine.gameStop();
     });
 
