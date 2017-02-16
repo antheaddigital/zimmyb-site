@@ -5,7 +5,7 @@
     <div class="wrapper">
       <div class="stage">
         <div class="game-head-board">
-          <div class="game-logo-sign">SAVE THE PIG!</div>
+          <div class="game-logo-sign"></div>
           <div class="game-control-board">
             <div class="player-score-board">
               <div class="player-score"><span class="score-label">score</span><span class="score">0</span></div>
