@@ -23,9 +23,9 @@
             </div>
             <div class="inputs">
               <div class="input-wrapper">
-                <label for="speed">Speed</label>
+                <label for="speed">Max Speed</label>
                 <input type="number" id="speed" class="speed" name="speed" value="5" min="0" max="10" />
-                <span>min = 0<br />max = 10<br />default = 5</span>
+                <span>slowest = 0<br />fastest = 10<br />default = 5</span>
               </div>
               <div class="input-wrapper">
                 <label for="strikes">Strikes</label>
@@ -80,7 +80,24 @@
         <div class="water-barrel-wrapper">
           <div class="zimmy"></div>
           <div class="water-barrel">
-            <div class="water-barrel-ad"></div>
+            <div class="water-barrel-ad">
+              <div class="ad"></div>
+              <div class="strikes hidden">
+                <div class="strikes-header">STRIKES</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
+        <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
+          <div class="game-finished-popup-header">THANK YOU FOR PLAYING!</div>
+          <div class="game-finished-popup-score-wrapper">
+            <div class="game-finished-popup-score">Score: <span></span></div>
+            <div class="game-finished-popup-streak">Highest Streak: <span></span></div>
+          </div>
+          <div class="game-finished-popup-social-wrapper">
+            <a class="game-finished-popup-social-facebook" href="">facebook</a>
+            <a class="game-finished-popup-social-twitter" href="">twitter</a>
           </div>
         </div>
       </div>

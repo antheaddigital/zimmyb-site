@@ -10,7 +10,6 @@
   });
 })(jQuery);
 
-
 (function($){
   $(document).ready(function(){
 
@@ -18,7 +17,9 @@
       pointsPerHit: 500,
       playerScore: 0,
       scoreStreak: 0,
+      highestStreak: 0,
       strikes: 0,
+      strikesInfinite: true,
       durationIncrementor: .02,
       durationIncrementorThrottle: .09,
       durationMin: 1000, // min is the fastest speed
@@ -31,7 +32,9 @@
     window.gameDefaults = {
       playerScore: 0,
       scoreStreak: 0,
+      highestStreak: 0,
       strikes: 0,
+      strikesInfinite: true,
       durationIncrementor: .02,
       durationIncrementorThrottle: .09,
       durationMin: 1000, // min is the fastest speed
@@ -57,7 +60,80 @@
       },
 
       init: function(){
+        this.resetScoreboard();
+        this.setStrikesZone();
+        this.setSpeed();
         this.nextLetterBegin();
+      },
+
+      resetScoreboard: function(){
+        $('.player-score .score').html(0);
+        $('.player-streak .streak').html(0);
+      },
+
+      setStrikesZone: function(){
+        window.playerStats.strikes = window.gamePresets.strikes;
+        if(window.playerStats.strikes >= 1 && window.playerStats.strikes <= 5){
+          window.playerStats.strikesInfinite = false;
+          // show water barrel strike board
+          $('.water-barrel-ad .ad').addClass('hidden');
+          $('.water-barrel-ad .strikes').removeClass('hidden');
+          var i = window.playerStats.strikes;
+          while( i > 0 ){
+            var strikeEl = '<span class="strike" data-strike="'+i+'">X</span>';
+            $('.water-barrel-ad .strikes').append(strikeEl);
+            i--;
+          }
+        } else if (window.playerStats.strikes == 0) {
+          window.playerStats.strikesInfinite = true;
+          // show water barrel ad
+          $('.water-barrel-ad .strikes').addClass('hidden');
+          $('.water-barrel-ad .ad').removeClass('hidden');
+        }
+      },
+
+      addStrike: function(){
+        $('.water-barrel-ad .strikes span[data-strike='+window.playerStats.strikes+']').addClass('active');
+        window.playerStats.strikes = window.playerStats.strikes - 1;
+      },
+
+      setSpeed: function(){
+        //console.log(window.gamePresets.speed);
+        switch(window.gamePresets.speed){
+          case '0':
+            window.playerStats.durationMin = 5000;
+            break;
+          case '1':
+            window.playerStats.durationMin = 4500;
+            break;
+          case '2':
+            window.playerStats.durationMin = 4000;
+            break;
+          case '3':
+            window.playerStats.durationMin = 3500;
+            break;
+          case '4':
+            window.playerStats.durationMin = 3000;
+            break;
+          case '5':
+            window.playerStats.durationMin = 2500;
+            break;
+          case '6':
+            window.playerStats.durationMin = 2000;
+            break;
+          case '7':
+            window.playerStats.durationMin = 1500;
+            break;
+          case '8':
+            window.playerStats.durationMin = 1000;
+            break;
+          case '9':
+            window.playerStats.durationMin = 500;
+            break;
+          case '10':
+            window.playerStats.durationMin = 0;
+            break;
+        }
       },
 
       nextLetterBegin: function(){
@@ -68,7 +144,7 @@
             this.defaults.$letterBoxDiv.addClass(letter);
             break;
           case 'character':
-            console.log(letter);
+            //console.log(letter);
             this.defaults.$letterBoxDiv.html(letter);
             break;
         }
@@ -88,18 +164,18 @@
           if(letterPressed.toLowerCase() == letter.toLowerCase()){
             // player stats
             window.playerStats.durationIncrementor = window.playerStats.durationIncrementor + (window.playerStats.durationIncrementor * window.playerStats.durationIncrementorThrottle);
-            console.log(window.playerStats.durationIncrementor);
+            //console.log(window.playerStats.durationIncrementor);
 
             if(window.playerStats.durationMin < window.playerStats.durationMax) {
               window.playerStats.durationMax = window.playerStats.durationMax - (window.playerStats.durationMax * window.playerStats.durationIncrementor);
             }
-            console.log(window.playerStats.durationMax);
+            //console.log(window.playerStats.durationMax);
 
             ++window.playerStats.scoreStreak;
-            console.log(window.playerStats.scoreStreak);
+            //console.log(window.playerStats.scoreStreak);
 
             window.playerStats.playerScore = window.playerStats.playerScore + window.playerStats.getPlayerScore();
-            console.log(window.playerStats.playerScore);
+            //console.log(window.playerStats.playerScore);
             $('.player-score .score').html(window.playerStats.playerScore);
             $('.player-streak .streak').html(window.playerStats.scoreStreak);
 
@@ -118,7 +194,7 @@
               window.gameEngine.nextLetterBegin();
             });
           } else {
-            console.log('no');
+            //console.log('no');
           }
         }).bind('keyup', function(e) {
           $('.keys-row span').removeClass('active');
@@ -137,7 +213,12 @@
       },
 
       getPig: function(){
-
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        var pigNum = Math.floor(Math.random() * (3 - 1)) + 1;
+        var template_uri = $('.template-directory-uri-value').attr('data-template-directory-uri');
+        var imageUrl = template_uri + '/imgs/games/save-the-pig/pig-'+pigNum+'.gif';
+        //console.log(imageUrl);
+        $('.pig-box').css('background-image', 'url(' + imageUrl + ')');
       },
 
       resetPigBoxPosition: function($pigBox){
@@ -157,8 +238,16 @@
             window.playerStats.durationIncrementor = .02;
             window.playerStats.durationIncrementorThrottle = .09;
             window.playerStats.durationMax = window.playerStats.durationMax + (window.playerStats.durationMax / 2);
+            window.gameEngine.setThankPopupValues();
             window.playerStats.scoreStreak = 0;
             $('.player-streak .streak').html('0');
+            window.gameEngine.addStrike();
+            // console.log(window.playerStats.strikes);
+            // console.log(window.playerStats.strikesInfinite);
+            if(window.playerStats.strikes <= 0 && window.playerStats.strikesInfinite == false){
+              $('.stop-game').trigger('click');
+              return false;
+            }
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
             window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
@@ -179,7 +268,11 @@
       gameStop: function(){
         var $pigBox = this.defaults.$pigBox;
         $pigBox.velocity("stop");
+        window.gameEngine.setThankPopupValues();
         $pigBox.velocity('fadeOut', 'slow', function(){
+          $('.water-barrel-ad .strikes span').remove();
+          $('.water-barrel-ad .strikes').addClass('hidden');
+          $('.water-barrel-ad .ad').removeClass('hidden');
           window.gameEngine.resetGameDefaults();
           switch(window.gamePresets.mode) {
             case 'sign':
@@ -190,12 +283,25 @@
               break;
           }
         });
+        $('.game-finished-popup-open').trigger('click');
+      },
+
+      setThankPopupValues: function(){
+        if(window.playerStats.highestStreak < window.playerStats.scoreStreak){
+          window.playerStats.highestStreak = window.playerStats.scoreStreak;
+        }
+        $('.game-finished-popup-score span').html(window.playerStats.playerScore);
+        $('.game-finished-popup-streak span').html(window.playerStats.highestStreak);
+
+        // http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
       },
 
       resetGameDefaults: function(){
         window.playerStats.playerScore = window.gameDefaults.playerScore;
         window.playerStats.scoreStreak = window.gameDefaults.scoreStreak;
+        window.playerStats.highestStreak = window.gameDefaults.highestStreak;
         window.playerStats.strikes = window.gameDefaults.strikes;
+        window.playerStats.strikesInfinite = window.gameDefaults.strikesInfinite;
         window.playerStats.durationIncrementor = window.gameDefaults.durationIncrementor;
         window.playerStats.durationIncrementorThrottle = window.gameDefaults.durationIncrementorThrottle;
         window.playerStats.durationMin = window.gameDefaults.durationMin;
@@ -225,33 +331,74 @@
           $('.letter-box').addClass('character');
           break;
       }
-      console.log(window.gamePresets.mode);
+      //console.log(window.gamePresets.mode);
     });
 
     $('.speed').on('change', function(){
+      var $this = $(this);
+      var inputVal = Math.floor($this.val());
+      console.log(inputVal);
+      $this.val(inputVal);
+      console.log($this.val().length);
+      if($this.val().length == 0){
+        $this.val(0);
+      }
+      if (inputVal < 0 || inputVal > 10){
+        if ($this.val() < 0) {
+          $this.val(0);
+        }
+        if ($this.val() > 10) {
+          $this.val(10);
+        }
+      }
       var speed = $(this).val();
       window.gamePresets.speed = speed;
       console.log(window.gamePresets.speed);
     });
 
     $('.strikes').on('change', function(){
+      var $this = $(this);
+      var inputVal = Math.floor($this.val());
+      $this.val(inputVal);
+      if($this.val().length == 0){
+        $this.val(0);
+      }
+      if (inputVal < 0 || inputVal > 5){
+        if ($this.val() < 0) {
+          $this.val(0);
+        }
+        if ($this.val() > 5) {
+          $this.val(5);
+        }
+      }
       var strikes = $(this).val();
       window.gamePresets.strikes = strikes;
-      console.log(window.gamePresets.strikes);
     });
 
     $('.start-game').on('click', function(e){
       e.preventDefault();
       $('.controls button').removeClass('active');
       $(this).addClass('active');
-      window.gameEngine.init(window.gamePresets);
+      window.gameEngine.init();
     });
 
     $('.stop-game').on('click', function(e){
       e.preventDefault();
-      $('.controls button').removeClass('active');
-      $(this).addClass('active');
-      window.gameEngine.gameStop();
+      if(!$(this).hasClass('active')){
+        $('.controls button').removeClass('active');
+        $(this).addClass('active');
+        window.gameEngine.gameStop();
+      }
+    });
+
+    $('.game-finished-popup-open').magnificPopup({
+      type: 'inline',
+      preloader: false,
+      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+    });
+    $(document).on('click', '.mfp-close', function (e) {
+      e.preventDefault();
+      $.magnificPopup.close();
     });
 
   });
