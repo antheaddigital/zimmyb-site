@@ -15,58 +15,58 @@
 
  // mmenu
  // http://mmenu.frebsite.nl/
- (function($) {
-   $('document').ready(function(){
-     // if($(window).width() < 880){
-       $('#menu').mmenu({
-         onClick: {
-           close: true
-         },
-         extensions: ["fullscreen"],
-         offCanvas: {
-           position: "top"
-         },
-         navbars: [
-           {
-             position: "top",
-             //height: 3,
-             content: []
-           },
-           {
-             position: "bottom",
-             content: [
-               '<a class="" href="#/"></a>',
-               '<a class="" href="#/"></a>'
-             ]
-           }
-         ]
-       }, {
-         clone: true
-       });
-       var api = $('#mm-menu').data('mmenu');
-       $('.close-menu').on('click', function(e){
-         e.preventDefault();
-         api.close();
-       });
-       $('.nav-icon').click(function(){
-     		$(this).toggleClass('open');
-     	});
-       $('.nav-get-a-free-quote-wrapper').appendTo('body');
-       $('.mobile-nav-getafreequote').on('click', function(e){
-         e.preventDefault();
-         $('.nav-get-a-free-quote-wrapper').show();
-         $('.nav-get-a-free-quote-wrapper .gform_wrapper').show();
-       });
-       $('.nav-get-a-free-quote-wrapper .close').on('click', function(e){
-         e.preventDefault();
-         $('.nav-get-a-free-quote-wrapper').hide();
-         $('.nav-get-a-free-quote-wrapper .gform_wrapper').hide();
-       });
-     // } else {
-     //   $('#menu').show();
-     // }
-   });
- })(jQuery);
+ // (function($) {
+ //   $('document').ready(function(){
+ //     // if($(window).width() < 880){
+ //       $('#menu').mmenu({
+ //         onClick: {
+ //           close: true
+ //         },
+ //         extensions: ["fullscreen"],
+ //         offCanvas: {
+ //           position: "top"
+ //         },
+ //         navbars: [
+ //           {
+ //             position: "top",
+ //             //height: 3,
+ //             content: []
+ //           },
+ //           {
+ //             position: "bottom",
+ //             content: [
+ //               '<a class="" href="#/"></a>',
+ //               '<a class="" href="#/"></a>'
+ //             ]
+ //           }
+ //         ]
+ //       }, {
+ //         clone: true
+ //       });
+ //       var api = $('#mm-menu').data('mmenu');
+ //       $('.close-menu').on('click', function(e){
+ //         e.preventDefault();
+ //         api.close();
+ //       });
+ //       $('.nav-icon').click(function(){
+ //     		$(this).toggleClass('open');
+ //     	});
+ //       $('.nav-get-a-free-quote-wrapper').appendTo('body');
+ //       $('.mobile-nav-getafreequote').on('click', function(e){
+ //         e.preventDefault();
+ //         $('.nav-get-a-free-quote-wrapper').show();
+ //         $('.nav-get-a-free-quote-wrapper .gform_wrapper').show();
+ //       });
+ //       $('.nav-get-a-free-quote-wrapper .close').on('click', function(e){
+ //         e.preventDefault();
+ //         $('.nav-get-a-free-quote-wrapper').hide();
+ //         $('.nav-get-a-free-quote-wrapper .gform_wrapper').hide();
+ //       });
+ //     // } else {
+ //     //   $('#menu').show();
+ //     // }
+ //   });
+ // })(jQuery);
 
  // Sitewide sliders
  // http://kenwheeler.github.io/slick/

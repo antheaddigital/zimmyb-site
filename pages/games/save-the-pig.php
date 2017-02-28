@@ -100,52 +100,50 @@
             <a class="game-finished-popup-social-twitter" href="">twitter</a>
           </div>
         </div>
+        <a class="strike-popup-open hidden" href="#strike-popup"></a>
+        <div id="strike-popup" class="mfp-hide white-popup-block strike-popup">
+          <div class="pig-clean-wrapper">
+            <div class="pig-clean-image"></div>
+            <div class="pig-clean-strikes"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <!-- page-save-the-pig - end -->
 
-<!-- game-description -->
-<section class="game-description">
-
-  <div class="game-description-wrapper">
-
-    <h1>Save the Pig</h1>
-
-    <div class="description">
-      <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <!-- game-description -->
+  <section class="game-description">
+    <div class="game-description-wrapper">
+      <h1>Save the Pig</h1>
+      <div class="description">
+        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+      </div>
+      <div class="requirements">
+        Requirements: Desktop and Keyboard only
+      </div>
+      <div class="share">
+        <ul class="Share-list">
+          <li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          <li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
     </div>
+  </section>
+  <!-- game-description - end -->
 
-    <div class="requirements">
-      Requirements: Desktop and Keyboard only
+  <!-- site-promos -->
+  <section class="site-promos">
+    <div>
+      <h2>Learning Material</h2>
     </div>
-
-    <div class="share">
-      <ul class="Share-list">
-        <li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-      </ul>
+    <div>
+      <h2>Books</h2>
     </div>
+    <div>
+      <h2>Games</h2>
+    </div>
+  </section>
+  <!-- site-promos - end -->
 
-  </div>
-
-</section>
-<!-- game-description - end -->
-
-<!-- site-promos -->
-<section class="site-promos">
-
-  <div>
-    <h2>Learning Material</h2>
-  </div>
-
-  <div>
-    <h2>Books</h2>
-  </div>
-
-  <div>
-    <h2>Games</h2>
-  </div>
-
-</section>
-<!-- site-promos - end -->
+</div>

@@ -30,10 +30,13 @@
       case 'velocity':
         echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.1/velocity.min.js"></script>';
         break;
+      case 'preloadjs':
+        echo '<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>';
+        break;
     }
   }
 ?>
 <!-- Custom JS -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/<?php echo $css_file; ?>.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/<?php echo $js_file; ?>.js"></script>
 </body>
 </html>

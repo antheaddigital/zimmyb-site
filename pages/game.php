@@ -21,11 +21,13 @@ switch ($post_slug) {
 require_once( get_template_directory() . '/header-game.php');
 ?>
 
+<?php //echo zb_get_breadcrumb(false, $cat_name, $header_text); ?>
+
 <?php
 // game page
   switch ($post_slug) {
     case 'save-the-pig':
-      require_once( get_template_directory() . '/pages/save-the-pig.php' );
+      require_once( get_template_directory() . '/pages/games/save-the-pig.php' );
       break;
     default:
       break;
@@ -39,7 +41,8 @@ switch ($post_slug) {
     $header_libs = [
       'jquery',
       'magnific-popup',
-      'velocity'
+      'velocity',
+      'preloadjs'
     ];
     $js_file = 'save-the-pig';
     break;

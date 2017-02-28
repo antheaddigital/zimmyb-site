@@ -44,8 +44,10 @@
     window.gameEngine = {
 
       defaults: {
+        $template_uri: $('.template-directory-uri-value').attr('data-template-directory-uri'),
         $letterBoxDiv: $('.letter-box div'),
         $pigBox: $('.pig-box'),
+        pigNum: null,
         lookup: {
           // Ranges calculated from data found at
           // http://en.wikipedia.org/wiki/Letter_frequency
@@ -62,6 +64,7 @@
       init: function(){
         this.resetScoreboard();
         this.setStrikesZone();
+        this.setGifs('animated');
         this.setSpeed();
         this.nextLetterBegin();
       },
@@ -82,6 +85,7 @@
           while( i > 0 ){
             var strikeEl = '<span class="strike" data-strike="'+i+'">X</span>';
             $('.water-barrel-ad .strikes').append(strikeEl);
+            $('.strike-popup .pig-clean-strikes').append(strikeEl);
             i--;
           }
         } else if (window.playerStats.strikes == 0) {
@@ -92,8 +96,19 @@
         }
       },
 
+      setGifs: function(type){
+        var waterBarrel = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/barrel-'+type+'.gif';
+        $('.water-barrel').css('background-image', 'url(' + waterBarrel + ')');
+      },
+
+      setStillGifs: function(){
+        var waterBarrel = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/barrel-still.gif';
+        $('.water-barrel').css('background-image', 'url(' + waterBarrel + ')');
+      },
+
       addStrike: function(){
         $('.water-barrel-ad .strikes span[data-strike='+window.playerStats.strikes+']').addClass('active');
+        $('.strike-popup .pig-clean-strikes span[data-strike='+window.playerStats.strikes+']').addClass('active');
         window.playerStats.strikes = window.playerStats.strikes - 1;
       },
 
@@ -156,9 +171,12 @@
       },
 
       bindKeyboard: function(letter){
-        $('body').unbind().bind('keydown', function(e) {
+        $('body').unbind().bind('keydown', function(e){
           var letterPressed = String.fromCharCode(e.which);
           $('.keys-row span[data-key="'+letterPressed.toLowerCase()+'"]').addClass('active');
+        }).bind('keyup', function(e) {
+          var letterPressed = String.fromCharCode(e.which);
+          $('.keys-row span').removeClass('active');
           // console.log('letter = '+letter);
           // console.log('letterPressed = '+letterPressed);
           if(letterPressed.toLowerCase() == letter.toLowerCase()){
@@ -197,7 +215,7 @@
             //console.log('no');
           }
         }).bind('keyup', function(e) {
-          $('.keys-row span').removeClass('active');
+
         });
       },
 
@@ -214,9 +232,9 @@
 
       getPig: function(){
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-        var pigNum = Math.floor(Math.random() * (3 - 1)) + 1;
-        var template_uri = $('.template-directory-uri-value').attr('data-template-directory-uri');
-        var imageUrl = template_uri + '/imgs/games/save-the-pig/pig-'+pigNum+'.gif';
+        var pigNum = Math.floor(Math.random() * (5 - 1)) + 1;
+        window.gameEngine.defaults.pigNum = pigNum;
+        var imageUrl = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/pig-'+pigNum+'.gif';
         //console.log(imageUrl);
         $('.pig-box').css('background-image', 'url(' + imageUrl + ')');
       },
@@ -234,6 +252,7 @@
           duration: window.playerStats.durationMax,
           easing: 'linear',
           complete: function() {
+
             // player stats
             window.playerStats.durationIncrementor = .02;
             window.playerStats.durationIncrementorThrottle = .09;
@@ -250,7 +269,8 @@
             }
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
-            window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
+            window.gameEngine.defaults.$pigBox.hide();
+            //window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
               switch(window.gamePresets.mode) {
                 case 'sign':
                   window.gameEngine.defaults.$letterBoxDiv.removeClass();
@@ -259,8 +279,24 @@
                   window.gameEngine.defaults.$letterBoxDiv.html('');
                   break;
               }
-              window.gameEngine.nextLetterBegin();
-            });
+              var pigCleanImage = window.gameEngine.defaults.$template_uri+'/imgs/games/save-the-pig/pig-clean-'+window.gameEngine.defaults.pigNum+'.gif';
+              $('.pig-clean-image').css({
+                'background-image': 'url(' + pigCleanImage + ')'
+              });
+              $('.pig-clean-image').velocity({
+                scale: 5
+              }, {
+                duration: 2000
+              });
+              $('.strike-popup-open').trigger('click');
+              setTimeout(function(){
+                $('.pig-clean-image').velocity({
+                  scale: -5
+                });
+                $('.strike-popup .mfp-close').trigger('click');
+                window.gameEngine.nextLetterBegin();
+              }, 5000);
+            //});
           }
         });
       },
@@ -271,6 +307,7 @@
         window.gameEngine.setThankPopupValues();
         $pigBox.velocity('fadeOut', 'slow', function(){
           $('.water-barrel-ad .strikes span').remove();
+          $('.strike-popup .pig-clean-strikes span').remove();
           $('.water-barrel-ad .strikes').addClass('hidden');
           $('.water-barrel-ad .ad').removeClass('hidden');
           window.gameEngine.resetGameDefaults();
@@ -283,6 +320,7 @@
               break;
           }
         });
+        this.setGifs('still');
         $('.game-finished-popup-open').trigger('click');
       },
 
@@ -293,7 +331,7 @@
         $('.game-finished-popup-score span').html(window.playerStats.playerScore);
         $('.game-finished-popup-streak span').html(window.playerStats.highestStreak);
 
-        // http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
+        //http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
       },
 
       resetGameDefaults: function(){
@@ -391,7 +429,7 @@
       }
     });
 
-    $('.game-finished-popup-open').magnificPopup({
+    $('.game-finished-popup-open, .strike-popup-open').magnificPopup({
       type: 'inline',
       preloader: false,
       closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
@@ -400,6 +438,28 @@
       e.preventDefault();
       $.magnificPopup.close();
     });
+
+  });
+})(jQuery);
+
+(function($){
+  $(document).ready(function(){
+
+    var template_uri = $('.template-directory-uri-value').attr('data-template-directory-uri');
+
+    var gameImgs = [
+      template_uri + '/imgs/games/save-the-pig/background.jpg',
+      template_uri + '/imgs/games/save-the-pig/bigboardsign.png',
+      template_uri + '/imgs/games/save-the-pig/ice-table.png',
+      template_uri + '/imgs/games/save-the-pig/kid-dog-announcer.png',
+      template_uri + '/imgs/games/save-the-pig/signs.png',
+      template_uri + '/imgs/games/save-the-pig/zimmy.gif',
+      template_uri + '/imgs/games/save-the-pig/water-barrel.png',
+      template_uri + '/imgs/games/save-the-pig/water-barrel-ad.png',
+      template_uri + '/imgs/games/save-the-pig/keyboard-backboard.png',
+      template_uri + '/imgs/games/save-the-pig/pig-1.gif',
+      template_uri + '/imgs/games/save-the-pig/pig-2.gif'
+    ];
 
   });
 })(jQuery);
