@@ -18,19 +18,19 @@ error_reporting(E_ALL ^ E_NOTICE);
   <meta name="description" content="">
   <!-- CSS Libs -->
   <?php
-    foreach ($header_libs as $lib) {
-      switch($lib){
-        case 'font-awesome':
-          echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">';
-          break;
-        case 'magnific-popup':
-          echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>';
-          break;
-      }
-    }
+    // foreach ($header_libs as $lib) {
+    //   switch($lib){
+    //     case 'font-awesome':
+    //       echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">';
+    //       break;
+    //     case 'magnific-popup':
+    //       echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>';
+    //       break;
+    //   }
+    // }
   ?>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/<?php echo $css_file; ?>.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 </head>
 <?php
 require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
