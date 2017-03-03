@@ -7,6 +7,12 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 ?>
+<?php
+  if(isset($_GET['fullscreen']) && $_GET['fullscreen'] == 'true'){
+    $book_fullscreen = true;
+    $book_fullscreen_class = 'fullscreen';
+  }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,9 +30,13 @@ $device_type = Detect::deviceType();
 ?>
 <body <?php body_class($device_type); ?>>
 <input type="hidden" class="template-directory-uri-value" data-template-directory-uri="<?php echo get_template_directory_uri(); ?>" />
-<!-- header-nav -->
-<?php require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
-<!-- header-nav - end -->
-<div class="site-wrapper">
-<div class="site-content-border">
-<div class="site-content">
+<?php if($book_fullscreen == true): ?>
+
+<?php else: ?>
+  <!-- header-nav -->
+  <?php require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
+  <!-- header-nav - end -->
+  <div class="site-wrapper">
+  <div class="site-content-border">
+  <div class="site-content">
+<?php endif; ?>
