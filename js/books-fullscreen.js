@@ -1,6 +1,7 @@
 (function($) {
   $('document').ready(function(){
 
+    $('body').removeClass('book-siteview');
     $('body').addClass('book-fullscreen');
 
     /* ---------------------------------------------------------------------- */

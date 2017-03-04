@@ -11,6 +11,9 @@ error_reporting(E_ALL ^ E_NOTICE);
   if(isset($_GET['fullscreen']) && $_GET['fullscreen'] == 'true'){
     $book_fullscreen = true;
     $book_fullscreen_class = 'fullscreen';
+  } else {
+    $book_fullscreen = false;
+    $book_fullscreen_class = 'siteview';
   }
 ?>
 <!doctype html>

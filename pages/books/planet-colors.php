@@ -66,6 +66,7 @@
         </div>
       </div>
     </div>
+    <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
   </section> <!-- book-section - end -->
 
   <?php if($book_fullscreen == true): ?>

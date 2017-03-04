@@ -1,6 +1,9 @@
 (function($) {
   $('document').ready(function(){
 
+    $('body').removeClass('book-fullscreen');
+    $('body').addClass('book-siteview');
+
     /* ---------------------------------------------------------------------- */
     // Slider functionality
     /* ---------------------------------------------------------------------- */
@@ -21,13 +24,13 @@
 
       setTimeout(function(){
         // Apply browser height to wrapper and slider blocks
-        var browserHeight = $(window).height();
-        $('.wrapper').height(browserHeight);
-        $('.slider .page-img').width((browserHeight * 1.5) - ((browserHeight * 1.5) * .1));
-        var sliderHeight = $('.slider .page-img').height();
+        // var browserHeight = $(window).height();
+        // $('.wrapper').height(browserHeight);
+        // $('.slider .page-img').width((browserHeight * 1.5) - ((browserHeight * 1.5) * .1));
+        // var sliderHeight = $('.slider .page-img').height();
 
-        var sliderMarginTop = (browserHeight - sliderHeight) / 2;
-        $('.slider').css({'margin-top': sliderMarginTop});
+        // var sliderMarginTop = (browserHeight - sliderHeight) / 2;
+        // $('.slider').css({'margin-top': sliderMarginTop});
 
         // Apply new image width to slider width
         var pageImgWidth = $('.slider .page-img').width();
@@ -62,34 +65,34 @@
     // init magnific popup
     $('.sign-link').magnificPopup({type:'image'});
 
-    $('.full-page-switch').on('click', function(e){
-      e.preventDefault();
-      $('body, html').toggleClass('full-page-view');
-      if ($(this).text() == 'view in full screen') {
-        $(this).text('back to site');
-      } else {
-        $(this).text('view in full screen');
-      }
-    });
+    // $('.full-page-switch').on('click', function(e){
+    //   e.preventDefault();
+    //   $('body, html').toggleClass('full-page-view');
+    //   if ($(this).text() == 'view in full screen') {
+    //     $(this).text('back to site');
+    //   } else {
+    //     $(this).text('view in full screen');
+    //   }
+    // });
 
-    (function($){
-      $(document).ready(function(){
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-        if(windowHeight > windowWidth){
-          console.log('please rotate');
-        }
-        $(window).on('resize', function(){
-           if($(this).width() != windowWidth){
-            windowWidth = $(this).width();
-            windowHeight = $(this).height();
-            if(windowHeight > windowWidth){
-              console.log('please rotate');
-            }
-           }
-        });
-      });
-    })(jQuery);
+    // (function($){
+    //   $(document).ready(function(){
+    //     var windowWidth = $(window).width();
+    //     var windowHeight = $(window).height();
+    //     if(windowHeight > windowWidth){
+    //       console.log('please rotate');
+    //     }
+    //     $(window).on('resize', function(){
+    //        if($(this).width() != windowWidth){
+    //         windowWidth = $(this).width();
+    //         windowHeight = $(this).height();
+    //         if(windowHeight > windowWidth){
+    //           console.log('please rotate');
+    //         }
+    //        }
+    //     });
+    //   });
+    // })(jQuery);
 
 
   });
