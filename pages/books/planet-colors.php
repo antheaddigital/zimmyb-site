@@ -2,6 +2,13 @@
 
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="wrapper">
+      <?php if($book_fullscreen == true): ?>
+        <div class="book-fullscreen-nav">
+          <a class="site-nav" href=""><i class="fa fa-bars" aria-hidden="true"></i><br />menu</a>
+          <a class="back-to-siteview" href="<?php echo get_permalink(); ?>"><i class="fa fa-arrow-left" aria-hidden="true"></i><br />back</a>
+          <a class="share" href=""><i class="fa fa-share-alt" aria-hidden="true"></i><br />share</a>
+        </div>
+      <?php endif; ?>
       <div class="slider">
         <!-- intro - slide 0 -->
         <div class="slider-page">
@@ -14,47 +21,74 @@
         <!-- page 01 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/brown.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Sun.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/brown.jpg" class="img-responsive" /></a>
+          <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/brown.jpg" class="img-responsive" /></a>
+          <div id="brown-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/brown.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 02 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/green.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Broken.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/green.jpg" class="img-responsive" /></a>
+          <a href="#green-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/green.jpg" class="img-responsive" /></a>
+          <div id="green-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/green.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 03 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/yellow.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Sleep.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/yellow.jpg" class="img-responsive" /></a>
+          <a href="#yellow-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/yellow.jpg" class="img-responsive" /></a>
+          <div id="yellow-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/yellow.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 04 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/black.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Rabbitx2.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/black.jpg" class="img-responsive" /></a>
+          <a href="#black-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/black.jpg" class="img-responsive" /></a>
+          <div id="black-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/black.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 05 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/purple.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Fish.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/purple.jpg" class="img-responsive" /></a>
+          <a href="#purple-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/purple.jpg" class="img-responsive" /></a>
+          <div id="purple-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/purple.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 06 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/white.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Monkey.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/white.jpg" class="img-responsive" /></a>
+          <a href="#white-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/white.jpg" class="img-responsive" /></a>
+          <div id="white-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/white.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 07 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/orange.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Moon.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/orange.jpg" class="img-responsive" /></a>
+          <a href="#orange-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/orange.jpg" class="img-responsive" /></a>
+          <div id="orange-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/orange.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 08 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/red.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Working.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/red.jpg" class="img-responsive" /></a>
+          <a href="#red-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/red.jpg" class="img-responsive" /></a>
+          <div id="red-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/red.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- page 09 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/blue.jpg" class="page-img img-responsive" />
-          <a href="imgs/signs/Working.jpg" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/blue.jpg" class="img-responsive" /></a>
+          <a href="#blue-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/blue.jpg" class="img-responsive" /></a>
+          <div id="blue-sign" class="mfp-hide white-popup-block">
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/blue.jpg" class="img-responsive" />
+          </div>
         </div>
         <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
         <div class="slider-page">
@@ -66,7 +100,9 @@
         </div>
       </div>
     </div>
-    <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
+    <?php if($book_fullscreen != true): ?>
+      <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
+    <?php endif; ?>
   </section> <!-- book-section - end -->
 
   <?php if($book_fullscreen == true): ?>

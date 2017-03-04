@@ -35,6 +35,7 @@
         // Apply new image width to slider width
         var pageImgWidth = $('.slider .page-img').width();
         $('.slider').width(pageImgWidth);
+        $('mfp-wrap').width(pageImgWidth);
 
         // Apply width of sign link and position
         var signLinkWidth = Math.ceil(pageImgWidth / 5);
@@ -63,7 +64,14 @@
     /* ---------------------------------------------------------------------- */
 
     // init magnific popup
-    $('.sign-link').magnificPopup({type:'image'});
+    $('.sign-link').magnificPopup({
+      type:'inline',
+      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+    });
+    $(document).on('click', '.mfp-close', function (e) {
+      e.preventDefault();
+      $.magnificPopup.close();
+    });
 
     // $('.full-page-switch').on('click', function(e){
     //   e.preventDefault();
