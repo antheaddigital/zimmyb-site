@@ -64,7 +64,7 @@
       init: function(){
         this.resetScoreboard();
         this.setStrikesZone();
-        this.setGifs('animated');
+        //this.setGifs('animated');
         this.setSpeed();
         this.nextLetterBegin();
       },
@@ -320,7 +320,7 @@
               break;
           }
         });
-        this.setGifs('still');
+        //this.setGifs('still');
         $('.game-finished-popup-open').trigger('click');
       },
 
