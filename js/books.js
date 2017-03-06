@@ -34,6 +34,7 @@
 
         // Apply new image width to slider width
         var pageImgWidth = $('.slider .page-img').width();
+        window.sliderWidth = pageImgWidth;
         $('.slider').width(pageImgWidth);
         $('mfp-wrap').width(pageImgWidth);
 
@@ -59,6 +60,7 @@
       cssEase: 'linear'
     });
 
+
     /* ---------------------------------------------------------------------- */
     // Sign pop-up functionality
     /* ---------------------------------------------------------------------- */
@@ -66,7 +68,13 @@
     // init magnific popup
     $('.sign-link').magnificPopup({
       type:'inline',
-      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>',
+      callbacks: {
+        open: function() {
+          var popWidth = window.sliderWidth * .7;
+          $('.white-popup-block').width(popWidth);
+        }
+      }
     });
     $(document).on('click', '.mfp-close', function (e) {
       e.preventDefault();

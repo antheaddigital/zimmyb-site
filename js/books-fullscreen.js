@@ -34,6 +34,7 @@
 
         // Apply new image width to slider width
         var pageImgWidth = $('.slider .page-img').width();
+        window.sliderWidth = pageImgWidth;
         $('.slider').width(pageImgWidth);
 
         // Apply width of sign link and position
@@ -50,13 +51,14 @@
 
     });
 
-    // init slick carousel
     $('.slider').slick({
       infinite: true,
       dots: false,
       lazyLoad: 'ondemand',
       cssEase: 'linear'
     });
+
+    //$(window).resize(function(){location.reload();});
 
     /* ---------------------------------------------------------------------- */
     // Sign pop-up functionality
@@ -65,42 +67,47 @@
     // init magnific popup
     $('.sign-link').magnificPopup({
       type:'inline',
-      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>',
+      callbacks: {
+        open: function() {
+          var popWidth = window.sliderWidth * .7;
+          $('.white-popup-block').width(popWidth);
+        }
+      }
     });
     $(document).on('click', '.mfp-close', function (e) {
       e.preventDefault();
       $.magnificPopup.close();
     });
 
-    $('.full-page-switch').on('click', function(e){
-      e.preventDefault();
-      $('body, html').toggleClass('full-page-view');
-      if ($(this).text() == 'view in full screen') {
-        $(this).text('back to site');
-      } else {
-        $(this).text('view in full screen');
-      }
-    });
-
-    (function($){
-      $(document).ready(function(){
-        var windowWidth = $(window).width();
-        var windowHeight = $(window).height();
-        if(windowHeight > windowWidth){
-          console.log('please rotate');
-        }
-        $(window).on('resize', function(){
-           if($(this).width() != windowWidth){
-            windowWidth = $(this).width();
-            windowHeight = $(this).height();
-            if(windowHeight > windowWidth){
-              console.log('please rotate');
-            }
-           }
-        });
-      });
-    })(jQuery);
-
+    // $('.full-page-switch').on('click', function(e){
+    //   e.preventDefault();
+    //   $('body, html').toggleClass('full-page-view');
+    //   if ($(this).text() == 'view in full screen') {
+    //     $(this).text('back to site');
+    //   } else {
+    //     $(this).text('view in full screen');
+    //   }
+    // });
+    //
+    // (function($){
+    //   $(document).ready(function(){
+    //     var windowWidth = $(window).width();
+    //     var windowHeight = $(window).height();
+    //     if(windowHeight > windowWidth){
+    //       console.log('please rotate');
+    //     }
+    //     $(window).on('resize', function(){
+    //        if($(this).width() != windowWidth){
+    //         windowWidth = $(this).width();
+    //         windowHeight = $(this).height();
+    //         if(windowHeight > windowWidth){
+    //           console.log('please rotate');
+    //         }
+    //        }
+    //     });
+    //   });
+    // })(jQuery);
 
   });
 })(jQuery);
