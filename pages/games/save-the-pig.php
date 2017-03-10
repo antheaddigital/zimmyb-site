@@ -7,6 +7,7 @@
   <section class="save-the-pig-game">
     <div class="wrapper">
       <div class="stage">
+        <div class="audience"></div>
         <div class="game-head-board">
           <div class="game-logo-sign"></div>
           <div class="game-control-board">
@@ -81,13 +82,10 @@
           </div>
         </div>
         <div class="water-barrel-wrapper">
-          <div class="zimmy"></div>
-          <div class="water-barrel">
-            <div class="water-barrel-ad">
-              <div class="ad"></div>
-              <div class="strikes hidden">
-                <div class="strikes-header">STRIKES</div>
-              </div>
+          <div class="water-barrel-ad">
+            <div class="ad"></div>
+            <div class="strikes hidden">
+              <div class="strikes-header">STRIKES</div>
             </div>
           </div>
         </div>

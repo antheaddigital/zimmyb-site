@@ -86,12 +86,10 @@ Site Management
 
 Todo List
 ---------------
-1. Footer promo
-  * Sign up to Mail Chimp and setup and newsletter form
-  * Create Twitter and add tweets
-2. About page - needs content
-3. Contact page - needs content
-4. Search pages - needs cleanup
-5. Book page
-  * Create page for Bayme Pants in The sun is broken
-6. Terms of Service / Privacy Policy - clean up page
+- Hompage
+- Contact
+- Privacy Policy
+-
+- Games Search
+    - Save the Pig
+        - add cheat sheet to description
