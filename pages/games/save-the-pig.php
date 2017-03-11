@@ -89,6 +89,7 @@
             </div>
           </div>
         </div>
+        <div class="mouse-skunk"></div>
         <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
         <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
           <div class="game-finished-popup-header">THANK YOU FOR PLAYING!</div>
