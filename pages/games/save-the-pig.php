@@ -22,8 +22,8 @@
             </div>
             <div class="mode">
               <span>Mode</span>
-              <a href="#" class="active" data-mode="sign">sign</a>
-              <a href="#" class="" data-mode="character">character</a>
+              <a href="#" class="active sign" data-mode="sign"></a>
+              <a href="#" class="character" data-mode="character"></a>
             </div>
             <div class="inputs">
               <div class="input-wrapper">
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="mouse-skunk"></div>
+        <!-- <div class="mouse-skunk"></div> -->
         <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
         <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
           <div class="game-finished-popup-header">THANK YOU FOR PLAYING!</div>

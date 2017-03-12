@@ -47,18 +47,7 @@
         $template_uri: $('.template-directory-uri-value').attr('data-template-directory-uri'),
         $letterBoxDiv: $('.letter-box div'),
         $pigBox: $('.pig-box'),
-        pigNum: null,
-        lookup: {
-          // Ranges calculated from data found at
-          // http://en.wikipedia.org/wiki/Letter_frequency
-          a: 8167,  b: 9659,  c: 12441, d: 16694,
-          e: 29396, f: 31624, g: 33639, h: 39733,
-          i: 46699, j: 46852, k: 47624, l: 51649,
-          m: 54055, n: 60804, o: 68311, p: 70240,
-          q: 70335, r: 76322, s: 82649, t: 91705,
-          u: 94463, v: 95441, w: 97801, x: 97951,
-          y: 99925, z: 100000
-        }
+        pigNum: null
       },
 
       init: function(){
@@ -171,15 +160,19 @@
       },
 
       bindKeyboard: function(letter){
-        $('body').unbind().bind('keydown', function(e){
+        $('body').unbind('keydown').bind('keydown', function(e){
+          if(e.keyCode == 32) {
+            e.preventDefault();
+          }
           var letterPressed = String.fromCharCode(e.which);
           $('.keys-row span[data-key="'+letterPressed.toLowerCase()+'"]').addClass('active');
-        }).bind('keyup', function(e) {
+        }).unbind('keyup').bind('keyup', function(e) {
+          if(e.keyCode == 32) {
+            e.preventDefault();
+          }
           var letterPressed = String.fromCharCode(e.which);
           $('.keys-row span').removeClass('active');
-          // console.log('letter = '+letter);
-          // console.log('letterPressed = '+letterPressed);
-          if(letterPressed.toLowerCase() == letter.toLowerCase()){
+          if(letterPressed.toLowerCase() === letter.toLowerCase()){
             // player stats
             window.playerStats.durationIncrementor = window.playerStats.durationIncrementor + (window.playerStats.durationIncrementor * window.playerStats.durationIncrementorThrottle);
             //console.log(window.playerStats.durationIncrementor);
@@ -211,23 +204,35 @@
               window.gameEngine.defaults.$letterBoxDiv.removeClass();
               window.gameEngine.nextLetterBegin();
             });
-          } else {
-            //console.log('no');
           }
         }).bind('keyup', function(e) {
 
         });
       },
 
+      shuffleLetterArray: function(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+        return array;
+      },
+
       getLetter: function(){
         // http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
-        var random = Math.random() * 100000,
-            letter;
-        for (letter in this.defaults.lookup) {
-          if (random < this.defaults.lookup[letter]) {
-            return letter;
-          }
-        }
+        var lettersArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+            lettersArrayShuffled = this.shuffleLetterArray(lettersArray),
+            lettersArrayTemp = [],
+            lettersArrayTemp = lettersArrayShuffled;
+        var randomNumber = Math.floor(Math.random() * (lettersArrayTemp.length - 1)) + 0;
+        return lettersArrayTemp[randomNumber];
       },
 
       getPig: function(){
@@ -261,42 +266,38 @@
             window.playerStats.scoreStreak = 0;
             $('.player-streak .streak').html('0');
             window.gameEngine.addStrike();
-            // console.log(window.playerStats.strikes);
-            // console.log(window.playerStats.strikesInfinite);
             if(window.playerStats.strikes <= 0 && window.playerStats.strikesInfinite == false){
               $('.stop-game').trigger('click');
               return false;
             }
             // next block
             window.gameEngine.defaults.$pigBox.velocity('stop');
+            $('body').unbind('keydown').unbind('keyup');
             window.gameEngine.defaults.$pigBox.hide();
-            //window.gameEngine.defaults.$pigBox.velocity('fadeOut', 'slow', function(){
-              switch(window.gamePresets.mode) {
-                case 'sign':
-                  window.gameEngine.defaults.$letterBoxDiv.removeClass();
-                  break;
-                case 'character':
-                  window.gameEngine.defaults.$letterBoxDiv.html('');
-                  break;
-              }
-              var pigCleanImage = window.gameEngine.defaults.$template_uri+'/imgs/games/save-the-pig/pig-clean-'+window.gameEngine.defaults.pigNum+'.gif';
-              $('.pig-clean-image').css({
-                'background-image': 'url(' + pigCleanImage + ')'
-              });
-              $('.pig-clean-image').velocity({
-                scale: 5
-              }, {
-                duration: 2000
-              });
-              $('.strike-popup-open').trigger('click');
-              setTimeout(function(){
-                $('.pig-clean-image').velocity({
-                  scale: -5
-                });
-                $('.strike-popup .mfp-close').trigger('click');
-                window.gameEngine.nextLetterBegin();
-              }, 5000);
-            //});
+            switch(window.gamePresets.mode) {
+              case 'sign':
+                window.gameEngine.defaults.$letterBoxDiv.removeClass();
+                break;
+              case 'character':
+                window.gameEngine.defaults.$letterBoxDiv.html('');
+                break;
+            }
+            var pigCleanImage = window.gameEngine.defaults.$template_uri+'/imgs/games/save-the-pig/pig-clean-'+window.gameEngine.defaults.pigNum+'.gif';
+            $('.pig-clean-image').css({
+              'background-image': 'url(' + pigCleanImage + ')'
+            });
+            // $('.pig-clean-image').velocity({
+            //   scale: 5
+            // }, {
+            //   duration: 2000
+            // });
+            $('.strike-popup-open').trigger('click');
+            setTimeout(function(){
+              // $('.pig-clean-image').velocity({
+              //   scale: -5
+              // });
+              $('.strike-popup .mfp-close').trigger('click');
+            }, 5000);
           }
         });
       },
@@ -354,9 +355,9 @@
       strikes: 0
     };
 
-    $('.mode a').on('click', function(e){
+    $('.mode a').unbind('click').bind('click', function(e){
       e.preventDefault();
-      $('.mode a').removeClass();
+      $('.mode a').removeClass('active');
       $(this).addClass('active');
       window.gamePresets.mode = $(this).attr('data-mode');
       switch (window.gamePresets.mode) {
@@ -369,10 +370,9 @@
           $('.letter-box').addClass('character');
           break;
       }
-      //console.log(window.gamePresets.mode);
     });
 
-    $('.speed').on('change', function(){
+    $('.speed').unbind('change').bind('change', function(){
       var $this = $(this);
       var inputVal = Math.floor($this.val());
       console.log(inputVal);
@@ -394,7 +394,7 @@
       console.log(window.gamePresets.speed);
     });
 
-    $('.strikes').on('change', function(){
+    $('.strikes').unbind('change').bind('change', function(){
       var $this = $(this);
       var inputVal = Math.floor($this.val());
       $this.val(inputVal);
@@ -413,8 +413,20 @@
       window.gamePresets.strikes = strikes;
     });
 
+    window.gameControlsDisable = function(){
+      $('.mode a').addClass('disable-links');
+      $('.speed, .strikes').prop('disabled', true);
+    }
+
+    window.gameControlsEnable = function(){
+      $('.mode a').removeClass('disable-links');
+      $('.speed, .strikes').prop('disabled', false);
+    }
+    window.gameControlsEnable();
+
     $('.start-game').on('click', function(e){
       e.preventDefault();
+      window.gameControlsDisable();
       $('.controls button').removeClass('active');
       $(this).addClass('active');
       window.gameEngine.init();
@@ -422,6 +434,7 @@
 
     $('.stop-game').on('click', function(e){
       e.preventDefault();
+      window.gameControlsEnable();
       if(!$(this).hasClass('active')){
         $('.controls button').removeClass('active');
         $(this).addClass('active');
@@ -433,6 +446,13 @@
       type: 'inline',
       preloader: false,
       closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+    });
+    $('.strike-popup-open').magnificPopup({
+      callbacks: {
+        close: function() {
+          window.gameEngine.nextLetterBegin();
+        }
+      }
     });
     $(document).on('click', '.mfp-close', function (e) {
       e.preventDefault();
