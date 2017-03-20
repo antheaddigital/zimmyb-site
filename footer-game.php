@@ -33,6 +33,9 @@
       case 'preloadjs':
         echo '<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>';
         break;
+      case 'soundjs':
+        echo '<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>';
+        break;
     }
   }
 ?>

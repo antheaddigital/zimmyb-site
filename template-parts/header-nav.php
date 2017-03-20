@@ -21,7 +21,7 @@
           <ul class="menu">
             <li class="menu-item"><a class="menu-item-link" href="<?php echo esc_url( site_url() ); ?>/books">Books</a></li>
             <li class="menu-item"><a class="menu-item-link" href="<?php echo esc_url( site_url() ); ?>/games">Games</a></li>
-            <li class="menu-item"><a class="menu-item-link" href="<?php echo esc_url( site_url() ); ?>/learning">Learning</a></li>
+            <!-- <li class="menu-item"><a class="menu-item-link" href="<?php echo esc_url( site_url() ); ?>/learning">Learning</a></li> -->
             <li class="menu-item"><a class="menu-item-link" href="<?php echo esc_url( site_url() ); ?>/coloring">Coloring</a></li>
             <!-- <li class="menu-item"><a class="menu-item-link" href="<?php //echo esc_url( site_url() ); ?>/blog">Blog</a></li>
             <li class="menu-item"><a class="menu-item-link" href="<?php //echo esc_url( site_url() ); ?>/news">News</a></li> -->

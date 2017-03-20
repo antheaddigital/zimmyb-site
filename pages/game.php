@@ -42,7 +42,8 @@ switch ($post_slug) {
       'jquery',
       'magnific-popup',
       'velocity',
-      'preloadjs'
+      'preloadjs',
+      'soundjs'
     ];
     $js_file = 'save-the-pig';
     break;

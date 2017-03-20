@@ -6,8 +6,8 @@
   <!-- save-the-pig-game -->
   <section class="save-the-pig-game">
     <div class="wrapper">
+      <div class="stage-preload"><div class="loading-msg">Loading... <span></span></div></div>
       <div class="stage">
-        <div class="audience"></div>
         <div class="game-head-board">
           <div class="game-logo-sign"></div>
           <div class="game-control-board">
