@@ -44,7 +44,7 @@
     <a class="games-featured" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/home-game-featured.jpg" /></a>
     <div class="games-description">
       <h3>Save the Pig!</h3>
-      <p>Can help Honkatonk Pig, Squiky Pig, War Pig, and Poopy Pig from getting their much needed baths? You will learn the alphebet in Sign Language and also how to type.</p>
+      <p>Can you help Honkatonk Pig, Squiky Pig, War Pig, and Poopy Pig from getting their much needed baths? You will learn the alphebet in Sign Language and also how to type.</p>
       <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig">Play Now! ></a>
     </div>
     <div class="clear"></div>

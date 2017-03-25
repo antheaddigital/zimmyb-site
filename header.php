@@ -12,8 +12,8 @@
  */
 // $wpdb->show_errors();
 // $wpdb->print_error();
-ini_set('display_errors', 1);
-error_reporting(E_ALL ^ E_NOTICE);
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL ^ E_NOTICE);
 ?>
 <?php
 require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
