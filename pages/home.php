@@ -10,7 +10,7 @@
 <!-- Breadcrumbs - end -->
 
 <!-- site-intro -->
-<section class="site-intro">
+<section class="site-intro" id="home-particles">
   <div class="intro-wrapper">
     <div class="site-intro-description">
       <h1>Books and Games for Learning Sign Language</h1>

@@ -112,15 +112,18 @@
   <?php if($book_fullscreen == true): ?>
 
   <?php else: ?>
+
     <!-- game-description -->
     <?php
     $book_title = 'Planet Colors';
     $book_description = '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
     require_once( get_template_directory() . '/template-parts/book-description.php'); ?>
     <!-- game-description - end -->
-    <!-- site-promos -->
-    <?php require_once( get_template_directory() . '/template-parts/book-promos.php'); ?>
-    <!-- site-promos - end -->
+
+    <!-- recommendations -->
+    <?php require_once( get_template_directory() . '/template-parts/more-books-games.php'); ?>
+    <!-- recommendations - end -->
+
   <?php endif; ?>
 
 </div> <!-- book-page - end -->

@@ -20,10 +20,10 @@ $obj = get_queried_object();
 			$hero_header_text = 'Sign Language Books for All Ages';
 			break;
 		case 'Games':
-			$hero_header_text = 'Blog to Teach Kids Sign Language';
+			$hero_header_text = 'Games for Teaching Sign Language';
 			break;
 		case 'Coloring':
-			$hero_header_text = 'Blog to Teach Kids Sign Language';
+			$hero_header_text = 'Coloring Books that Teach Kids Sign Language';
 			break;
 	}
 ?>

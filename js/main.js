@@ -1,3 +1,5 @@
+var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
+
 /***********************************************************************************
  * Sitewide functionality
  ***********************************************************************************/
@@ -10,6 +12,18 @@
            $('.back-to-top').fadeOut();
        }
      });
+  });
+})(jQuery);
+
+/***********************************************************************************
+ * Page specific functionality
+ ***********************************************************************************/
+(function($) {
+  $('document').ready(function(){
+    var particlesJSON = templateDirectoryURI + '/js/particles-home-01.json';
+    particlesJS.load('home-particles', particlesJSON, function() {
+      console.log('callback - particles.js config loaded');
+    });
   });
 })(jQuery);
 

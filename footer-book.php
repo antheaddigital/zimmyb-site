@@ -2,7 +2,7 @@
 
 <?php else: ?>
   <!-- support-bar -->
-  <?php require_once( get_template_directory() . '/template-parts/support-bar.php'); ?>
+  <?php // require_once( get_template_directory() . '/template-parts/support-bar.php'); ?>
   <!-- support-bar - end -->
   <!-- footer-social -->
   <?php require_once( get_template_directory() . '/template-parts/footer-social.php'); ?>

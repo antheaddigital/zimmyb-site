@@ -347,6 +347,19 @@
         $('.game-finished-popup-score span').html(window.playerStats.playerScore);
         $('.game-finished-popup-streak span').html(window.playerStats.highestStreak);
 
+        $('.game-finished-popup .challenge-settings .challenge-speed, .game-finished-popup .challenge-settings .challenge-strikes').css('background-image', 'url(' + window.gameDefaults.effects.spinningNumbers + ')');
+
+        setTimeout(function(){
+          $('.game-finished-popup .challenge-settings .challenge-speed, .game-finished-popup .challenge-settings .challenge-strikes').css('background-image', 'none');
+          if(window.gamePresets.speed < 10) {
+            var speedIncrease = parseInt(window.gamePresets.speed) + 1;
+            $('.game-finished-popup .challenge-settings .challenge-speed').html(speedIncrease);
+          }
+          $('.game-finished-popup .challenge-settings .challenge-strikes').html(Math.floor(Math.random() * 5) + 1);
+        }, 2000);
+
+
+
         //http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
       },
 
@@ -390,9 +403,9 @@
     $('.speed').unbind('change').bind('change', function(){
       var $this = $(this);
       var inputVal = Math.floor($this.val());
-      console.log(inputVal);
+      //console.log(inputVal);
       $this.val(inputVal);
-      console.log($this.val().length);
+      //console.log($this.val().length);
       if($this.val().length == 0){
         $this.val(0);
       }
@@ -406,7 +419,7 @@
       }
       var speed = $(this).val();
       window.gamePresets.speed = speed;
-      console.log(window.gamePresets.speed);
+      //console.log(window.gamePresets.speed);
     });
 
     $('.strikes').unbind('change').bind('change', function(){
@@ -457,9 +470,10 @@
       }
     });
 
-    $('.game-finished-popup-open, .strike-popup-open').magnificPopup({
+    $('.strike-popup-open').magnificPopup({
       type: 'inline',
       preloader: false,
+      closeOnBgClick: false,
       closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
     });
     $('.strike-popup-open').magnificPopup({
@@ -470,6 +484,26 @@
       }
     });
     $(document).on('click', '.mfp-close', function (e) {
+      e.preventDefault();
+      $.magnificPopup.close();
+    });
+    $('.game-finished-popup-open').magnificPopup({
+      type: 'inline',
+      preloader: false,
+      closeOnBgClick: false
+    });
+    $('.game-finished-popup-open').magnificPopup({
+      callbacks: {
+        close: function() {
+          //window.gameEngine.nextLetterBegin();
+        }
+      }
+    });
+    $(document).on('click', '.game-finished-popup .play-again', function (e) {
+      e.preventDefault();
+      $.magnificPopup.close();
+    });
+    $(document).on('click', '.game-finished-popup .challenge-accept', function (e) {
       e.preventDefault();
       $.magnificPopup.close();
     });
@@ -544,6 +578,10 @@
           id: "rat-skunk"
         },
         {
+          src:  templateDirectoryURI + "/imgs/games/save-the-pig/spinning-numbers.gif",
+          id: "spinning-numbers"
+        },
+        {
           src:  templateDirectoryURI + "/imgs/games/save-the-pig/save-the-pig-sign.gif",
           id: "save-the-pig-sign"
         },
@@ -601,7 +639,6 @@
     }
 
     function handleFileLoad(event) {
-      console.log(event.item);
       switch(event.item.id){
         case 'background':
           $('.stage').css('background-image', 'url(' + event.item.src + ')');
@@ -629,6 +666,9 @@
           break;
         case 'rat-skunk':
           $('.rat-skunk').css('background-image', 'url(' + event.item.src + ')');
+          break;
+        case 'spinning-numbers':
+          window.gameDefaults.effects.spinningNumbers = event.item.src;
           break;
         case 'zimmy-barrel-ad':
           $('.water-barrel-ad').css('background-image', 'url(' + event.item.src + ')');
@@ -667,10 +707,10 @@
     }
 
     function loadComplete(event) {
-      console.log("Finished Loading Assets");
       $('.stage-preload').hide();
       $('.stage').css({
-        opacity: 1
+        opacity: 1,
+        height: '600px'
       });
       if(window.gameDefaults.isMusic){
         window.gameDefaults.music.song01.loop = true;

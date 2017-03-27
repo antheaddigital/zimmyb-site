@@ -6,7 +6,14 @@
   <!-- save-the-pig-game -->
   <section class="save-the-pig-game">
     <div class="wrapper">
-      <div class="stage-preload"><div class="loading-msg">Loading... <span></span></div></div>
+      <div class="stage-preload">
+        <img src="<?php echo get_template_directory_uri(); ?>/imgs/games/save-the-pig/loader.gif" />
+        <div class="loading-message-wrapper">
+          <div class="loading-timer">Loading... <span></span></div>
+          <!-- <div class="loading-message">Load time could take around 1 minute.</div> -->
+          <div class="loading-thank-you">Thank You for Playing!</div>
+        </div>
+      </div>
       <div class="stage">
         <div class="game-head-board">
           <div class="game-logo-sign"></div>
@@ -92,15 +99,29 @@
         <div class="rat-skunk"></div>
         <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
         <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
-          <div class="game-finished-popup-header">THANK YOU FOR PLAYING!</div>
-          <div class="game-finished-popup-score-wrapper">
-            <div class="game-finished-popup-score">Score: <span></span></div>
-            <div class="game-finished-popup-streak">Highest Streak: <span></span></div>
-          </div>
-          <div class="game-finished-popup-social-wrapper">
-            <a class="game-finished-popup-social-facebook" href="">facebook</a>
-            <a class="game-finished-popup-social-twitter" href="">twitter</a>
-          </div>
+          <div class="game-finished-popup-header"></div>
+          <div class="clear"></div>
+            <div class="game-finished-popup-score-wrapper">
+              <div class="game-finished-popup-score">Score: <span></span></div>
+              <div class="game-finished-popup-streak">Highest Streak: <span></span></div>
+            </div>
+            <div class="game-finished-popup-challenge-wrapper">
+              <div class="challenge-header">Are You Brave Enough?</div>
+              <div class="challenge-settings">
+                <span class="challenge-speed"></span>
+                <span class="challenge-strikes"></span>
+              </div>
+              <a class="challenge-accept" href="">ACCEPT CHALLENGE!</a>
+            </div>
+          <div class="clear"></div>
+            <div class="game-finished-popup-play-again-wrapper">
+              <a class="play-again" href="">PLAY AGAIN!</a>
+            </div>
+            <div class="game-finished-popup-social-wrapper">
+              <a class="game-finished-popup-social-facebook" href="">facebook</a>
+              <a class="game-finished-popup-social-twitter" href="">twitter</a>
+            </div>
+          <div class="clear"></div>
         </div>
         <a class="strike-popup-open hidden" href="#strike-popup"></a>
         <div id="strike-popup" class="mfp-hide white-popup-block strike-popup">
@@ -134,18 +155,8 @@
   </section>
   <!-- game-description - end -->
 
-  <!-- site-promos -->
-  <section class="site-promos">
-    <div>
-      <h2>Learning Material</h2>
-    </div>
-    <div>
-      <h2>Books</h2>
-    </div>
-    <div>
-      <h2>Games</h2>
-    </div>
-  </section>
-  <!-- site-promos - end -->
+  <!-- recommendations -->
+  <?php require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>
+  <!-- recommendations - end -->
 
 </div>
