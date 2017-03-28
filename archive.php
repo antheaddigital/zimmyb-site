@@ -28,7 +28,7 @@ $obj = get_queried_object();
 	}
 ?>
 
-<section class="hero">
+<section class="hero hero-<?php echo strtolower($obj->cat_name); ?>" id="<?php echo strtolower($obj->cat_name); ?>-particles">
   <h1><?php echo $hero_header_text; ?></h1>
 </section>
 
@@ -52,11 +52,11 @@ if ( have_posts() ) : ?>
         <?php if( have_rows('search_results') ): ?>
           <?php while ( have_rows('search_results') ) : the_row(); ?>
             <?php if( get_row_layout() == 'content' ): ?>
-              <div class="result">
+              <div class="result result-<?php echo strtolower($obj->cat_name); ?>">
                 <a class="result-img" href="<?php the_sub_field('link'); ?>"><img class="img-responsive" src="<?php the_sub_field('image'); ?>" /></a>
                 <h3 class="result-header"><?php the_sub_field('title'); ?></h3>
                 <div class="result-description"><?php the_sub_field('description'); ?></div>
-                <a class="result-link" href="<?php the_sub_field('link'); ?>">Read Now! ></a>
+                <a class="result-link result-link-<?php echo strtolower($obj->cat_name); ?> read-play-btn-01" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('link_text'); ?></a>
               </div>
             <?php endif; ?>
           <?php endwhile; ?>

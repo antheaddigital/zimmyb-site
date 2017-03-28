@@ -20,10 +20,18 @@ var templateDirectoryURI = $('.template-directory-uri-value').attr('data-templat
  ***********************************************************************************/
 (function($) {
   $('document').ready(function(){
-    var particlesJSON = templateDirectoryURI + '/js/particles-home-01.json';
-    particlesJS.load('home-particles', particlesJSON, function() {
-      console.log('callback - particles.js config loaded');
-    });
+    if ($('#home-particles').length) {
+      var particlesJSON = templateDirectoryURI + '/js/particles-home-01.json';
+      particlesJS.load('home-particles', particlesJSON);
+    }
+    if ($('#books-particles').length) {
+      var particlesJSON = templateDirectoryURI + '/js/particles-books-01.json';
+      particlesJS.load('books-particles', particlesJSON);
+    }
+    if ($('#games-particles').length) {
+      var particlesJSON = templateDirectoryURI + '/js/particles-games-01.json';
+      particlesJS.load('games-particles', particlesJSON);
+    }
   });
 })(jQuery);
 

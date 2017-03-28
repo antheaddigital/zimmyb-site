@@ -121,7 +121,7 @@
     <!-- game-description - end -->
 
     <!-- recommendations -->
-    <?php require_once( get_template_directory() . '/template-parts/more-books-games.php'); ?>
+    <?php // require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>
     <!-- recommendations - end -->
 
   <?php endif; ?>
