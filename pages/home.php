@@ -22,35 +22,43 @@
 </section>
 <!-- site-intro - end -->
 
-<!-- books -->
-<section class="books">
-  <h2>Family Sign Language Books</h2>
-  <div class="books-copy-wrapper">
-    <div class="books-description">
+<!-- featured -->
+<section class="featured">
+
+  <h2>Featured Releases!</h2>
+
+  <div class="featured-wrapper featured-left">
+    <div class="featured-description planet-colors">
       <h3>Planet Colors!</h2>
       <p>Travel around the world and learn the colors that make each location a special place to visit.</p>
       <a class="read-play-btn-01" href="<?php echo esc_url( site_url() ); ?>/books/planet-colors">read!</a>
     </div>
-    <a class="books-featured" href="<?php echo esc_url( site_url() ); ?>/books/planet-colors"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/planet-colors-featured.jpg" /></a>
+    <a class="featured-img" href="<?php echo esc_url( site_url() ); ?>/books/planet-colors"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/planet-colors-featured.jpg" /></a>
     <div class="clear"></div>
   </div>
-</section>
-<!-- books - end -->
 
-<!-- games -->
-<section class="games">
-  <h2>Sign Language Games for Everybody</h2>
-  <div class="games-copy-wrapper">
-    <a class="games-featured" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/save-the-pig-featured.jpg" /></a>
-    <div class="games-description">
+  <div class="featured-wrapper featured-right">
+    <div class="featured-description bayme-pants-the-sun-its-broken">
+      <h3>Bayme Pants - The Sun! It's Broken!</h3>
+      <p>Hang out with Bayme Pants and friends as they try to find out why the sun is broken. The signs you will learn are: Sun, Moon, Fish, Monkey, Rabbit, and more.</p>
+      <a class="read-play-btn-01" href="<?php echo esc_url( site_url() ); ?>/books/bayme-pants-the-sun-its-broken">read!</a>
+    </div>
+    <a class="featured-img" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/the-sun-its-broken-featured.jpg" /></a>
+    <div class="clear"></div>
+  </div>
+
+  <div class="featured-wrapper featured-left">
+    <div class="featured-description save-the-pig">
       <h3>Save the Pig!</h3>
       <p>Can you help Honkatonk Pig, Squiky Pig, War Pig, and Poopy Pig from getting their much needed baths? You will learn the alphebet in Sign Language and also how to type.</p>
       <a class="read-play-btn-01" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig">play!</a>
     </div>
+    <a class="featured-img" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/save-the-pig-featured.jpg" /></a>
     <div class="clear"></div>
   </div>
+
 </section>
-<!-- games - end -->
+<!-- featured - end -->
 
 <?php
 get_footer();
