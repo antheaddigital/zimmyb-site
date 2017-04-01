@@ -51,13 +51,13 @@
         $template_uri: $('.template-directory-uri-value').attr('data-template-directory-uri'),
         $letterBoxDiv: $('.letter-box div'),
         $pigBox: $('.pig-box'),
-        pigNum: null
+        pigNum: null,
+        currentLetter: null
       },
 
       init: function(){
         this.resetScoreboard();
         this.setStrikesZone();
-        //this.setGifs('animated');
         this.setSpeed();
         this.nextLetterBegin();
       },
@@ -87,16 +87,6 @@
           $('.water-barrel-ad .strikes').addClass('hidden');
           $('.water-barrel-ad .ad').removeClass('hidden');
         }
-      },
-
-      setGifs: function(type){
-        var waterBarrel = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/barrel-'+type+'.gif';
-        $('.water-barrel').css('background-image', 'url(' + waterBarrel + ')');
-      },
-
-      setStillGifs: function(){
-        var waterBarrel = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/barrel-still.gif';
-        $('.water-barrel').css('background-image', 'url(' + waterBarrel + ')');
       },
 
       addStrike: function(){
@@ -165,18 +155,16 @@
 
       bindKeyboard: function(letter){
         $('body').unbind('keydown').bind('keydown', function(e){
+
           if(e.keyCode == 32) {
             e.preventDefault();
           }
           var letterPressed = String.fromCharCode(e.which);
           $('.keys-row span[data-key="'+letterPressed.toLowerCase()+'"]').addClass('active');
-        }).unbind('keyup').bind('keyup', function(e) {
-          if(e.keyCode == 32) {
-            e.preventDefault();
-          }
-          var letterPressed = String.fromCharCode(e.which);
-          $('.keys-row span').removeClass('active');
+
           if(letterPressed.toLowerCase() === letter.toLowerCase()){
+
+            $('body').unbind('keydown');
             if(window.gameDefaults.isEffects){
               window.gameDefaults.effects.applause.play();
               window.gameDefaults.effects.snort.play();
@@ -213,12 +201,15 @@
               window.gameEngine.defaults.$letterBoxDiv.removeClass();
               window.gameEngine.nextLetterBegin();
             });
+
           } else {
             if(window.gameDefaults.isEffects){ window.gameDefaults.effects.fart.play(); }
           }
-        }).bind('keyup', function(e) {
 
+        }).bind('keyup', function(e) {
+          $('.keys-row span').removeClass('active');
         });
+
       },
 
       shuffleLetterArray: function(array) {
@@ -243,7 +234,9 @@
             lettersArrayTemp = [],
             lettersArrayTemp = lettersArrayShuffled;
         var randomNumber = Math.floor(Math.random() * (lettersArrayTemp.length - 1)) + 0;
-        return lettersArrayTemp[randomNumber];
+        var currentLetter = lettersArrayTemp[randomNumber]
+        window.gameEngine.defaults.currentLetter = currentLetter;
+        return currentLetter;
       },
 
       getPig: function(){
@@ -301,16 +294,12 @@
             $('.pig-clean-image').css({
               'background-image': 'url(' + pigCleanImage + ')'
             });
-            // $('.pig-clean-image').velocity({
-            //   scale: 5
-            // }, {
-            //   duration: 2000
-            // });
+            $('.pig-clean-show-answer .sign-letter div').removeClass();
+            $('.pig-clean-show-answer .character-letter').html('');
+            $('.pig-clean-show-answer .sign-letter div').addClass(window.gameEngine.defaults.currentLetter);
+            $('.pig-clean-show-answer .character-letter').html(window.gameEngine.defaults.currentLetter);
             $('.strike-popup-open').trigger('click');
             setTimeout(function(){
-              // $('.pig-clean-image').velocity({
-              //   scale: -5
-              // });
               $('.strike-popup .mfp-close').trigger('click');
             }, 5000);
           }
@@ -336,7 +325,6 @@
               break;
           }
         });
-        //this.setGifs('still');
         $('.game-finished-popup-open').trigger('click');
       },
 
@@ -660,6 +648,7 @@
           break;
         case 'signs':
           $('.letter-box.sign div').css('background-image', 'url(' + event.item.src + ')');
+          $('.pig-clean-show-answer .sign-letter div').css('background-image', 'url(' + event.item.src + ')');
           break;
         case 'keyboard-backboard':
           $('.keyboard-wrapper').css('background-image', 'url(' + event.item.src + ')');

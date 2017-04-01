@@ -127,6 +127,9 @@
         <div id="strike-popup" class="mfp-hide white-popup-block strike-popup">
           <div class="pig-clean-wrapper">
             <div class="pig-clean-image"></div>
+            <div class="pig-clean-show-answer">
+              <div class="sign-letter"><div></div></div><span class="character-letter"></span>
+            </div>
             <div class="pig-clean-strikes"></div>
           </div>
         </div>
