@@ -39,8 +39,11 @@
       durationIncrementorThrottle: .09,
       durationMin: 1000, // min is the fastest speed
       durationMax: 5000,
-      isEffects: true,
-      isMusic: true,
+      soundEffectSnort: true,
+      soundEffectCheers: true,
+      soundEffectFart: true,
+      soundEffectSplash: true,
+      soundEffectMusic: true,
       effects: {},
       music: {}
     },
@@ -165,8 +168,10 @@
           if(letterPressed.toLowerCase() === letter.toLowerCase()){
 
             $('body').unbind('keydown');
-            if(window.gameDefaults.isEffects){
+            if(window.gameDefaults.soundEffectCheers){
               window.gameDefaults.effects.applause.play();
+            }
+            if(window.gameDefaults.soundEffectSnort){
               window.gameDefaults.effects.snort.play();
             }
 
@@ -203,7 +208,7 @@
             });
 
           } else {
-            if(window.gameDefaults.isEffects){ window.gameDefaults.effects.fart.play(); }
+            if(window.gameDefaults.soundEffectFart){ window.gameDefaults.effects.fart.play(); }
           }
 
         }).bind('keyup', function(e) {
@@ -263,7 +268,7 @@
           complete: function() {
 
             // player stats
-            if(window.gameDefaults.isEffects){
+            if(window.gameDefaults.soundEffectSplash){
               window.gameDefaults.effects.yahoo.play();
               window.gameDefaults.effects.bigWave.play();
             }
@@ -345,8 +350,6 @@
           }
           $('.game-finished-popup .challenge-settings .challenge-strikes').html(Math.floor(Math.random() * 5) + 1);
         }, 2000);
-
-
 
         //http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
       },
@@ -440,6 +443,46 @@
     }
     window.gameControlsEnable();
 
+    $('.sound-control-toggle').on('click', function(e){
+      e.preventDefault();
+      $('.sound-control-panel').show();
+    });
+    $('.sound-control-panel-close').on('click', function(e){
+      e.preventDefault();
+      $('.sound-control-panel').hide();
+    });
+    $('.sound-music-effect').on('click', function(e){
+      e.preventDefault();
+      $this = $(this);
+      var soundMusic = $this.attr('data-sound-music');
+      var volume = $this.attr('data-volume');
+      var soundEffectObj = 'soundEffect'+soundMusic;
+      switch(volume){
+        case 'on':
+          $this.removeClass('volume-on');
+          $this.addClass('volume-off');
+          $this.attr('data-volume', 'off');
+          $this.find('i').removeClass('fa-volume-up');
+          $this.find('i').addClass('fa-volume-down');
+          window.gameDefaults[soundEffectObj] = false;
+          if(soundMusic == 'Music'){
+            window.gameDefaults.music.song01.pause();
+          }
+          break;
+        case 'off':
+          $this.removeClass('volume-off');
+          $this.addClass('volume-on');
+          $this.attr('data-volume', 'on');
+          $this.find('i').removeClass('fa-volume-down');
+          $this.find('i').addClass('fa-volume-up');
+          window.gameDefaults[soundEffectObj] = true;
+          if(soundMusic == 'Music'){
+            window.gameDefaults.music.song01.play();
+          }
+          break;
+      }
+    });
+
     $('.start-game').on('click', function(e){
       e.preventDefault();
       window.gameControlsDisable();
@@ -462,7 +505,7 @@
       type: 'inline',
       preloader: false,
       closeOnBgClick: false,
-      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>'
+      showCloseBtn: false
     });
     $('.strike-popup-open').magnificPopup({
       callbacks: {
@@ -471,21 +514,15 @@
         }
       }
     });
-    $(document).on('click', '.mfp-close', function (e) {
-      e.preventDefault();
-      $.magnificPopup.close();
-    });
+    // $(document).on('click', '.mfp-close', function (e) {
+    //   e.preventDefault();
+    //   $.magnificPopup.close();
+    // });
     $('.game-finished-popup-open').magnificPopup({
       type: 'inline',
       preloader: false,
-      closeOnBgClick: false
-    });
-    $('.game-finished-popup-open').magnificPopup({
-      callbacks: {
-        close: function() {
-          //window.gameEngine.nextLetterBegin();
-        }
-      }
+      closeOnBgClick: false,
+      showCloseBtn: false
     });
     $(document).on('click', '.game-finished-popup .play-again', function (e) {
       e.preventDefault();
@@ -701,11 +738,11 @@
         opacity: 1,
         height: '600px'
       });
-      if(window.gameDefaults.isMusic){
+      if(window.gameDefaults.soundEffectMusic){
         window.gameDefaults.music.song01.loop = true;
         window.gameDefaults.music.song01.play();
       }
-      if(window.gameDefaults.isEffects){ window.gameDefaults.effects.applause.play(); }
+      if(window.gameDefaults.soundEffectCheers){ window.gameDefaults.effects.applause.play(); }
     }
 
     setupManifest();

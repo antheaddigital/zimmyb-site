@@ -15,6 +15,21 @@
         </div>
       </div>
       <div class="stage">
+        <div class="sound-control-wrapper">
+          <a class="sound-control-toggle" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />edit</a>
+          <div class="sound-control-panel">
+            <a class="sound-control-panel-close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <div class="sound-control-panel-section">
+              <a class="sound-control-panel-answer-snort sound-music-effect volume-on" data-volume="on" data-sound-music="Snort" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />snort</a>
+              <a class="sound-control-panel-answer-fart sound-music-effect volume-on" data-volume="on" data-sound-music="Fart" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />fart</a>
+              <a class="sound-control-panel-answer-splash sound-music-effect volume-on" data-volume="on" data-sound-music="Splash" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />splash</a>
+              <a class="sound-control-panel-answer-cheers sound-music-effect volume-on" data-volume="on" data-sound-music="Cheers" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />cheers</a>
+            </div>
+            <div class="sound-control-panel-section">
+              <a class="sound-control-panel-answer-music sound-music-effect volume-on" data-volume="on" data-sound-music="Music" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />music</a>
+            </div>
+          </div>
+        </div>
         <div class="game-head-board">
           <div class="game-logo-sign"></div>
           <div class="game-control-board">
@@ -106,20 +121,21 @@
               <div class="game-finished-popup-streak">Highest Streak: <span></span></div>
             </div>
             <div class="game-finished-popup-challenge-wrapper">
-              <div class="challenge-header">Are You Brave Enough?</div>
+              <div class="challenge-header">Are You<br />Brave Enough?</div>
               <div class="challenge-settings">
                 <span class="challenge-speed"></span>
                 <span class="challenge-strikes"></span>
               </div>
-              <a class="challenge-accept" href="">ACCEPT CHALLENGE!</a>
+              <button class="challenge-accept" href="">ACCEPT CHALLENGE!</button>
             </div>
           <div class="clear"></div>
             <div class="game-finished-popup-play-again-wrapper">
-              <a class="play-again" href="">PLAY AGAIN!</a>
+              <button class="play-again" href="">PLAY AGAIN!</button>
             </div>
             <div class="game-finished-popup-social-wrapper">
-              <a class="game-finished-popup-social-facebook" href="">facebook</a>
-              <a class="game-finished-popup-social-twitter" href="">twitter</a>
+              <a class="game-finished-popup-social-facebook" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-social-twitter" href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
             </div>
           <div class="clear"></div>
         </div>

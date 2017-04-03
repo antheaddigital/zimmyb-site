@@ -21,9 +21,9 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/libs.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <?php if($book_fullscreen == true): ?>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books-fullscreen.js?ver=0.2.1"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books-fullscreen.js?ver=20170402.01"></script>
 <?php else: ?>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books.js?ver=0.2.1"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books.js?ver=20170402.01"></script>
 <?php endif; ?>
 </body>
 </html>

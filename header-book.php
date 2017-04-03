@@ -25,7 +25,7 @@ error_reporting(E_ALL ^ E_NOTICE);
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
   <title></title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=0.2.1">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=20170402.01">
 </head>
 <?php
 require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
