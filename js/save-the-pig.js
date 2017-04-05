@@ -55,7 +55,8 @@
         $letterBoxDiv: $('.letter-box div'),
         $pigBox: $('.pig-box'),
         pigNum: null,
-        currentLetter: null
+        currentLetter: null,
+        gameOverStrikesChallenge: null
       },
 
       init: function(){
@@ -330,6 +331,7 @@
               break;
           }
         });
+        $('body').unbind('keydown');
         $('.game-finished-popup-open').trigger('click');
       },
 
@@ -337,18 +339,25 @@
         if(window.playerStats.highestStreak < window.playerStats.scoreStreak){
           window.playerStats.highestStreak = window.playerStats.scoreStreak;
         }
-        $('.game-finished-popup-score span').html(window.playerStats.playerScore);
-        $('.game-finished-popup-streak span').html(window.playerStats.highestStreak);
+        $('.game-finished-popup-left-score span').html(window.playerStats.playerScore);
+        $('.game-finished-popup-left-streak span').html(window.playerStats.highestStreak);
 
-        $('.game-finished-popup .challenge-settings .challenge-speed, .game-finished-popup .challenge-settings .challenge-strikes').css('background-image', 'url(' + window.gameDefaults.effects.spinningNumbers + ')');
+        $('.game-finished-popup .challenge-settings .challenge-settings-speed').html('');
+        $('.game-finished-popup .challenge-settings .challenge-settings-strikes').html('');
+
+        $('.game-finished-popup .challenge-settings .challenge-settings-speed, .game-finished-popup .challenge-settings .challenge-settings-strikes').css('background-image', 'url(' + window.gameDefaults.effects.spinningNumbers + ')');
 
         setTimeout(function(){
-          $('.game-finished-popup .challenge-settings .challenge-speed, .game-finished-popup .challenge-settings .challenge-strikes').css('background-image', 'none');
+          $('.game-finished-popup .challenge-settings .challenge-settings-speed, .game-finished-popup .challenge-settings .challenge-settings-strikes').css('background-image', 'none');
           if(window.gamePresets.speed < 10) {
             var speedIncrease = parseInt(window.gamePresets.speed) + 1;
-            $('.game-finished-popup .challenge-settings .challenge-speed').html(speedIncrease);
+            $('.game-finished-popup .challenge-settings .challenge-settings-speed').html(speedIncrease);
+          } else {
+            $('.game-finished-popup .challenge-settings .challenge-settings-speed').html('10');
           }
-          $('.game-finished-popup .challenge-settings .challenge-strikes').html(Math.floor(Math.random() * 5) + 1);
+          var randomeNum5 = Math.floor(Math.random() * 5) + 1;
+          window.gameEngine.gameOverStrikesChallenge = randomeNum5;
+          $('.game-finished-popup .challenge-settings .challenge-settings-strikes').html(randomeNum5);
         }, 2000);
 
         //http://www.facebook.com/sharer/sharer.php?u=http://www.reliantfunding.com/blog/the-holy-grail-of-success-lies-in-a-great-sales-team
@@ -530,6 +539,11 @@
     });
     $(document).on('click', '.game-finished-popup .challenge-accept', function (e) {
       e.preventDefault();
+      var challengeSpeed = parseInt($('.challenge-settings-speed').html());
+      var challengeStrikes = parseInt($('.challenge-settings-strikes').html());
+      window.gamePresets.speed = challengeSpeed;
+      $('.game-control-board .inputs .speed').val(challengeSpeed);
+      $('.game-control-board .inputs .strikes').val(challengeStrikes);
       $.magnificPopup.close();
     });
 

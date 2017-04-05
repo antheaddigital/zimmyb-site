@@ -114,29 +114,38 @@
         <div class="rat-skunk"></div>
         <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
         <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
-          <div class="game-finished-popup-header"></div>
+          <div class="game-finished-popup-header">nice score!</div>
           <div class="clear"></div>
-            <div class="game-finished-popup-score-wrapper">
-              <div class="game-finished-popup-score">Score: <span></span></div>
-              <div class="game-finished-popup-streak">Highest Streak: <span></span></div>
+          <div class="game-finished-popup-left">
+            <div class="game-finished-popup-left-score-wrapper">
+              <div class="game-finished-popup-left-score">Score: <span></span></div>
+              <div class="game-finished-popup-left-streak">Highest Streak: <span></span></div>
             </div>
-            <div class="game-finished-popup-challenge-wrapper">
+            <div class="game-finished-popup-left-social-wrapper">
+              <a class="game-finished-popup-left-social-facebook" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-left-social-twitter" href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-left-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+            </div>
+            <div class="game-finished-popup-left-play-again-wrapper">
+              <button class="play-again" href="">PLAY AGAIN!</button>
+            </div>
+          </div>
+          <div class="game-finished-popup-right">
+            <div class="game-finished-popup-right-challenge-wrapper">
               <div class="challenge-header">Are You<br />Brave Enough?</div>
               <div class="challenge-settings">
-                <span class="challenge-speed"></span>
-                <span class="challenge-strikes"></span>
+                <div class="challenge-settings-wrapper">
+                  <span class="challenge-settings-header">max speed</span>
+                  <span class="challenge-settings-speed"></span>
+                </div>
+                <div class="challenge-settings-wrapper">
+                  <span class="challenge-settings-header">strikes</span>
+                  <span class="challenge-settings-strikes"></span>
+                </div>
               </div>
               <button class="challenge-accept" href="">ACCEPT CHALLENGE!</button>
             </div>
-          <div class="clear"></div>
-            <div class="game-finished-popup-play-again-wrapper">
-              <button class="play-again" href="">PLAY AGAIN!</button>
-            </div>
-            <div class="game-finished-popup-social-wrapper">
-              <a class="game-finished-popup-social-facebook" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a class="game-finished-popup-social-twitter" href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-              <a class="game-finished-popup-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
-            </div>
+          </div>
           <div class="clear"></div>
         </div>
         <a class="strike-popup-open hidden" href="#strike-popup"></a>

@@ -40,6 +40,6 @@
   }
 ?>
 <!-- Custom JS -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/<?php echo $js_file; ?>.js?ver=20170402.01"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/<?php echo $js_file; ?>.js?ver=20170404.02"></script>
 </body>
 </html>

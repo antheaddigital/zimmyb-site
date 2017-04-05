@@ -30,7 +30,7 @@ error_reporting(E_ALL ^ E_NOTICE);
     // }
   ?>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=20170402.01">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=20170404.01">
 </head>
 <?php
 require_once( get_template_directory() . '/libs/mobile-detect/detect.php');
