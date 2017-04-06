@@ -17,25 +17,21 @@
         <!-- title -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/title.jpg" class="page-img img-responsive" />
-          <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/colors.jpg" class="img-responsive" /></a>
-          <div id="brown-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/colors.jpg" class="img-responsive" />
-          </div>
         </div>
         <!-- page 01 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/01.jpg" class="page-img img-responsive" />
-          <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/brown.jpg" class="img-responsive" /></a>
+          <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/sun.jpg" class="img-responsive" /></a>
           <div id="brown-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/brown.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/sun.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 02 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/02.jpg" class="page-img img-responsive" />
-          <a href="#green-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/green.jpg" class="img-responsive" /></a>
+          <a href="#green-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/broken.jpg" class="img-responsive" /></a>
           <div id="green-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/green.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/broken.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 03 -->

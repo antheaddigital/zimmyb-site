@@ -24,10 +24,11 @@
               <a class="sound-control-panel-answer-fart sound-music-effect volume-on" data-volume="on" data-sound-music="Fart" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />fart</a>
               <a class="sound-control-panel-answer-splash sound-music-effect volume-on" data-volume="on" data-sound-music="Splash" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />splash</a>
               <a class="sound-control-panel-answer-cheers sound-music-effect volume-on" data-volume="on" data-sound-music="Cheers" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />cheers</a>
-            </div>
-            <div class="sound-control-panel-section">
+              <a class="sound-control-panel-answer-cheers sound-music-effect volume-on" data-volume="on" data-sound-music="Numbers" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />numbers</a>
               <a class="sound-control-panel-answer-music sound-music-effect volume-on" data-volume="on" data-sound-music="Music" href="#"><i class="fa fa-volume-up" aria-hidden="true"></i><br />music</a>
             </div>
+            <!-- <div class="sound-control-panel-section">
+            </div> -->
           </div>
         </div>
         <div class="game-head-board">
@@ -114,7 +115,7 @@
         <div class="rat-skunk"></div>
         <a class="game-finished-popup-open hidden" href="#game-finished-popup"></a>
         <div id="game-finished-popup" class="mfp-hide white-popup-block game-finished-popup">
-          <div class="game-finished-popup-header">nice score!</div>
+          <!-- <div class="game-finished-popup-header">nice score!</div> -->
           <div class="clear"></div>
           <div class="game-finished-popup-left">
             <div class="game-finished-popup-left-score-wrapper">
@@ -124,7 +125,7 @@
             <div class="game-finished-popup-left-social-wrapper">
               <a class="game-finished-popup-left-social-facebook" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
               <a class="game-finished-popup-left-social-twitter" href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-              <a class="game-finished-popup-left-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+              <!-- <a class="game-finished-popup-left-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a> -->
             </div>
             <div class="game-finished-popup-left-play-again-wrapper">
               <button class="play-again" href="">PLAY AGAIN!</button>

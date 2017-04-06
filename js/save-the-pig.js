@@ -41,6 +41,7 @@
       durationMax: 5000,
       soundEffectSnort: true,
       soundEffectCheers: true,
+      soundEffectNumbers: true,
       soundEffectFart: true,
       soundEffectSplash: true,
       soundEffectMusic: true,
@@ -347,7 +348,12 @@
 
         $('.game-finished-popup .challenge-settings .challenge-settings-speed, .game-finished-popup .challenge-settings .challenge-settings-strikes').css('background-image', 'url(' + window.gameDefaults.effects.spinningNumbers + ')');
 
+        if(window.gameDefaults.soundEffectNumbers){
+          window.gameDefaults.effects.spinningNumbersSound.play();
+        }
+
         setTimeout(function(){
+          //window.gameDefaults.effects.spinningNumbersSound.pause();
           $('.game-finished-popup .challenge-settings .challenge-settings-speed, .game-finished-popup .challenge-settings .challenge-settings-strikes').css('background-image', 'none');
           if(window.gamePresets.speed < 10) {
             var speedIncrease = parseInt(window.gamePresets.speed) + 1;
@@ -663,6 +669,10 @@
         {
           src:  templateDirectoryURI + "/audio/music/save-the-pig/1.mp3",
           id: "music"
+        },
+        {
+          src:  templateDirectoryURI + "/audio/effects/save-the-pig/spinning-numbers.mp3",
+          id: "spinning-numbers-sound"
         }
       ];
     }
@@ -733,6 +743,9 @@
           break;
         case 'yahoo':
           window.gameDefaults.effects.yahoo = new Audio(event.item.src);
+          break;
+        case 'spinning-numbers-sound':
+          window.gameDefaults.effects.spinningNumbersSound = new Audio(event.item.src);
           break;
       }
     }
