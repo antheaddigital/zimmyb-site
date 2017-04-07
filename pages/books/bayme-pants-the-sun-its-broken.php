@@ -37,49 +37,49 @@
         <!-- page 03 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/03.jpg" class="page-img img-responsive" />
-          <a href="#yellow-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/yellow.jpg" class="img-responsive" /></a>
+          <a href="#yellow-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/sleep.jpg" class="img-responsive" /></a>
           <div id="yellow-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/yellow.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/sleep.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 04 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/04.jpg" class="page-img img-responsive" />
-          <a href="#black-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/black.jpg" class="img-responsive" /></a>
+          <a href="#black-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/rabbit.jpg" class="img-responsive" /></a>
           <div id="black-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/black.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/rabbit.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 05 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/05.jpg" class="page-img img-responsive" />
-          <a href="#purple-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/purple.jpg" class="img-responsive" /></a>
+          <a href="#purple-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/fish.jpg" class="img-responsive" /></a>
           <div id="purple-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/purple.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/fish.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 06 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/06.jpg" class="page-img img-responsive" />
-          <a href="#white-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/white.jpg" class="img-responsive" /></a>
+          <a href="#white-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/monkey.jpg" class="img-responsive" /></a>
           <div id="white-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/white.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/monkey.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 07 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/07.jpg" class="page-img img-responsive" />
-          <a href="#orange-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/orange.jpg" class="img-responsive" /></a>
+          <a href="#orange-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/moon.jpg" class="img-responsive" /></a>
           <div id="orange-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/orange.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/moon.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- page 08 -->
         <div class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/08.jpg" class="page-img img-responsive" />
-          <a href="#red-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/red.jpg" class="img-responsive" /></a>
+          <a href="#red-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/working.jpg" class="img-responsive" /></a>
           <div id="red-sign" class="mfp-hide white-popup-block">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/red.jpg" class="img-responsive" />
+            <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/working.jpg" class="img-responsive" />
           </div>
         </div>
         <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
