@@ -38,7 +38,7 @@
   </div>
 
   <div class="featured-wrapper featured-right">
-    <a class="featured-img featured-img-bayme-pants-the-sun-its-broken" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/the-sun-its-broken-featured.jpg" /></a>
+    <a class="featured-img featured-img-bayme-pants-the-sun-its-broken" href="<?php echo esc_url( site_url() ); ?>/books/bayme-pants-the-sun-its-broken"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/the-sun-its-broken-featured.jpg" /></a>
     <div class="featured-description featured-description-bayme-pants-the-sun-its-broken">
       <h3>Bayme Pants - The Sun! It's Broken!</h3>
       <p>Hang out with Bayme Pants and friends as they try to find out why the sun is broken. The signs you will learn are: Sun, Moon, Fish, Monkey, Rabbit, and more.</p>
