@@ -9,7 +9,7 @@
     /* ---------------------------------------------------------------------- */
 
     // apply functionality after slick carousel is initilized
-    $('.slider').on('init', function(event, slick){
+    $('.slider').on('init, reInit', function(event, slick){
 
       // watch slide - on credits show ad
       // $('.slider').on('afterChange', function(event, slick, currentSlide){
@@ -53,12 +53,13 @@
     });
 
     // init slick carousel
-    $('.slider').slick({
-      infinite: true,
-      dots: false,
-      lazyLoad: 'ondemand',
-      cssEase: 'linear'
-    });
+    function sliderInitialize(){
+      $('.slider').slick({
+        dots: false,
+        cssEase: 'linear'
+      });
+    }
+    sliderInitialize();
 
 
     /* ---------------------------------------------------------------------- */
@@ -91,24 +92,26 @@
     //   }
     // });
 
-    // (function($){
-    //   $(document).ready(function(){
-    //     var windowWidth = $(window).width();
-    //     var windowHeight = $(window).height();
-    //     if(windowHeight > windowWidth){
-    //       console.log('please rotate');
-    //     }
-    //     $(window).on('resize', function(){
-    //        if($(this).width() != windowWidth){
-    //         windowWidth = $(this).width();
-    //         windowHeight = $(this).height();
-    //         if(windowHeight > windowWidth){
-    //           console.log('please rotate');
-    //         }
-    //        }
-    //     });
-    //   });
-    // })(jQuery);
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    if(windowHeight > windowWidth){
+      console.log('please rotate');
+    }
+    $(window).on('resize', function(){
+      $('.slider').slick('unslick');
+      sliderInitialize();
+      //}, 1000);
+      // if($(this).width() != windowWidth){
+      //   windowWidth = $(this).width();
+      //   windowHeight = $(this).height();
+      //   if(windowHeight > windowWidth){
+      //     console.log('please rotate');
+      //   } else {
+      //     $('.slider').slick('unslick');
+      //     sliderInitialize();
+      //   }
+      // }
+    });
 
 
   });

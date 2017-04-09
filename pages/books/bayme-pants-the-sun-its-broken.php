@@ -2,13 +2,10 @@
 
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="wrapper">
-      <?php if($book_fullscreen == true): ?>
-        <div class="book-fullscreen-nav">
-          <a class="site-nav" href=""><i class="fa fa-bars" aria-hidden="true"></i><br />menu</a>
-          <a class="back-to-siteview" href="<?php echo get_permalink(); ?>"><i class="fa fa-arrow-left" aria-hidden="true"></i><br />back</a>
-          <a class="share" href=""><i class="fa fa-share-alt" aria-hidden="true"></i><br />share</a>
-        </div>
-      <?php endif; ?>
+      <?php if($book_fullscreen == true){
+          require_once( get_template_directory() . '/template-parts/book-full-page-nav.php');
+        }
+      ?>
       <div class="slider">
         <!-- intro - slide 0 -->
         <div class="slider-page">
@@ -101,12 +98,20 @@
 
   <?php else: ?>
 
-    <!-- game-description -->
+    <!-- book-game-description -->
     <?php
-    $book_title = 'Bayme Pants - The Sun! It\'s Broken!';
-    $book_description = '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
-    require_once( get_template_directory() . '/template-parts/book-description.php'); ?>
-    <!-- game-description - end -->
+      $book_game_title = 'bayme-pants-the-sun-its-broken';
+      $book_game_description = '<h1>Bayme Pants - The Sun! It\'s Broken!</h1>';
+      $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+      $book_game_description .= '<div class="share">';
+        $book_game_description .= '<ul class="Share-list">';
+          $book_game_description .= '<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
+          $book_game_description .= '<li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
+        $book_game_description .= '</ul>';
+      $book_game_description .= '</div>';
+      require_once( get_template_directory() . '/template-parts/book-game-description.php');
+    ?>
+    <!-- book-game-description - end -->
 
     <!-- recommendations -->
     <?php // require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>

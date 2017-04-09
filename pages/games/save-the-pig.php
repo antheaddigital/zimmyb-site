@@ -164,28 +164,23 @@
   </section>
   <!-- page-save-the-pig - end -->
 
-  <!-- game-description -->
-  <section class="game-description">
-    <div class="game-description-wrapper">
-      <h1>Save the Pig</h1>
-      <div class="description">
-        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-      </div>
-      <div class="requirements">
-        Requirements: Desktop and Keyboard only
-      </div>
-      <div class="share">
-        <ul class="Share-list">
-          <li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-          <li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <!-- game-description - end -->
+  <!-- book-game-description -->
+  <?php
+    $book_game_title = 'save-the-pig';
+    $book_game_description = '<h1>Save the Pig</h1>';
+    $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+    $book_game_description .= '<div class="share">';
+      $book_game_description .= '<ul class="Share-list">';
+        $book_game_description .= '<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
+        $book_game_description .= '<li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
+      $book_game_description .= '</ul>';
+    $book_game_description .= '</div>';
+    require_once( get_template_directory() . '/template-parts/book-game-description.php');
+  ?>
+  <!-- book-game-description - end -->
 
   <!-- recommendations -->
-  <?php require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>
+  <?php // require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>
   <!-- recommendations - end -->
 
 </div>
