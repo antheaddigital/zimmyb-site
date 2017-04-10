@@ -760,10 +760,17 @@
     }
 
     function loadComplete(event) {
+      var windowWidth = $(window).width();
+      if(windowWidth >= 1024){
+        stageHeight = '471px';
+      }
+      if(windowWidth >= 1300){
+        stageHeight = '600px';
+      }
       $('.stage-preload').hide();
       $('.stage').css({
         opacity: 1,
-        height: '600px'
+        height: stageHeight
       });
       if(window.gameDefaults.soundEffectMusic){
         window.gameDefaults.music.song01.loop = true;

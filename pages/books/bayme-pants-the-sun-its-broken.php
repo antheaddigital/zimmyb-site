@@ -1,93 +1,98 @@
 <div class="book-page page-bayme-pants-the-sun-its-broken">
 
+  <?php if($book_fullscreen == true){
+      require_once( get_template_directory() . '/template-parts/book-full-page-please-rotate.php');
+    }
+  ?>
+
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="wrapper">
       <?php if($book_fullscreen == true){
           require_once( get_template_directory() . '/template-parts/book-full-page-nav.php');
         }
       ?>
-      <div class="slider">
+      <ul class="slider">
         <!-- intro - slide 0 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/intro.jpg" class="page-img img-responsive" />
-        </div>
+        </li>
         <!-- title -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/title.jpg" class="page-img img-responsive" />
-        </div>
+        </li>
         <!-- page 01 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/01.jpg" class="page-img img-responsive" />
           <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/sun.jpg" class="img-responsive" /></a>
           <div id="brown-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/sun.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 02 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/02.jpg" class="page-img img-responsive" />
           <a href="#green-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/broken.jpg" class="img-responsive" /></a>
           <div id="green-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/broken.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 03 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/03.jpg" class="page-img img-responsive" />
           <a href="#yellow-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/sleep.jpg" class="img-responsive" /></a>
           <div id="yellow-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/sleep.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 04 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/04.jpg" class="page-img img-responsive" />
           <a href="#black-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/rabbit.jpg" class="img-responsive" /></a>
           <div id="black-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/rabbit.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 05 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/05.jpg" class="page-img img-responsive" />
           <a href="#purple-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/fish.jpg" class="img-responsive" /></a>
           <div id="purple-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/fish.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 06 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/06.jpg" class="page-img img-responsive" />
           <a href="#white-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/monkey.jpg" class="img-responsive" /></a>
           <div id="white-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/monkey.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 07 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/07.jpg" class="page-img img-responsive" />
           <a href="#orange-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/moon.jpg" class="img-responsive" /></a>
           <div id="orange-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/moon.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- page 08 -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/08.jpg" class="page-img img-responsive" />
           <a href="#red-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/working.jpg" class="img-responsive" /></a>
           <div id="red-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/working.jpg" class="img-responsive" />
           </div>
-        </div>
+        </li>
         <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/credits.jpg" class="page-img img-responsive" />
-        </div>
+        </li>
         <!-- the end -->
-        <div class="slider-page">
+        <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/bayme-pants/the-sun-its-broken/the-end.jpg" class="page-img img-responsive" />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <?php if($book_fullscreen != true): ?>
       <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
