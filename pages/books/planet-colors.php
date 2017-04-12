@@ -19,8 +19,8 @@
         <!-- title -->
         <li class="slider-page">
           <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/title.jpg" class="page-img img-responsive" />
-          <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/colors.jpg" class="img-responsive" /></a>
-          <div id="brown-sign" class="mfp-hide white-popup-block">
+          <a href="#colors-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/colors.jpg" class="img-responsive" /></a>
+          <div id="colors-sign" class="mfp-hide white-popup-block">
             <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/colors.jpg" class="img-responsive" />
           </div>
         </li>
@@ -107,7 +107,7 @@
       </ul>
     </div>
     <?php if($book_fullscreen != true): ?>
-      <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
+      <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK <br />IN FULL SCREEN</a>
     <?php endif; ?>
   </section> <!-- book-section - end -->
 

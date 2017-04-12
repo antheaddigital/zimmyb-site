@@ -8,7 +8,7 @@
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="wrapper">
       <?php if($book_fullscreen == true){
-          require_once( get_template_directory() . '/template-parts/book-full-page-nav.php');
+          require( get_template_directory() . '/template-parts/book-full-page-nav.php');
         }
       ?>
       <ul class="slider">
@@ -95,7 +95,7 @@
       </ul>
     </div>
     <?php if($book_fullscreen != true): ?>
-      <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK IN FULL SCREEN</a>
+      <a class="fullscreen-btn" href="<?php echo get_permalink() . '?fullscreen=true'; ?>">CLICK TO VIEW BOOK <br />IN FULL SCREEN</a>
     <?php endif; ?>
   </section> <!-- book-section - end -->
 
