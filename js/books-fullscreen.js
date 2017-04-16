@@ -22,48 +22,50 @@
     // Slider functionality
     /* ---------------------------------------------------------------------- */
 
-    var $slider = $('.slider');
-    $slider.bxSlider({
-      pager: false,
-      nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-      prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-      onSliderLoad: function(){
-        // Apply browser height to wrapper and slider blocks
-        $('.bx-wrapper').css({'opacity': 0});
-        setTimeout(function(){
-          var browserHeight = $(window).height();
-          $('.wrapper').height(browserHeight);
-          if(((browserHeight * 1.5) - ((browserHeight * 1.5) * .1)) > $(window).width()){
-            var magicNum = .3;
-          } else {
-            var magicNum = .1;
-          }
-          $('.bx-wrapper').width((browserHeight * 1.5) - ((browserHeight * 1.5) * magicNum));
-          $('.slider .page-img').width((browserHeight * 1.5) - ((browserHeight * 1.5) * magicNum));
-          var sliderHeight = $('.slider .page-img').height();
-          $('.bx-viewport').height(sliderHeight);
+    function signBoxResize(){
+      var pageImgWidth = $('.swiper-slide').width();
+      window.sliderWidth = pageImgWidth;
+      var signLinkWidth = Math.ceil(pageImgWidth / 5);
+      $('.sign-link').width(signLinkWidth);
+      var signLinkPosition = Math.ceil(signLinkWidth / 10);
+      $('.sign-link').css({ top: signLinkPosition, right: signLinkPosition});
+    }
 
-          var sliderMarginTop = (browserHeight - sliderHeight) / 2;
-          $('.book-section').css({'padding-top': sliderMarginTop});
-
-          // // Apply new image width to slider width
-          var pageImgWidth = $('.slider .page-img').width();
-          window.sliderWidth = pageImgWidth;
-          $('.slider-page').width(pageImgWidth);
-
-          // // Apply width of sign link and position
-          var signLinkWidth = Math.ceil(pageImgWidth / 5);
-          $('.sign-link').width(signLinkWidth);
-          var signLinkPosition = Math.ceil(signLinkWidth / 10);
-          $('.sign-link').css({ top: signLinkPosition, right: signLinkPosition});
-
-          $slider.goToSlide(1);
-          $slider.goToSlide(0);
-          $('.bx-wrapper').css({'opacity': 1});
-        }, 500);
-
+    function swiperSizeAdjustment(){
+      var browserHeight = $(window).height();
+      $('.wrapper').height(browserHeight);
+      if(((browserHeight * 1.5) - ((browserHeight * 1.5) * .1)) > $(window).width()){
+        var magicNum = .3;
+      } else {
+        var magicNum = .1;
       }
-    });
+
+      $('.swiper-container').width((browserHeight * 1.5) - ((browserHeight * 1.5) * magicNum));
+      $('.swiper-slide').width((browserHeight * 1.5) - ((browserHeight * 1.5) * magicNum));
+
+      var sliderHeight = $('.swiper-slide .page-img').height();
+      $('.swiper-container').height(sliderHeight);
+
+      var sliderMarginTop = (browserHeight - sliderHeight) / 2;
+      $('.book-section').css({'padding-top': sliderMarginTop});
+
+      setTimeout(function(){
+        signBoxResize();
+      }, 1000);
+
+    }
+    swiperSizeAdjustment();
+
+    function swiperInit(){
+      var mySwiper = null;
+      mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
+      });
+      return mySwiper;
+    }
+    var mySwiper = swiperInit();
 
     /* ---------------------------------------------------------------------- */
     // Sign pop-up functionality
@@ -104,10 +106,8 @@
         } else {
           $('.book-full-page-please-rotate').hide();
           $('.book-section').show();
-          var currentSlide = $slider.getCurrentSlide();
-          $slider.destroySlider();
-          $slider.reloadSlider();
-          $slider.goToSlide(currentSlide);
+          swiperSizeAdjustment();
+          mySwiper.update();
         }
       }
     });

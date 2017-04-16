@@ -8,73 +8,124 @@
     // Slider functionality
     /* ---------------------------------------------------------------------- */
 
-    var $slider = $('.slider');
-    $slider.bxSlider({
-      pager: false,
-      nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-      prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-      onSliderLoad: function(){
-        $('.bx-wrapper').css({'opacity': 0});
-        setTimeout(function(){
-          var pageImgWidth = $('.slider .page-img').width();
-          window.sliderWidth = pageImgWidth;
-          // $('.slider').width(pageImgWidth);
-          // $('mfp-wrap').width(pageImgWidth);
-          //
-          // // Apply width of sign link and position
-          var signLinkWidth = Math.ceil(pageImgWidth / 5);
-          $('.sign-link').width(signLinkWidth);
-          var signLinkPosition = Math.ceil(signLinkWidth / 10);
-          $('.sign-link').css({ top: signLinkPosition, right: signLinkPosition});
-          $('.bx-wrapper').css({'opacity': 1});
-        }, 500);
+    function sliderFunctionality(){
+
+      function signBoxResize(){
+        var pageImgWidth = $('.swiper-slide .page-img').width();
+        window.sliderWidth = pageImgWidth;
+        var signLinkWidth = Math.ceil(pageImgWidth / 5);
+        $('.sign-link').width(signLinkWidth);
+        var signLinkPosition = Math.ceil(signLinkWidth / 10);
+        $('.sign-link').css({ top: signLinkPosition, right: signLinkPosition});
       }
-    });
+
+      var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        onInit: function(){
+          setTimeout(function(){
+            signBoxResize();
+          }, 1000);
+        },
+        onAfterResize: function(){
+          setTimeout(function(){
+            signBoxResize();
+          }, 1000);
+        }
+      });
+      setTimeout(function(){
+        mySwiper.slideTo(1);
+      }, 500);
+
+    }
 
     /* ---------------------------------------------------------------------- */
     // Sign pop-up functionality
     /* ---------------------------------------------------------------------- */
 
-    // init magnific popup
-    $('.sign-link').magnificPopup({
-      type:'inline',
-      closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>',
-      callbacks: {
-        open: function() {
-          var popWidth = window.sliderWidth * .7;
-          $('.white-popup-block').width(popWidth);
+    function popUpFunctionality(){
+
+      $('.sign-link').magnificPopup({
+        type:'inline',
+        closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-times" aria-hidden="true"></i></button>',
+        callbacks: {
+          open: function() {
+            var popWidth = window.sliderWidth * .7;
+            $('.white-popup-block').width(popWidth);
+          }
         }
-      }
-    });
-    $(document).on('click', '.mfp-close', function (e) {
-      e.preventDefault();
-      $.magnificPopup.close();
-    });
+      });
+      $(document).on('click', '.mfp-close', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+      });
 
-    var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
-    if(windowHeight > windowWidth){
-      console.log('please rotate');
     }
-    $(window).on('resize', function(){
-      var currentSlide = $slider.getCurrentSlide();
-      $slider.destroySlider();
-      $slider.reloadSlider();
-      $slider.goToSlide(currentSlide);
-      //sliderInitialize();
-      //}, 1000);
-      // if($(this).width() != windowWidth){
-      //   windowWidth = $(this).width();
-      //   windowHeight = $(this).height();
-      //   if(windowHeight > windowWidth){
-      //     console.log('please rotate');
-      //   } else {
-      //     $('.slider').slick('unslick');
-      //     sliderInitialize();
-      //   }
-      // }
-    });
 
+    /* ---------------------------------------------------------------------- */
+    // Preloader
+    /* ---------------------------------------------------------------------- */
+
+    var preload;
+    var progressText;
+    var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
+    var bookName = $('.book-page').attr('data-book');
+    var manifest = window.bookPreload.setupManifest(templateDirectoryURI, bookName);
+
+    function startPreload() {
+      preload = new createjs.LoadQueue(true);
+      preload.on("fileload", handleFileLoad);
+      preload.on("progress", handleFileProgress);
+      preload.on("complete", loadComplete);
+      preload.on("error", loadError);
+      preload.loadManifest(manifest);
+    }
+
+    function handleFileLoad(event) {
+      var html;
+      var idArray = event.item.id.split('-');
+      switch(idArray[1]){
+        case 'page':
+          if(idArray[0] == 'intro'){
+            html = '<img src="'+templateDirectoryURI+'/imgs/books/intro.jpg" class="page-img img-responsive" />';
+          } else {
+            html = '<img src="'+templateDirectoryURI+'/imgs/books/'+bookName+'/'+idArray[0]+'.jpg" class="page-img img-responsive" />';
+          }
+          break;
+        case 'sign':
+          html = '<div id="'+idArray[0]+'-sign" class="mfp-hide white-popup-block"><img src="'+templateDirectoryURI+'/imgs/signs/'+idArray[0]+'.jpg" class="img-responsive" /></div>';
+          break;
+
+        case 'signbox':
+          html = '<a href="#'+idArray[0]+'-sign" class="sign-link"><img src="'+templateDirectoryURI+'/imgs/books/sign-boxes/'+idArray[0]+'.jpg" class="img-responsive" /></a>';
+          break;
+      }
+      $('.swiper-slide'+'.'+idArray[0]).append(html);
+    }
+
+    function loadError(evt) {
+      console.log("Error!", evt.text);
+    }
+
+    function handleFileProgress(event) {
+      progressText = (preload.progress*100|0) + '%';
+      console.log(progressText);
+      $('.book-section-loader span').html(progressText);
+    }
+
+    function loadComplete(event) {
+      console.log('load conplete');
+      sliderFunctionality();
+      popUpFunctionality();
+      $('.book-section-loader').hide();
+      //$('.book-section .wrapper').fadeIn('slow');
+      $('.book-section .wrapper').removeClass('height-zero');
+      $('.book-section .wrapper').css({
+        'opacity': 1
+      });
+    }
+    startPreload();
 
   });
 })(jQuery);
