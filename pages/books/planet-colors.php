@@ -1,4 +1,144 @@
-<div class="book-page page-planet-colors">
+<script>
+  window.bookPreload = {};
+  window.bookPreload.setupManifest = function(templateDirectoryURI, bookName) {
+    return manifest = [
+      {
+        src:  templateDirectoryURI + "/imgs/books/intro.jpg",
+        id: "intro-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/colors.jpg",
+        id: "colors-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/colors.jpg",
+        id: "colors-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/colors.jpg",
+        id: "colors-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/brown.jpg",
+        id: "brown-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/brown.jpg",
+        id: "brown-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/brown.jpg",
+        id: "brown-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/green.jpg",
+        id: "green-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/green.jpg",
+        id: "green-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/green.jpg",
+        id: "green-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/yellow.jpg",
+        id: "yellow-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/yellow.jpg",
+        id: "yellow-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/yellow.jpg",
+        id: "yellow-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/black.jpg",
+        id: "black-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/black.jpg",
+        id: "black-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/black.jpg",
+        id: "black-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/purple.jpg",
+        id: "purple-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/purple.jpg",
+        id: "purple-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/purple.jpg",
+        id: "purple-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/white.jpg",
+        id: "white-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/white.jpg",
+        id: "white-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/white.jpg",
+        id: "white-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/orange.jpg",
+        id: "orange-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/orange.jpg",
+        id: "orange-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/orange.jpg",
+        id: "orange-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/red.jpg",
+        id: "red-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/red.jpg",
+        id: "red-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/red.jpg",
+        id: "red-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/blue.jpg",
+        id: "blue-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/signs/blue.jpg",
+        id: "blue-sign"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/blue.jpg",
+        id: "blue-signbox"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/credits.jpg",
+        id: "credits-page"
+      },
+      {
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/theend.jpg",
+        id: "theend-page"
+      }
+    ];
+  }
+</script>
+
+<div class="book-page page-planet-colors" data-book="planet-colors">
 
   <?php if($book_fullscreen == true){
       require_once( get_template_directory() . '/template-parts/book-full-page-please-rotate.php');
@@ -6,6 +146,8 @@
   ?>
 
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
+    <div class="book-section-loader">Loading... <span></span></div>
+    <div class="clear"></div>
     <div class="wrapper">
       <?php if($book_fullscreen == true){
           require( get_template_directory() . '/template-parts/book-full-page-nav.php');
@@ -15,97 +157,31 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <!-- intro - slide 0 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/intro.jpg" class="page-img img-responsive" />
-          </div>
+          <div class="swiper-slide intro"></div>
           <!-- title -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/title.jpg" class="page-img img-responsive" />
-            <a href="#colors-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/colors.jpg" class="img-responsive" /></a>
-            <div id="colors-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/colors.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide colors"></div>
           <!-- page 01 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/brown.jpg" class="page-img img-responsive" />
-            <a href="#brown-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/brown.jpg" class="img-responsive" /></a>
-            <div id="brown-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/brown.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide brown"></div>
           <!-- page 02 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/green.jpg" class="page-img img-responsive" />
-            <a href="#green-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/green.jpg" class="img-responsive" /></a>
-            <div id="green-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/green.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide green"></div>
           <!-- page 03 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/yellow.jpg" class="page-img img-responsive" />
-            <a href="#yellow-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/yellow.jpg" class="img-responsive" /></a>
-            <div id="yellow-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/yellow.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide yellow"></div>
           <!-- page 04 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/black.jpg" class="page-img img-responsive" />
-            <a href="#black-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/black.jpg" class="img-responsive" /></a>
-            <div id="black-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/black.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide black"></div>
           <!-- page 05 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/purple.jpg" class="page-img img-responsive" />
-            <a href="#purple-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/purple.jpg" class="img-responsive" /></a>
-            <div id="purple-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/purple.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide purple"></div>
           <!-- page 06 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/white.jpg" class="page-img img-responsive" />
-            <a href="#white-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/white.jpg" class="img-responsive" /></a>
-            <div id="white-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/white.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide white"></div>
           <!-- page 07 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/orange.jpg" class="page-img img-responsive" />
-            <a href="#orange-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/orange.jpg" class="img-responsive" /></a>
-            <div id="orange-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/orange.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide orange"></div>
           <!-- page 08 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/red.jpg" class="page-img img-responsive" />
-            <a href="#red-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/red.jpg" class="img-responsive" /></a>
-            <div id="red-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/red.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide red"></div>
           <!-- page 09 -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/blue.jpg" class="page-img img-responsive" />
-            <a href="#blue-sign" class="sign-link"><img src="<?php echo get_template_directory_uri(); ?>/imgs/books/sign-boxes/blue.jpg" class="img-responsive" /></a>
-            <div id="blue-sign" class="mfp-hide white-popup-block">
-              <img src="<?php echo get_template_directory_uri(); ?>/imgs/signs/blue.jpg" class="img-responsive" />
-            </div>
-          </div>
+          <div class="swiper-slide blue"></div>
           <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/credits.jpg" class="page-img img-responsive" />
-          </div>
+          <div class="swiper-slide credits"></div>
           <!-- the end -->
-          <div class="swiper-slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/imgs/books/planet-colors/the-end.jpg" class="page-img img-responsive" />
-          </div>
+          <div class="swiper-slide theend"></div>
         </div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         <div class="swiper-button-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>

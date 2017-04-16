@@ -105,21 +105,20 @@
     }
 
     function loadError(evt) {
-      console.log("Error!", evt.text);
+      // console.log("Error!", evt.text);
     }
 
     function handleFileProgress(event) {
       progressText = (preload.progress*100|0) + '%';
-      console.log(progressText);
+      // console.log(progressText);
       $('.book-section-loader span').html(progressText);
     }
 
     function loadComplete(event) {
-      console.log('load conplete');
+      // console.log('load conplete');
       sliderFunctionality();
       popUpFunctionality();
       $('.book-section-loader').hide();
-      //$('.book-section .wrapper').fadeIn('slow');
       $('.book-section .wrapper').removeClass('height-zero');
       $('.book-section .wrapper').css({
         'opacity': 1
