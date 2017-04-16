@@ -148,12 +148,11 @@
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="book-section-loader">Loading... <span></span></div>
     <div class="clear"></div>
-    <div class="wrapper">
+    <div class="wrapper height-zero">
       <?php if($book_fullscreen == true){
           require( get_template_directory() . '/template-parts/book-full-page-nav.php');
         }
       ?>
-
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <!-- intro - slide 0 -->

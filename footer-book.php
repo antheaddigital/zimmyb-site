@@ -22,9 +22,9 @@
 <script type="text/javascript" src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <?php if($book_fullscreen == true): ?>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books-fullscreen.js?ver=20170414.01"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books-fullscreen.js?ver=20170416.01"></script>
 <?php else: ?>
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books.js?ver=20170414.01"></script>
+  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/books.js?ver=20170416.02"></script>
 <?php endif; ?>
 </body>
 </html>

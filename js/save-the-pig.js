@@ -1,17 +1,21 @@
-(function($) {
- $('document').ready(function(){
-   $(window).scroll(function() {
-       if ($(this).scrollTop()) {
-           $('.back-to-top').fadeIn();
-       } else {
-           $('.back-to-top').fadeOut();
-       }
-     });
-  });
-})(jQuery);
-
 (function($){
   $(document).ready(function(){
+
+    var imgMode = $('.page-save-the-pig').attr('data-mode');
+    switch(imgMode) {
+      case 'animated':
+        var fileType = 'gif';
+        break;
+      case 'still':
+        var fileType = 'png';
+        break;
+      case 'null':
+
+        break;
+      default:
+
+    }
+    console.log(imgMode);
 
     window.playerStats = {
       pointsPerHit: 500,
@@ -250,7 +254,7 @@
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
         var pigNum = Math.floor(Math.random() * (5 - 1)) + 1;
         window.gameEngine.defaults.pigNum = pigNum;
-        var imageUrl = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/pig-'+pigNum+'.gif';
+        var imageUrl = window.gameEngine.defaults.$template_uri + '/imgs/games/save-the-pig/pig-'+pigNum+'-'+imgMode+'.'+fileType;
         //console.log(imageUrl);
         $('.pig-box').css('background-image', 'url(' + imageUrl + ')');
       },
@@ -262,8 +266,15 @@
       },
 
       pigBoxMove: function($pigBox){
+        var velocityPigTrackLength;
+        var windowWidth = $(window).width();
+        if(windowWidth >= 1300){
+          velocityPigTrackLength = '750px';
+        } else {
+          velocityPigTrackLength = '550px';
+        }
         $pigBox.velocity({
-          left: '700px'
+          left: velocityPigTrackLength
         }, {
           duration: window.playerStats.durationMax,
           easing: 'linear',
@@ -297,7 +308,7 @@
                 window.gameEngine.defaults.$letterBoxDiv.html('');
                 break;
             }
-            var pigCleanImage = window.gameEngine.defaults.$template_uri+'/imgs/games/save-the-pig/pig-clean-'+window.gameEngine.defaults.pigNum+'.gif';
+            var pigCleanImage = window.gameEngine.defaults.$template_uri+'/imgs/games/save-the-pig/pig-clean-'+window.gameEngine.defaults.pigNum+'-'+imgMode+'.'+fileType;
             $('.pig-clean-image').css({
               'background-image': 'url(' + pigCleanImage + ')'
             });
@@ -553,234 +564,240 @@
       $.magnificPopup.close();
     });
 
-  });
-})(jQuery);
+    if(imgMode != 'null'){
 
-(function($){
-  $(document).ready(function(){
+      $('.mode-select').hide();
+      if(imgMode == 'still'){
+        $('.stage-preload img').hide();
+      }
 
-    var manifest;
-    var preload;
-    var progressText;
-    var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
+      var manifest;
+      var preload;
+      var progressText;
+      var templateDirectoryURI = $('.template-directory-uri-value').attr('data-template-directory-uri');
 
-    function setupManifest() {
-      manifest = [
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/bigboard.png",
-          id: "bigboard"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/ice-table.png",
-          id: "ice-table"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/keyboard-backboard.png",
-          id: "keyboard-backboard"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/kid-dog-announcer.gif",
-          id: "kid-dog-announcer"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/mode-sign-character.jpg",
-          id: "mode-sign-character"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-1.gif",
-          id: "pig-1"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-2.gif",
-          id: "pig-2"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-3.gif",
-          id: "pig-3"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-4.gif",
-          id: "pig-4"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-1.gif",
-          id: "pig-clean-1"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-2.gif",
-          id: "pig-clean-2"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-3.gif",
-          id: "pig-clean-3"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-4.gif",
-          id: "pig-clean-4"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/rat-skunk.gif",
-          id: "rat-skunk"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/spinning-numbers.gif",
-          id: "spinning-numbers"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/save-the-pig-sign.gif",
-          id: "save-the-pig-sign"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/background.gif",
-          id: "background"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/signs.png",
-          id: "signs"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/zimmy-barrel-ad.png",
-          id: "zimmy-barrel-ad"
-        },
-        {
-          src:  templateDirectoryURI + "/imgs/games/save-the-pig/zimmy-barrel-animated.gif",
-          id: "zimmy-barrel-animated"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/big-wave.mp3",
-          id: "big-wave"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/fart.mp3",
-          id: "fart"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/snort.mp3",
-          id: "snort"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/yahoo.mp3",
-          id: "yahoo"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/applause.mp3",
-          id: "applause"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/music/save-the-pig/1.mp3",
-          id: "music"
-        },
-        {
-          src:  templateDirectoryURI + "/audio/effects/save-the-pig/spinning-numbers.mp3",
-          id: "spinning-numbers-sound"
+      function setupManifest() {
+        manifest = [
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/bigboard.png",
+            id: "bigboard"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/ice-table.png",
+            id: "ice-table"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/keyboard-backboard.png",
+            id: "keyboard-backboard"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/kid-dog-announcer-"+imgMode+"."+fileType,
+            id: "kid-dog-announcer"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/mode-sign-character.jpg",
+            id: "mode-sign-character"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-1-"+imgMode+"."+fileType,
+            id: "pig-1"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-2-"+imgMode+"."+fileType,
+            id: "pig-2"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-3-"+imgMode+"."+fileType,
+            id: "pig-3"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-4-"+imgMode+"."+fileType,
+            id: "pig-4"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-1-"+imgMode+"."+fileType,
+            id: "pig-clean-1"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-2-"+imgMode+"."+fileType,
+            id: "pig-clean-2"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-3-"+imgMode+"."+fileType,
+            id: "pig-clean-3"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-clean-4-"+imgMode+"."+fileType,
+            id: "pig-clean-4"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/rat-skunk-"+imgMode+"."+fileType,
+            id: "rat-skunk"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/spinning-numbers-"+imgMode+"."+fileType,
+            id: "spinning-numbers"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/save-the-pig-sign-"+imgMode+"."+fileType,
+            id: "save-the-pig-sign"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/background-"+imgMode+"."+fileType,
+            id: "background"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/signs.png",
+            id: "signs"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/zimmy-barrel-ad.png",
+            id: "zimmy-barrel-ad"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/zimmy-barrel-"+imgMode+"."+fileType,
+            id: "zimmy-barrel-animated"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/big-wave.mp3",
+            id: "big-wave"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/fart.mp3",
+            id: "fart"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/snort.mp3",
+            id: "snort"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/yahoo.mp3",
+            id: "yahoo"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/applause.mp3",
+            id: "applause"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/music/save-the-pig/1.mp3",
+            id: "music"
+          },
+          {
+            src:  templateDirectoryURI + "/audio/effects/save-the-pig/spinning-numbers.mp3",
+            id: "spinning-numbers-sound"
+          }
+        ];
+      }
+
+      function startPreload() {
+        preload = new createjs.LoadQueue(true);
+        preload.installPlugin(createjs.Sound);
+        preload.on("fileload", handleFileLoad);
+        preload.on("progress", handleFileProgress);
+        preload.on("complete", loadComplete);
+        preload.on("error", loadError);
+        preload.loadManifest(manifest);
+      }
+
+      function handleFileLoad(event) {
+        switch(event.item.id){
+          case 'background':
+            $('.stage').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'bigboard':
+            $('.game-head-board').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'save-the-pig-sign':
+            $('.game-logo-sign').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'ice-table':
+            $('.hidden-track').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'mode-sign-character':
+            $('.mode a').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'kid-dog-announcer':
+            $('.kid-dog-announcer').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'signs':
+            $('.letter-box.sign div').css('background-image', 'url(' + event.item.src + ')');
+            $('.pig-clean-show-answer .sign-letter div').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'keyboard-backboard':
+            $('.keyboard-wrapper').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'rat-skunk':
+            $('.rat-skunk').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'spinning-numbers':
+            window.gameDefaults.effects.spinningNumbers = event.item.src;
+            break;
+          case 'zimmy-barrel-ad':
+            $('.water-barrel-ad').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'zimmy-barrel-animated':
+            $('.water-barrel-wrapper').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'big-wave':
+            window.gameDefaults.effects.bigWave = new Audio(event.item.src);
+            break;
+          case 'fart':
+            window.gameDefaults.effects.fart = new Audio(event.item.src);
+            break;
+          case 'snort':
+            window.gameDefaults.effects.snort = new Audio(event.item.src);
+            break;
+          case 'music':
+            window.gameDefaults.music.song01 = new Audio(event.item.src);
+            break;
+          case 'applause':
+            window.gameDefaults.effects.applause = new Audio(event.item.src);
+            break;
+          case 'yahoo':
+            window.gameDefaults.effects.yahoo = new Audio(event.item.src);
+            break;
+          case 'spinning-numbers-sound':
+            window.gameDefaults.effects.spinningNumbersSound = new Audio(event.item.src);
+            break;
         }
-      ];
-    }
-
-    function startPreload() {
-      preload = new createjs.LoadQueue(true);
-      preload.installPlugin(createjs.Sound);
-      preload.on("fileload", handleFileLoad);
-      preload.on("progress", handleFileProgress);
-      preload.on("complete", loadComplete);
-      preload.on("error", loadError);
-      preload.loadManifest(manifest);
-    }
-
-    function handleFileLoad(event) {
-      switch(event.item.id){
-        case 'background':
-          $('.stage').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'bigboard':
-          $('.game-head-board').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'save-the-pig-sign':
-          $('.game-logo-sign').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'ice-table':
-          $('.hidden-track').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'mode-sign-character':
-          $('.mode a').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'kid-dog-announcer':
-          $('.kid-dog-announcer').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'signs':
-          $('.letter-box.sign div').css('background-image', 'url(' + event.item.src + ')');
-          $('.pig-clean-show-answer .sign-letter div').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'keyboard-backboard':
-          $('.keyboard-wrapper').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'rat-skunk':
-          $('.rat-skunk').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'spinning-numbers':
-          window.gameDefaults.effects.spinningNumbers = event.item.src;
-          break;
-        case 'zimmy-barrel-ad':
-          $('.water-barrel-ad').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'zimmy-barrel-animated':
-          $('.water-barrel-wrapper').css('background-image', 'url(' + event.item.src + ')');
-          break;
-        case 'big-wave':
-          window.gameDefaults.effects.bigWave = new Audio(event.item.src);
-          break;
-        case 'fart':
-          window.gameDefaults.effects.fart = new Audio(event.item.src);
-          break;
-        case 'snort':
-          window.gameDefaults.effects.snort = new Audio(event.item.src);
-          break;
-        case 'music':
-          window.gameDefaults.music.song01 = new Audio(event.item.src);
-          break;
-        case 'applause':
-          window.gameDefaults.effects.applause = new Audio(event.item.src);
-          break;
-        case 'yahoo':
-          window.gameDefaults.effects.yahoo = new Audio(event.item.src);
-          break;
-        case 'spinning-numbers-sound':
-          window.gameDefaults.effects.spinningNumbersSound = new Audio(event.item.src);
-          break;
       }
-    }
 
-    function loadError(evt) {
-      console.log("Error!", evt.text);
-    }
-
-    function handleFileProgress(event) {
-      progressText = (preload.progress*100|0) + '%';
-      $('.stage-preload span').html(progressText);
-    }
-
-    function loadComplete(event) {
-      var windowWidth = $(window).width();
-      if(windowWidth >= 1024){
-        stageHeight = '471px';
+      function loadError(evt) {
+        console.log("Error!", evt.text);
       }
-      if(windowWidth >= 1300){
-        stageHeight = '600px';
+
+      function handleFileProgress(event) {
+        progressText = (preload.progress*100|0) + '%';
+        $('.stage-preload span').html(progressText);
       }
+
+      function loadComplete(event) {
+        var windowWidth = $(window).width();
+        if(windowWidth >= 1024){
+          stageHeight = '471px';
+        }
+        if(windowWidth >= 1300){
+          stageHeight = '600px';
+        }
+        $('.stage-preload').hide();
+        $('.stage').css({
+          opacity: 1,
+          height: stageHeight
+        });
+        if(window.gameDefaults.soundEffectMusic){
+          window.gameDefaults.music.song01.loop = true;
+          window.gameDefaults.music.song01.play();
+        }
+        if(window.gameDefaults.soundEffectCheers){ window.gameDefaults.effects.applause.play(); }
+      }
+
+      setupManifest();
+      startPreload();
+
+    } else {
       $('.stage-preload').hide();
-      $('.stage').css({
-        opacity: 1,
-        height: stageHeight
-      });
-      if(window.gameDefaults.soundEffectMusic){
-        window.gameDefaults.music.song01.loop = true;
-        window.gameDefaults.music.song01.play();
-      }
-      if(window.gameDefaults.soundEffectCheers){ window.gameDefaults.effects.applause.play(); }
+      $('.mode-select').show();
     }
-
-    setupManifest();
-    startPreload();
 
   });
 })(jQuery);

@@ -1,4 +1,4 @@
-<div class="page-save-the-pig">
+<div class="page-save-the-pig" data-mode="<?php if(isset($_GET['mode'])){ echo $_GET['mode']; } else { echo 'null'; } ?>">
 
   <!-- <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/Le4_YYSo_Vk?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 
@@ -6,6 +6,20 @@
   <!-- save-the-pig-game -->
   <section class="save-the-pig-game">
     <div class="wrapper">
+      <div class="mode-select">
+        <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/games/save-the-pig/save-the-pig-sign-still.png" />
+        <h2>Select a Game Mode</h2>
+        <div class="mode-select-wrapper">
+          <div class="mode-select-mode mode-select-mode-animate">
+            <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=animated">animated</a>
+            <p>Faster Computers<br /><span> - and/or -</span><br />Faster Wifi</p>
+          </div>
+          <div class="mode-select-mode mode-select-mode-still">
+            <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=still">still</a>
+            <p>Slower Computers<br /><span> - and/or -</span><br />Slower Wifi</p>
+          </div>
+        </div>
+      </div>
       <div class="stage-preload">
         <img src="<?php echo get_template_directory_uri(); ?>/imgs/games/save-the-pig/loader.gif" />
         <div class="loading-message-wrapper">
