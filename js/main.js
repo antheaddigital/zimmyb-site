@@ -3,15 +3,31 @@ var templateDirectoryURI = $('.template-directory-uri-value').attr('data-templat
 /***********************************************************************************
  * Sitewide functionality
  ***********************************************************************************/
+ (function($) {
+  $('document').ready(function(){
+    $('.header-hamburger-toggle').on('click', function(e){
+      e.preventDefault();
+      $('.header-menu-wrapper').slideToggle('slow');
+    });
+  });
+ })(jQuery);
+
 (function($) {
- $('document').ready(function(){
-   $(window).scroll(function() {
-       if ($(this).scrollTop()) {
-           $('.back-to-top').fadeIn();
-       } else {
-           $('.back-to-top').fadeOut();
-       }
-     });
+  $('document').ready(function(){
+    $(window).scroll(function() {
+      if ($(this).scrollTop()) {
+        $('.back-to-top').fadeIn();
+      } else {
+        $('.back-to-top').fadeOut();
+      }
+    });
+    $('.back-to-top a').on('click', function(e){
+      e.preventDefault();
+      $('body').velocity('scroll', {
+        duration: 2000,
+        easing: 'easeInBack'
+      });
+    });
   });
 })(jQuery);
 

@@ -29,9 +29,11 @@
 
     <div class="footer-social-item footer-social-item-twitter-feed">
       <h4>Tweets</h4>
+      <p>Feeds coming soon...</p>
     </div>
     <div class="footer-social-item footer-social-item-facebook-feed">
       <h4>Facebook</h4>
+      <p>Feeds coming soon...</p>
     </div>
   </div>
 </section>

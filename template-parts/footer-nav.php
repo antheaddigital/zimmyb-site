@@ -14,8 +14,8 @@
 					<a class="footer-mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
 				</div>
 				<ul class="site-nav">
-					<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about' ) ); ?>">About</a></li>
-					<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'contact' ) ); ?>">Contact</a></li>
+					<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'about-us' ) ); ?>">About</a></li>
+					<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'contact-us' ) ); ?>">Contact</a></li>
 					<li><a href="<?php esc_url( home_url( '/' ) ); echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a></li>
 					<li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a></li>
 				</ul>
