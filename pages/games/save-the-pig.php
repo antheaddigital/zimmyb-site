@@ -137,8 +137,8 @@
               <div class="game-finished-popup-left-streak">Highest Streak: <span></span></div>
             </div>
             <div class="game-finished-popup-left-social-wrapper">
-              <a class="game-finished-popup-left-social-facebook" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a class="game-finished-popup-left-social-twitter" href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-left-social-facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" /></a>
+              <a class="game-finished-popup-left-social-twitter" href="http://twitter.com/share?text=Save-the-Pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" /></a>
               <!-- <a class="game-finished-popup-left-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a> -->
             </div>
             <div class="game-finished-popup-left-play-again-wrapper">
@@ -180,14 +180,17 @@
 
   <!-- book-game-description -->
   <?php
+    $book_game_social = 'Save the Pig! https://goo.gl/6cNS8Q';
     $book_game_title = 'save-the-pig';
     $book_game_description = '<h1>Save the Pig</h1>';
     $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
     $book_game_description .= '<div class="share">';
       $book_game_description .= '<ul class="Share-list">';
-        $book_game_description .= '<li><a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
-        $book_game_description .= '<li><a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
+      $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
+      $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
+      $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
       $book_game_description .= '</ul>';
+      $book_game_description .= '<div class="clear"></div>';
     $book_game_description .= '</div>';
     require_once( get_template_directory() . '/template-parts/book-game-description.php');
   ?>

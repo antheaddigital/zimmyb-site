@@ -115,27 +115,27 @@
                 <g id="Path-15">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                    <use stroke="#353BA3" stroke-width="1" xlink:href="#path-2"></use>
+                    <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-2"></use>
                 </g>
                 <g id="Path-16">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-4"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
-                    <use stroke="#353BA3" stroke-width="1" xlink:href="#path-4"></use>
+                    <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-4"></use>
                 </g>
                 <g id="Path-17">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-6"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
-                    <use stroke="#353BA3" stroke-width="1" xlink:href="#path-6"></use>
+                    <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-6"></use>
                 </g>
                 <g id="Path-17-Copy">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-8"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
-                    <use stroke="#353BA3" stroke-width="1" xlink:href="#path-8"></use>
+                    <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-8"></use>
                 </g>
                 <g id="Path-19">
                     <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-10"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
-                    <use stroke="#353BA3" stroke-width="1" xlink:href="#path-10"></use>
+                    <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-10"></use>
                 </g>
             </g>
             <g id="books" transform="translate(0.000000, 36.536029)">
@@ -143,32 +143,32 @@
                     <g id="Combined-Shape">
                         <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-13"></use>
                         <use fill="black" fill-opacity="1" filter="url(#filter-14)" xlink:href="#path-13"></use>
-                        <use stroke="#21501D" stroke-width="1" xlink:href="#path-13"></use>
+                        <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-13"></use>
                     </g>
                 </g>
                 <g id="o---left" transform="translate(26.092431, 0.529508)">
                     <g id="Combined-Shape">
                         <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-15"></use>
                         <use fill="black" fill-opacity="1" filter="url(#filter-16)" xlink:href="#path-15"></use>
-                        <use stroke="#21501D" stroke-width="1" xlink:href="#path-15"></use>
+                        <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-15"></use>
                     </g>
                 </g>
                 <g id="o---left-copy" transform="translate(47.864922, 0.529508)">
                     <g id="Combined-Shape">
                         <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-17"></use>
                         <use fill="black" fill-opacity="1" filter="url(#filter-18)" xlink:href="#path-17"></use>
-                        <use stroke="#21501D" stroke-width="1" xlink:href="#path-17"></use>
+                        <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-17"></use>
                     </g>
                 </g>
                 <g id="Path-21">
                     <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-19"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-20)" xlink:href="#path-19"></use>
-                    <use stroke="#21501D" stroke-width="1" xlink:href="#path-19"></use>
+                    <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-19"></use>
                 </g>
                 <g id="Path-22" transform="translate(99.799167, 12.796435) rotate(-360.000000) translate(-99.799167, -12.796435) ">
                     <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-21"></use>
                     <use fill="black" fill-opacity="1" filter="url(#filter-22)" xlink:href="#path-21"></use>
-                    <use stroke="#21501D" stroke-width="1" xlink:href="#path-21"></use>
+                    <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-21"></use>
                 </g>
             </g>
             <g id="hands" transform="translate(110.134819, 0.000000)">
@@ -176,23 +176,23 @@
                     <g id="Path-1">
                         <use fill="url(#linearGradient-12)" fill-rule="evenodd" xlink:href="#path-23"></use>
                         <use fill="black" fill-opacity="1" filter="url(#filter-24)" xlink:href="#path-23"></use>
-                        <use stroke="#21501D" stroke-width="1" xlink:href="#path-23"></use>
+                        <use stroke="#21501D" stroke-width="0.5" xlink:href="#path-23"></use>
                     </g>
-                    <path d="M11.5032001,29.1510902 C12.2770703,24.4362516 15.1450348,6.9094213 15.1450348,4.60482567" id="Path-2" stroke="#30431F"></path>
-                    <path d="M26.1830864,11.6487072 C26.1830864,11.8322075 24.9142924,27.8483978 24.9142924,32.2493503" id="Path-4" stroke="#30431F"></path>
-                    <path d="M20.8296763,4.1723411 C20.4876176,7.78981554 18.2997815,31.1215726 18.2997815,31.1215726" id="Path-3" stroke="#30431F"></path>
-                    <path d="M6.91890644,25.0340466 L6.41890644,28.0480508" id="Path-5" stroke="#30431F"></path>
+                    <path d="M11.5032001,29.1510902 C12.2770703,24.4362516 15.1450348,6.9094213 15.1450348,4.60482567" id="Path-2" stroke="#30431F" stroke-width="0.5"></path>
+                    <path d="M26.1830864,11.6487072 C26.1830864,11.8322075 24.9142924,27.8483978 24.9142924,32.2493503" id="Path-4" stroke="#30431F" stroke-width="0.5"></path>
+                    <path d="M20.8296763,4.1723411 C20.4876176,7.78981554 18.2997815,31.1215726 18.2997815,31.1215726" id="Path-3" stroke="#30431F" stroke-width="0.5"></path>
+                    <path d="M6.91890644,25.0340466 L6.41890644,28.0480508" id="Path-5" stroke="#30431F" stroke-width="0.5"></path>
                 </g>
                 <g id="right" transform="translate(47.313759, 31.500000) scale(-1, 1) translate(-47.313759, -31.500000) translate(31.313759, 0.000000)">
                     <g id="Path-1">
                         <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-25"></use>
                         <use fill="black" fill-opacity="1" filter="url(#filter-26)" xlink:href="#path-25"></use>
-                        <use stroke="#353BA3" stroke-width="1" xlink:href="#path-25"></use>
+                        <use stroke="#353BA3" stroke-width="0.5" xlink:href="#path-25"></use>
                     </g>
-                    <path d="M11.5032001,29.1510902 C12.2770703,24.4362516 15.1450348,6.9094213 15.1450348,4.60482567" id="Path-2" stroke="#161C7F" fill="#D8D8D8"></path>
-                    <path d="M26.1830864,11.6487072 C26.1830864,11.8322075 24.9142924,27.8483978 24.9142924,32.2493503" id="Path-4" stroke="#161C7F" fill="#D8D8D8"></path>
-                    <path d="M20.8296763,4.1723411 C20.4876176,7.78981554 18.2997815,31.1215726 18.2997815,31.1215726" id="Path-3" stroke="#161C7F" fill="#D8D8D8"></path>
-                    <path d="M6.91890644,25.0340466 L6.41890644,28.0480508" id="Path-5" stroke="#161C7F" fill="#D8D8D8"></path>
+                    <path d="M11.5032001,29.1510902 C12.2770703,24.4362516 15.1450348,6.9094213 15.1450348,4.60482567" id="Path-2" stroke="#161C7F" stroke-width="0.5" fill="#D8D8D8"></path>
+                    <path d="M26.1830864,11.6487072 C26.1830864,11.8322075 24.9142924,27.8483978 24.9142924,32.2493503" id="Path-4" stroke="#161C7F" stroke-width="0.5" fill="#D8D8D8"></path>
+                    <path d="M20.8296763,4.1723411 C20.4876176,7.78981554 18.2997815,31.1215726 18.2997815,31.1215726" id="Path-3" stroke="#161C7F" stroke-width="0.5" fill="#D8D8D8"></path>
+                    <path d="M6.91890644,25.0340466 L6.41890644,28.0480508" id="Path-5" stroke="#161C7F" stroke-width="0.5" fill="#D8D8D8"></path>
                 </g>
             </g>
         </g>
