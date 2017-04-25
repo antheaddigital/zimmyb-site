@@ -179,9 +179,12 @@
       $book_game_social = 'Bayme Pants - The Sun! It\'s Broken! https://goo.gl/ABNj5S';
       $book_game_title = 'bayme-pants-the-sun-its-broken';
       $book_game_description = '<h1>Bayme Pants - The Sun! It\'s Broken!</h1>';
-      $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+      $book_game_description .= '<div class="description">';
+        $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+      $book_game_description .= '</div>';
       $book_game_description .= '<div class="share">';
-        $book_game_description .= '<ul class="Share-list">';
+        $book_game_description .= '<h3 class="requirements-list">Share:</h3>';
+        $book_game_description .= '<ul class="share-list">';
           $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
           $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
           $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';

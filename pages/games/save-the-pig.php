@@ -2,7 +2,6 @@
 
   <!-- <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/Le4_YYSo_Vk?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 
-
   <!-- save-the-pig-game -->
   <section class="save-the-pig-game">
     <div class="wrapper">
@@ -183,16 +182,47 @@
     $book_game_social = 'Save the Pig! https://goo.gl/6cNS8Q';
     $book_game_title = 'save-the-pig';
     $book_game_description = '<h1>Save the Pig</h1>';
-    $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+    $book_game_description .= '<div class="description">';
+      $book_game_description .= '<p>Sign language typing game for everybody and all ages. Learn the alphabet in sign language and practice your typing skills while trying to save the pigs from a warm summer day bath.</p>';
+      $book_game_description .= '<p>The crowd will cheer you on as the pigs pick up speed toward the full barrel of water. Keep the pigs from getting clean! Pigs don\'t like a bath, but pigs don\'t know pigs stink!</p>';
+    $book_game_description .= '</div>';
+    $book_game_description .= '<div class="instructions">';
+      $book_game_description .= '<h3>Instructions:</h3>';
+      $book_game_description .= '<ol class="instructions-list">';
+        $book_game_description .= '<li><b>Choose between two different modes: Signs and Characters.</b> Practice your skills with either the alphabet in sign language, or written characters.</li>';
+        $book_game_description .= '<li><b>Be brave and ramp up the max speed by setting a high number.</b><ul class="instructions-sublist"><li>"0" zero - recommended for toddlers.</li><li>"5" five - if you want to look cool in front of your friends.</li><li>"10" ten - if you want to get embarrassed.</li></ul></li>';
+        $book_game_description .= '<li><b>Choose between two different modes: Signs and Characters.</b> Practice your skills with either the alphabet in sign language, or written characters.</li>';
+        $book_game_description .= '<li><b>Crack your knuckles and get ready to rock! Press START!!!</b></li>';
+      $book_game_description .= '</ol>';
+    $book_game_description .= '</div>';
+    $book_game_description .= '<div class="requirements">';
+      $book_game_description .= '<h3>Requirements:</h3>';
+      $book_game_description .= '<ul class="requirements-list">';
+        $book_game_description .= '<li><b>Width of device 1024px or Greater.</b> For example: Desktop, Laptop, and iPad (in landscape view).</li>';
+        $book_game_description .= '<li><b>Keyboard.</b> This is a typing game, so don\'t be lazy! Bust out your keyboard for some fast pig-time action!</li>';
+      $book_game_description .= '</ul>';
+    $book_game_description .= '</div>';
+    $book_game_description .= '<div class="troubleshooting">';
+      $book_game_description .= '<h3>Troubleshooting:</h3>';
+      $book_game_description .= '<ul class="troubleshooting-list">';
+        $book_game_description .= '<li><b>Why is the animation so choppy?</b> It could that you computer or touchpad is too slow. Try the "Still" version of the game, the animation starts to get choppy on slower devices.</li>';
+        $book_game_description .= '<li><b>How do I turn off the music?</b> Music and all sound effects can be toggled by clicking on the sound edit button in the uppper-left corner on the game.</li>';
+      $book_game_description .= '</ul>';
+    $book_game_description .= '</div>';
+    $book_game_description .= '<div class="study-guide">';
+      $book_game_description .= '<h3>Study Guide:</h3>';
+      $book_game_description .= '<p class="study-guide-description">Coming Soon!</p>';
+    $book_game_description .= '</div>';
     $book_game_description .= '<div class="share">';
-      $book_game_description .= '<ul class="Share-list">';
-      $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
-      $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
-      $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
+      $book_game_description .= '<h3 class="requirements-list">Share:</h3>';
+      $book_game_description .= '<ul class="share-list">';
+        $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
+        $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
+        $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
       $book_game_description .= '</ul>';
       $book_game_description .= '<div class="clear"></div>';
     $book_game_description .= '</div>';
-    require_once( get_template_directory() . '/template-parts/book-game-description.php');
+    require_once( get_template_directory() . '/template-parts/book-game-description.php' );
   ?>
   <!-- book-game-description - end -->
 
