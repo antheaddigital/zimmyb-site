@@ -1,21 +1,46 @@
-<div class="page-save-the-pig" data-mode="<?php if(isset($_GET['mode'])){ echo $_GET['mode']; } else { echo 'null'; } ?>">
-
-  <!-- <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/Le4_YYSo_Vk?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
+<?php
+if( !isset($_GET['mode']) || $_GET['mode'] == '' ){
+  $data_mode = 'null';
+} else {
+  switch ($_GET['mode']) {
+    case 'still':
+      $data_mode = 'still';
+      break;
+    case 'animated':
+      $data_mode = 'animated';
+      break;
+    default:
+      $data_mode = 'null';
+      break;
+  }
+}
+?>
+<div class="page-save-the-pig" data-mode="<?php echo $data_mode; ?>">
 
   <!-- save-the-pig-game -->
   <section class="save-the-pig-game">
     <div class="wrapper">
       <div class="mode-select">
         <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/games/save-the-pig/save-the-pig-sign-still.png" />
-        <h2>Select a Game Mode</h2>
-        <div class="mode-select-wrapper">
-          <div class="mode-select-mode mode-select-mode-animate">
-            <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=animated">animated</a>
-            <p>Faster Computers<br /><span> - and/or -</span><br />Faster Wifi</p>
+        <div class="mode-select-requirements-no">
+          <span>Oink!! Oink!!!</span>
+          <p>Sorry! You need to be on a device that has a width of 1024px or Greater. For example: Desktop, Laptop, and iPad (in landscape view).</p>
+        </div>
+        <div class="mode-select-requirements-yes">
+          <h2>Select a Game Mode</h2>
+          <div class="mode-select-wrapper">
+            <div class="mode-select-mode mode-select-mode-animate">
+              <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=animated">animated</a>
+              <p>Faster Computers<br /><span> - and/or -</span><br />Faster Wifi</p>
+            </div>
+            <div class="mode-select-mode mode-select-mode-still">
+              <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=still">still</a>
+              <p>Slower Computers<br /><span> - and/or -</span><br />Slower Wifi</p>
+            </div>
           </div>
-          <div class="mode-select-mode mode-select-mode-still">
-            <a href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig/?mode=still">still</a>
-            <p>Slower Computers<br /><span> - and/or -</span><br />Slower Wifi</p>
+          <div class="mode-select-keyboard-required">
+            <span>KEYBOARD REQUIRED!!!</span>
+            <p>Before you begin, make sure your keyboard is hooked up.<br />Then get ready to save some pigs!</p>
           </div>
         </div>
       </div>
@@ -48,8 +73,8 @@
           <div class="game-logo-sign"></div>
           <div class="game-control-board">
             <div class="player-score-board">
-              <div class="player-score"><span class="score-label">score</span><span class="score">0</span></div>
-              <div class="player-streak"><span class="streak-label">streak</span><span class="streak">0</span></div>
+              <div class="player-score"><span class="label">score</span><span class="score">0</span></div>
+              <div class="player-streak"><span class="label">streak</span><span class="streak">0</span></div>
               <div class="clear"></div>
             </div>
             <div class="controls">
@@ -136,8 +161,9 @@
               <div class="game-finished-popup-left-streak">Highest Streak: <span></span></div>
             </div>
             <div class="game-finished-popup-left-social-wrapper">
-              <a class="game-finished-popup-left-social-facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-facebook.png" alt="Zimmy Books on Facebook" /></a>
-              <a class="game-finished-popup-left-social-twitter" href="http://twitter.com/share?text=Save-the-Pig"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmybooks-twitter.png" alt="Zimmy Books on Twitter" /></a>
+              <a class="game-finished-popup-left-social-wrapper-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-left-social-wrapper-twitter" target="_blank" href="http://twitter.com/share?text=Save-the-Pig https://goo.gl/6cNS8Q"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a class="game-finished-popup-left-social-wrapper-email" href="mailto:?subject=Check this out!&amp;body=Check out this! Save the Pig! https://goo.gl/6cNS8Q"><i class="fa fa-envelope" aria-hidden="true"></i></a>
               <!-- <a class="game-finished-popup-left-social-youtube" href=""><i class="fa fa-youtube-square" aria-hidden="true"></i></a> -->
             </div>
             <div class="game-finished-popup-left-play-again-wrapper">
@@ -181,7 +207,7 @@
   <?php
     $book_game_social = 'Save the Pig! https://goo.gl/6cNS8Q';
     $book_game_title = 'save-the-pig';
-    $book_game_description = '<h1>Save the Pig</h1>';
+    $book_game_description = '<h1>SAVE THE PIG</h1>';
     $book_game_description .= '<div class="description">';
       $book_game_description .= '<p>Sign language typing game for everybody and all ages. Learn the alphabet in sign language and practice your typing skills while trying to save the pigs from a warm summer day bath.</p>';
       $book_game_description .= '<p>The crowd will cheer you on as the pigs pick up speed toward the full barrel of water. Keep the pigs from getting clean! Pigs don\'t like a bath, but pigs don\'t know pigs stink!</p>';
@@ -189,9 +215,9 @@
     $book_game_description .= '<div class="instructions">';
       $book_game_description .= '<h3>Instructions:</h3>';
       $book_game_description .= '<ol class="instructions-list">';
-        $book_game_description .= '<li><b>Choose between two different modes: Signs and Characters.</b> Practice your skills with either the alphabet in sign language, or written characters.</li>';
-        $book_game_description .= '<li><b>Be brave and ramp up the max speed by setting a high number.</b><ul class="instructions-sublist"><li>"0" zero - recommended for toddlers.</li><li>"5" five - if you want to look cool in front of your friends.</li><li>"10" ten - if you want to get embarrassed.</li></ul></li>';
-        $book_game_description .= '<li><b>Choose between two different modes: Signs and Characters.</b> Practice your skills with either the alphabet in sign language, or written characters.</li>';
+        $book_game_description .= '<li><b>Choose a "MODE": Signs or Characters.</b> Practice your typing skills with either the alphabet in sign language, or written characters.</li>';
+        $book_game_description .= '<li><b>Set your "MAX SPEED".</b><ul class="instructions-sublist"><li>"0 to 3" Zero to Three - recommended for young kids.</li><li>"4 to 7" Four to Seven - if you want to look cool in front of your friends.</li><li>"8 to 10" Eight to Ten - if you want to get embarrassed.</li></ul></li>';
+        $book_game_description .= '<li><b>Set number of "STRIKES".</b> Just like playing baseball.</li>';
         $book_game_description .= '<li><b>Crack your knuckles and get ready to rock! Press START!!!</b></li>';
       $book_game_description .= '</ol>';
     $book_game_description .= '</div>';
@@ -205,7 +231,7 @@
     $book_game_description .= '<div class="troubleshooting">';
       $book_game_description .= '<h3>Troubleshooting:</h3>';
       $book_game_description .= '<ul class="troubleshooting-list">';
-        $book_game_description .= '<li><b>Why is the animation so choppy?</b> It could that you computer or touchpad is too slow. Try the "Still" version of the game, the animation starts to get choppy on slower devices.</li>';
+        $book_game_description .= '<li><b>Why is the animation so choppy?</b> It could be that your computer or touchpad is too slow. The animation starts to get choppy on slower computers/devices. Try the "Still" version of the game, it\'s a non-animated version of the game and recommended for slower computers/devices.</li>';
         $book_game_description .= '<li><b>How do I turn off the music?</b> Music and all sound effects can be toggled by clicking on the sound edit button in the uppper-left corner on the game.</li>';
       $book_game_description .= '</ul>';
     $book_game_description .= '</div>';
@@ -214,7 +240,7 @@
       $book_game_description .= '<p class="study-guide-description">Coming Soon!</p>';
     $book_game_description .= '</div>';
     $book_game_description .= '<div class="share">';
-      $book_game_description .= '<h3 class="requirements-list">Share:</h3>';
+      $book_game_description .= '<h3>Share:</h3>';
       $book_game_description .= '<ul class="share-list">';
         $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
         $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';

@@ -200,12 +200,16 @@
     <?php
       $book_game_social = 'Planet Colors https://goo.gl/fHnYzf';
       $book_game_title = 'planet-colors';
-      $book_game_description = '<h1>Planet Colors</h1>';
+      $book_game_description = '<h1>PLANET COLORS</h1>';
       $book_game_description .= '<div class="description">';
-        $book_game_description .= '<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>';
+        $book_game_description .= '<p>Visit all the different location around Planet Colors. Each location has a unique theme and setting, based on one of the many basic colors. Below is a list of colors you will learn on this amazing adventure.</p>';
+      $book_game_description .= '</div>';
+      $book_game_description .= '<div class="signs-learned">';
+        $book_game_description .= '<h3>Signs You Will Learn:</h3>';
+        $book_game_description .= '<p class="signs-learned-description">Brown, Green, Yellow, Black, Purple, White, Orange, Red, Blue</p>';
       $book_game_description .= '</div>';
       $book_game_description .= '<div class="share">';
-        $book_game_description .= '<h3 class="requirements-list">Share:</h3>';
+        $book_game_description .= '<h3>Share:</h3>';
         $book_game_description .= '<ul class="share-list">';
           $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
           $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';

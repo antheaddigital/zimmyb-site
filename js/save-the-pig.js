@@ -559,6 +559,7 @@
       var challengeSpeed = parseInt($('.challenge-settings-speed').html());
       var challengeStrikes = parseInt($('.challenge-settings-strikes').html());
       window.gamePresets.speed = challengeSpeed;
+      window.gamePresets.strikes = challengeStrikes;
       $('.game-control-board .inputs .speed').val(challengeSpeed);
       $('.game-control-board .inputs .strikes').val(challengeStrikes);
       $.magnificPopup.close();
@@ -595,8 +596,12 @@
             id: "kid-dog-announcer"
           },
           {
-            src:  templateDirectoryURI + "/imgs/games/save-the-pig/mode-sign-character.jpg",
-            id: "mode-sign-character"
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/mode-characters.jpg",
+            id: "mode-characters"
+          },
+          {
+            src:  templateDirectoryURI + "/imgs/games/save-the-pig/mode-signs.jpg",
+            id: "mode-signs"
           },
           {
             src:  templateDirectoryURI + "/imgs/games/save-the-pig/pig-1-"+imgMode+"."+fileType,
@@ -713,8 +718,11 @@
           case 'ice-table':
             $('.hidden-track').css('background-image', 'url(' + event.item.src + ')');
             break;
-          case 'mode-sign-character':
-            $('.mode a').css('background-image', 'url(' + event.item.src + ')');
+          case 'mode-characters':
+            $('.mode .character').css('background-image', 'url(' + event.item.src + ')');
+            break;
+          case 'mode-signs':
+            $('.mode .sign').css('background-image', 'url(' + event.item.src + ')');
             break;
           case 'kid-dog-announcer':
             $('.kid-dog-announcer').css('background-image', 'url(' + event.item.src + ')');
