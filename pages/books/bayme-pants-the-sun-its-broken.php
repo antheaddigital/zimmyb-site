@@ -176,7 +176,7 @@
 
     <!-- book-game-description -->
     <?php
-      $book_game_social = 'Bayme Pants - The Sun! It\'s Broken! https://goo.gl/ABNj5S';
+      $book_game_social = 'Bayme Pants - The Sun! It\'s Broken! https://goo.gl/ABNj5S via @ZimmyBooks';
       $book_game_title = 'bayme-pants-the-sun-its-broken';
       $book_game_description = '<h1>BAYME PANTS<br />THE SUN! IT\'S BROKEN</h1>';
       $book_game_description .= '<div class="description">';

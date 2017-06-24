@@ -9,9 +9,9 @@
 			?>
 			<!-- support-bar -->
 			<?php
-				if(!in_array($post_slug, $page_array)){
-					require_once( get_template_directory() . '/template-parts/support-bar.php');
-				}
+				// if(!in_array($post_slug, $page_array)){
+				// 	require_once( get_template_directory() . '/template-parts/support-bar.php');
+				// }
 			?>
 			<!-- support-bar - end -->
 			<!-- footer-social -->

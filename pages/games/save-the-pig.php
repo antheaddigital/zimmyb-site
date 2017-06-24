@@ -205,7 +205,7 @@ if( !isset($_GET['mode']) || $_GET['mode'] == '' ){
 
   <!-- book-game-description -->
   <?php
-    $book_game_social = 'Save the Pig! https://goo.gl/6cNS8Q';
+    $book_game_social = 'Save the Pig! https://goo.gl/6cNS8Q via @ZimmyBooks';
     $book_game_title = 'save-the-pig';
     $book_game_description = '<h1>SAVE THE PIG</h1>';
     $book_game_description .= '<div class="description">';

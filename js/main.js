@@ -48,6 +48,10 @@ var templateDirectoryURI = $('.template-directory-uri-value').attr('data-templat
       var particlesJSON = templateDirectoryURI + '/js/particles-games-01.json';
       particlesJS.load('games-particles', particlesJSON);
     }
+    if ($('#printables-particles').length) {
+      var particlesJSON = templateDirectoryURI + '/js/particles-printables-01.json';
+      particlesJS.load('printables-particles', particlesJSON);
+    }
   });
 })(jQuery);
 

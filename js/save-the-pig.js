@@ -15,7 +15,7 @@
       default:
 
     }
-    console.log(imgMode);
+    //console.log(imgMode);
 
     window.playerStats = {
       pointsPerHit: 500,

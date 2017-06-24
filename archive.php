@@ -22,8 +22,8 @@ $obj = get_queried_object();
 		case 'Games':
 			$hero_header_text = 'Games for Teaching Sign Language';
 			break;
-		case 'Coloring':
-			$hero_header_text = 'Coloring Books that Teach Kids Sign Language';
+		case 'Printables':
+			$hero_header_text = 'Printables that Teach Kids Sign Language';
 			break;
 	}
 ?>

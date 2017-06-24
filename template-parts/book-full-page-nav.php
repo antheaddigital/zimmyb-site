@@ -3,10 +3,10 @@
   $post_slug = $post->post_name;
   switch ($post_slug) {
     case 'planet-colors':
-      $book_title = 'Planet Colors : https://goo.gl/vc8kZ5';
+      $book_title = 'Planet Colors : https://goo.gl/vc8kZ5 via @ZimmyBooks';
       break;
     case 'bayme-pants-the-sun-its-broken':
-      $book_title = 'Bayme Pants - The Sun! It\'s Broken! : https://goo.gl/qEFGYc';
+      $book_title = 'Bayme Pants - The Sun! It\'s Broken! : https://goo.gl/qEFGYc via @ZimmyBooks';
       break;
   }
 ?>

@@ -198,7 +198,7 @@
 
     <!-- book-game-description -->
     <?php
-      $book_game_social = 'Planet Colors https://goo.gl/fHnYzf';
+      $book_game_social = 'Planet Colors https://goo.gl/fHnYzf via @ZimmyBooks';
       $book_game_title = 'planet-colors';
       $book_game_description = '<h1>PLANET COLORS</h1>';
       $book_game_description .= '<div class="description">';

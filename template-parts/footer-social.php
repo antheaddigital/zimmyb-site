@@ -33,12 +33,20 @@
     </div>
 
     <div class="footer-social-item footer-social-item-twitter-feed">
-      <h4>Tweets</h4>
-      <p>Feeds coming soon...</p>
+      <h4>Zimmy Books Twitter!</h4>
+      <a class="twitter-timeline" data-height="400" href="https://twitter.com/ZimmyBooks">Tweets by ZimmyBooks</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <div class="footer-social-item footer-social-item-facebook-feed">
-      <h4>Facebook</h4>
-      <p>Feeds coming soon...</p>
+      <h4>Zimmy Books Facebook!</h4>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=147902719091020";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="fb-page" data-href="https://www.facebook.com/zimmybooks/" data-tabs="timeline" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/zimmybooks/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/zimmybooks/">Zimmy Books</a></blockquote></div>
     </div>
   </div>
 </section>
