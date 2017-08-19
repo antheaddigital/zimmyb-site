@@ -13,7 +13,7 @@
 <section class="site-intro" id="home-particles">
   <div class="intro-wrapper">
     <div class="site-intro-description">
-      <h1>Books and Games for Learning Sign Language</h1>
+      <h1>ASL Books and Games for the Entire Family!</h1>
       <p>Welcome to Zimmy Books! Here you will learn sign language in a very fun way. All learning material you find here at Zimmy Books is, and will always be, 100% free.<span>ALL AGES / EVERYBODY!</span></p>
     </div>
     <img class="zimmy-home img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-book-sign-1.png" />

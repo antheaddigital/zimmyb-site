@@ -25,7 +25,7 @@ error_reporting(E_ALL ^ E_NOTICE);
   <meta name="msapplication-tap-highlight" content="no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/imgs/site/favicon.png" />
-  <title></title>
+  <title><?php wp_title(''); ?></title>
   <meta name="description" content="">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?ver=20170416.02">
 </head>
