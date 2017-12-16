@@ -3,7 +3,8 @@
     <div class="header-content">
       <div class="header-logo-wrapper">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <img class="nav-logo img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo.svg" />
+          <!-- <img class="nav-logo img-responsive" src="<?php //echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo.svg" /> -->
+          <img class="nav-logo img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/logo-temp.svg" />
         </a>
       </div>
       <div class="header-hamburger">

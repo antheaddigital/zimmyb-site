@@ -6,6 +6,7 @@
 <?php if($_SESSION['env'] == 'production') { require_once( get_template_directory() . '/template-parts/gtm-head.php' ); } ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes">
+<meta name="google-site-verification" content="RJvwgBshb7keJMZyFMRjXG8UHEkod_LCk4QIXQB_fco" />
 <?php //require_once( get_template_directory() . '/template-parts/module-page-checks-settings.php'); ?>
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/imgs/site/favicon.png" />
 <?php wp_head(); ?>
