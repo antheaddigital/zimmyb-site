@@ -3,6 +3,8 @@
 (function($){
   $(document).ready(function(){
 
+    $('body').addClass('book-fullscreen');
+
     var imgMode = $('.page-save-the-pig').attr('data-mode');
     switch(imgMode) {
       case 'animated':

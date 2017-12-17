@@ -3,21 +3,7 @@
 
     window.bookFullpage = {};
 
-    $('body').removeClass('book-siteview');
     $('body').addClass('book-fullscreen');
-
-    /* ---------------------------------------------------------------------- */
-    // Navigation functionality
-    /* ---------------------------------------------------------------------- */
-    $('.fullscreen-nav .site-nav, .fullscreen-nav .share').on('click', function(e){
-      e.preventDefault();
-      var dataMenuOption = $(this).attr('data-menu-option');
-      $('.'+dataMenuOption).show();
-      $('.'+dataMenuOption+' .close').on('click', function(e){
-        e.preventDefault();
-        $('.'+dataMenuOption).hide();
-      });
-    });
 
     /* ---------------------------------------------------------------------- */
     // Slider functionality

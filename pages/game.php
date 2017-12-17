@@ -10,8 +10,12 @@ $post_slug = $post->post_name;
 switch ($post_slug) {
   case 'save-the-pig':
     $header_libs = [
+      'jquery',
       'font-awesome',
-      'magnific-popup'
+      'magnific-popup',
+      'velocity',
+      'preloadjs',
+      'soundjs'
     ];
     $css_file = 'save-the-pig';
     break;
