@@ -120,18 +120,20 @@
 
 <div class="book-page page-bayme-pants-the-sun-its-broken" data-book="bayme-pants-the-sun-its-broken">
 
-  <?php if($book_fullscreen == true){
-      require_once( get_template_directory() . '/template-parts/book-full-page-please-rotate.php');
-    }
+  <?php
+    //if($book_fullscreen == true){
+      require_once( get_template_directory() . '/template-parts/full-page-please-rotate.php');
+    //}
   ?>
 
   <section class="book-section <?php if(isset($book_fullscreen_class)){ echo $book_fullscreen_class; } ?>">
     <div class="book-section-loader">Loading... <span></span></div>
     <div class="clear"></div>
     <div class="wrapper height-zero">
-      <?php if($book_fullscreen == true){
-          require( get_template_directory() . '/template-parts/book-full-page-nav.php');
-        }
+      <?php
+        //if($book_fullscreen == true){
+          require( get_template_directory() . '/template-parts/full-page-nav.php');
+        //}
       ?>
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -170,32 +172,32 @@
     <?php endif; ?>
   </section> <!-- book-section - end -->
 
-  <?php if($book_fullscreen == true): ?>
+  <?php //if($book_fullscreen == true): ?>
 
-  <?php else: ?>
+  <?php //else: ?>
 
     <!-- book-game-description -->
     <?php
-      $book_game_social = 'Bayme Pants - The Sun! It\'s Broken! https://goo.gl/ABNj5S via @ZimmyBooks';
-      $book_game_title = 'bayme-pants-the-sun-its-broken';
-      $book_game_description = '<h1>BAYME PANTS<br />THE SUN! IT\'S BROKEN</h1>';
-      $book_game_description .= '<div class="description">';
-        $book_game_description .= '<p>Hang out with Bayme Pants as she goes on a dreamy adventure in search for why the sun is broken. Along the way, she meets Mr. Rabbit, Mr. Fish, and Mr. Monkey. Below is a list of signs you will learn with Bayme Pants and her friends.</p>';
-      $book_game_description .= '</div>';
-      $book_game_description .= '<div class="signs-learned">';
-        $book_game_description .= '<h3>Signs You Will Learn:</h3>';
-        $book_game_description .= '<p class="signs-learned-description">Sun, Broken, Sleep, Rabbit, Fish, Monkey, Moon, Working</p>';
-      $book_game_description .= '</div>';
-      $book_game_description .= '<div class="share">';
-        $book_game_description .= '<h3>Share:</h3>';
-        $book_game_description .= '<ul class="share-list">';
-          $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
-          $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
-          $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
-        $book_game_description .= '</ul>';
-        $book_game_description .= '<div class="clear"></div>';
-      $book_game_description .= '</div>';
-      require_once( get_template_directory() . '/template-parts/book-game-description.php');
+      // $book_game_social = 'Bayme Pants - The Sun! It\'s Broken! https://goo.gl/ABNj5S via @ZimmyBooks';
+      // $book_game_title = 'bayme-pants-the-sun-its-broken';
+      // $book_game_description = '<h1>BAYME PANTS<br />THE SUN! IT\'S BROKEN</h1>';
+      // $book_game_description .= '<div class="description">';
+      //   $book_game_description .= '<p>Hang out with Bayme Pants as she goes on a dreamy adventure in search for why the sun is broken. Along the way, she meets Mr. Rabbit, Mr. Fish, and Mr. Monkey. Below is a list of signs you will learn with Bayme Pants and her friends.</p>';
+      // $book_game_description .= '</div>';
+      // $book_game_description .= '<div class="signs-learned">';
+      //   $book_game_description .= '<h3>Signs You Will Learn:</h3>';
+      //   $book_game_description .= '<p class="signs-learned-description">Sun, Broken, Sleep, Rabbit, Fish, Monkey, Moon, Working</p>';
+      // $book_game_description .= '</div>';
+      // $book_game_description .= '<div class="share">';
+      //   $book_game_description .= '<h3>Share:</h3>';
+      //   $book_game_description .= '<ul class="share-list">';
+      //     $book_game_description .= '<li><a class="social-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u='.get_permalink().'"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>';
+      //     $book_game_description .= '<li><a class="social-twitter" target="_blank" href="http://twitter.com/share?text='.$book_game_social.'"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>';
+      //     $book_game_description .= '<li><a class="social-email" href="mailto:?subject=Check this out!&amp;body=Check out this '.$book_game_social.'"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>';
+      //   $book_game_description .= '</ul>';
+      //   $book_game_description .= '<div class="clear"></div>';
+      // $book_game_description .= '</div>';
+      // require_once( get_template_directory() . '/template-parts/book-game-description.php');
     ?>
     <!-- book-game-description - end -->
 
@@ -203,6 +205,6 @@
     <?php // require_once( get_template_directory() . '/template-parts/more-recommendations.php'); ?>
     <!-- recommendations - end -->
 
-  <?php endif; ?>
+  <?php ///endif; ?>
 
 </div> <!-- book-page - end -->

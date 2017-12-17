@@ -8,13 +8,13 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 ?>
 <?php
-  if(isset($_GET['fullscreen']) && $_GET['fullscreen'] == 'true'){
+  // if(isset($_GET['fullscreen']) && $_GET['fullscreen'] == 'true'){
     $book_fullscreen = true;
     $book_fullscreen_class = 'fullscreen';
-  } else {
-    $book_fullscreen = false;
-    $book_fullscreen_class = 'siteview';
-  }
+  // } else {
+  //   $book_fullscreen = false;
+  //   $book_fullscreen_class = 'siteview';
+  // }
 ?>
 <!doctype html>
 <html lang="en">
@@ -36,13 +36,13 @@ $device_type = Detect::deviceType();
 <body <?php body_class($device_type); ?>>
 <?php require_once( get_template_directory() . '/template-parts/gtm-body.php' ); ?>
 <input type="hidden" class="template-directory-uri-value" data-template-directory-uri="<?php echo get_template_directory_uri(); ?>" />
-<?php if($book_fullscreen == true): ?>
+<?php //if($book_fullscreen == true): ?>
 
-<?php else: ?>
+<?php //else: ?>
   <!-- header-nav -->
-  <?php require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
+  <?php //require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
   <!-- header-nav - end -->
-  <div class="site-wrapper">
+  <!-- <div class="site-wrapper">
   <div class="site-content-border">
-  <div class="site-content">
-<?php endif; ?>
+  <div class="site-content"> -->
+<?php //endif; ?>

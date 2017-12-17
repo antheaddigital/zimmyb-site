@@ -1,3 +1,5 @@
+"use strict";
+
 (function($){
   $(document).ready(function(){
 
@@ -780,7 +782,8 @@
       }
 
       function loadComplete(event) {
-        var windowWidth = $(window).width();
+        var windowWidth = $(window).width(),
+            stageHeight;
         if(windowWidth >= 1024){
           stageHeight = '471px';
         }

@@ -17,13 +17,13 @@ $obj = get_queried_object();
 <?php
 	switch($obj->cat_name) {
 		case 'Books':
-			$hero_header_text = 'Sign Language Books for All Ages';
+			$hero_header_text = 'ASL Books Online';
 			break;
 		case 'Games':
-			$hero_header_text = 'Games for Teaching Sign Language';
+			$hero_header_text = 'ASL Games Online';
 			break;
 		case 'Printables':
-			$hero_header_text = 'Printables that Teach Kids Sign Language';
+			$hero_header_text = 'ASL Printables';
 			break;
 	}
 ?>
@@ -48,19 +48,15 @@ if ( have_posts() ) : ?>
 
   <?php while ( have_posts() ) : the_post(); ?>
 
-    <!-- get_template_part( 'template-parts/content', get_post_format() ); -->
-        <?php if( have_rows('search_results') ): ?>
-          <?php while ( have_rows('search_results') ) : the_row(); ?>
-            <?php if( get_row_layout() == 'content' ): ?>
-              <div class="result result-<?php echo strtolower($obj->cat_name); ?>">
-                <a class="result-img" href="<?php the_sub_field('link'); ?>"><img class="img-responsive" src="<?php the_sub_field('image'); ?>" /></a>
-                <h3 class="result-header"><?php the_sub_field('title'); ?></h3>
-                <div class="result-description"><?php the_sub_field('description'); ?></div>
-                <a class="result-link result-link-<?php echo strtolower($obj->cat_name); ?> read-play-btn-01" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('link_text'); ?></a>
-              </div>
-            <?php endif; ?>
-          <?php endwhile; ?>
+    <?php if( have_rows('search_results') ): ?>
+      <?php while ( have_rows('search_results') ) : the_row(); ?>
+        <?php if( get_row_layout() == 'content' ): ?>
+          <a class="result result-<?php echo strtolower($obj->cat_name); ?>" href="<?php the_sub_field('link'); ?>">
+						<img class="img-responsive" src="<?php the_sub_field('image'); ?>" />
+					</a>
         <?php endif; ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
 
   <?php endwhile; ?>
 

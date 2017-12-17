@@ -9,7 +9,7 @@
     /* ---------------------------------------------------------------------- */
     // Navigation functionality
     /* ---------------------------------------------------------------------- */
-    $('.book-fullscreen-nav .site-nav, .book-fullscreen-nav .share').on('click', function(e){
+    $('.fullscreen-nav .site-nav, .fullscreen-nav .share').on('click', function(e){
       e.preventDefault();
       var dataMenuOption = $(this).attr('data-menu-option');
       $('.'+dataMenuOption).show();

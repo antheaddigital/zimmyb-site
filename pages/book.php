@@ -4,9 +4,9 @@
 
 global $post;
 $post_slug = $post->post_name;
-if(isset($_GET['mode'])){
-  $mode = $_GET['mode'];
-}
+// if(isset($_GET['mode'])){
+//   $mode = $_GET['mode'];
+// }
 
 require_once( get_template_directory() . '/header-book.php');
 

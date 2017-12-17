@@ -16,9 +16,9 @@
 			<!-- support-bar - end -->
 			<!-- footer-social -->
 			<?php
-				if(!in_array($post_slug, $page_array)){
-					require_once( get_template_directory() . '/template-parts/footer-social.php');
-				}
+				// if(!in_array($post_slug, $page_array)){
+				// 	require_once( get_template_directory() . '/template-parts/footer-social.php');
+				// }
 			?>
 			<!-- footer-social - end -->
 			<!-- footer-nav -->

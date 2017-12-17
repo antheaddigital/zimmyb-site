@@ -42,8 +42,8 @@ $device_type = Detect::deviceType();
 <?php require_once( get_template_directory() . '/template-parts/gtm-body.php' ); ?>
 <input type="hidden" class="template-directory-uri-value" data-template-directory-uri="<?php echo get_template_directory_uri(); ?>" />
 <!-- header-nav -->
-<?php require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
+<?php //require_once( get_template_directory() . '/template-parts/header-nav.php'); ?>
 <!-- header-nav - end -->
-<div class="site-wrapper">
+<!-- <div class="site-wrapper">
 <div class="site-content-border">
-<div class="site-content">
+<div class="site-content"> -->
