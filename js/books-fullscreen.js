@@ -86,10 +86,10 @@
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
     if(windowHeight > windowWidth){
-      $('.book-full-page-please-rotate').show();
+      $('.full-page-please-rotate').show();
       $('.book-section').hide();
     } else {
-      $('.book-full-page-please-rotate').hide();
+      $('.full-page-please-rotate').hide();
       $('.book-section').show();
     }
     $(window).on('resize', function(){
@@ -97,10 +97,10 @@
         windowWidth = $(this).width();
         windowHeight = $(this).height();
         if(windowHeight > windowWidth){
-          $('.book-full-page-please-rotate').show();
+          $('.full-page-please-rotate').show();
           $('.book-section').hide();
         } else {
-          $('.book-full-page-please-rotate').hide();
+          $('.full-page-please-rotate').hide();
           $('.book-section').show();
           window.bookFullpage.swiperSizeAdjustment();
           window.bookFullpage.mySwiper.update();
