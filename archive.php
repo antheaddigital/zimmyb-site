@@ -32,6 +32,10 @@ $obj = get_queried_object();
   <h1><?php echo $hero_header_text; ?></h1>
 </section>
 
+<!-- nav-simple -->
+<?php require( get_template_directory() . '/template-parts/nav-simple.php'); ?>
+<!-- nav-simple - end-->
+
 <?php
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

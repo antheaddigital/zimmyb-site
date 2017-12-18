@@ -21,14 +21,15 @@
 				// }
 			?>
 			<!-- footer-social - end -->
-			<!-- footer-nav -->
-			<?php require_once( get_template_directory() . '/template-parts/footer-nav.php'); ?>
-			<!-- footer-nav - end -->
 			<?php require_once( get_template_directory() . '/template-parts/back-to-top.php'); ?>
 		</div><!-- #site-content -->
 	</div><!-- #site-content-border -->
 
 </div><!-- #site-wrapper -->
+
+<!-- footer-nav -->
+<?php require_once( get_template_directory() . '/template-parts/footer-nav.php'); ?>
+<!-- footer-nav - end -->
 
 <?php wp_footer(); ?>
 

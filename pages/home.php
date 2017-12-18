@@ -12,17 +12,21 @@
 <!-- site-intro -->
 <section class="site-intro" id="home-particles">
   <div class="intro-wrapper">
-    <h1>ASL Books and Games for the Entire Family!</h1>
-    <p>Welcome to Zimmy Books! Here you will learn sign language in a very fun way. All online learning material at Zimmy Books is, and will always be, 100% free.<span>ALL AGES / EVERYBODY!</span></p>
+    <h1>ASL Online Learning for Kids!</h1>
+    <!-- <h1>ASL Books and Games for the Entire Family!</h1>
+    <p>Welcome to Zimmy Books! Here you will learn sign language in a very fun way. All online learning material at Zimmy Books is, and will always be, 100% free.<span>ALL AGES / EVERYBODY!</span></p> -->
   </div>
 </section>
 <!-- site-intro - end -->
 
+<!-- nav-simple -->
+<?php require( get_template_directory() . '/template-parts/nav-simple.php'); ?>
+<!-- nav-simple - end-->
 
 <!-- books-and-games -->
 <section class="books-and-games">
 
-  <h2>Books & Games</h2>
+  <!-- <h2>Books & Games</h2> -->
 
   <div class="books-and-games-wrapper">
 
