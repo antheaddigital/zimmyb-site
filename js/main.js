@@ -46,23 +46,23 @@ $('.fullscreen-nav .site-nav, .fullscreen-nav .share').on('click', function(e){
 /***********************************************************************************
  * Page specific functionality
  ***********************************************************************************/
-(function($) {
-  $('document').ready(function(){
-    if ($('#home-particles').length) {
-      var particlesJSON = templateDirectoryURI + '/js/particles-home-01.json';
-      particlesJS.load('home-particles', particlesJSON);
-    }
-    if ($('#books-particles').length) {
-      var particlesJSON = templateDirectoryURI + '/js/particles-books-01.json';
-      particlesJS.load('books-particles', particlesJSON);
-    }
-    if ($('#games-particles').length) {
-      var particlesJSON = templateDirectoryURI + '/js/particles-games-01.json';
-      particlesJS.load('games-particles', particlesJSON);
-    }
-    if ($('#printables-particles').length) {
-      var particlesJSON = templateDirectoryURI + '/js/particles-printables-01.json';
-      particlesJS.load('printables-particles', particlesJSON);
-    }
-  });
-})(jQuery);
+// (function($) {
+//   $('document').ready(function(){
+//     if ($('#home-particles').length) {
+//       var particlesJSON = templateDirectoryURI + '/js/particles-home-01.json';
+//       particlesJS.load('home-particles', particlesJSON);
+//     }
+//     if ($('#books-particles').length) {
+//       var particlesJSON = templateDirectoryURI + '/js/particles-books-01.json';
+//       particlesJS.load('books-particles', particlesJSON);
+//     }
+//     if ($('#games-particles').length) {
+//       var particlesJSON = templateDirectoryURI + '/js/particles-games-01.json';
+//       particlesJS.load('games-particles', particlesJSON);
+//     }
+//     if ($('#printables-particles').length) {
+//       var particlesJSON = templateDirectoryURI + '/js/particles-printables-01.json';
+//       particlesJS.load('printables-particles', particlesJSON);
+//     }
+//   });
+// })(jQuery);
