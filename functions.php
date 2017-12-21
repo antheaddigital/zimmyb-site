@@ -131,7 +131,7 @@ function my_jquery_enqueue() {
  * Enqueue scripts and styles.
  */
 function underscores_scripts() {
-	wp_enqueue_style( 'underscores-style', get_stylesheet_uri(), '', '20171217.01' );
+	wp_enqueue_style( 'underscores-style', get_stylesheet_uri(), '', '20171220.05' );
 	wp_enqueue_script( 'joint-libs', get_template_directory_uri() . '/js/libs.js', array('jquery'), '20170402.01', true );
 	wp_enqueue_script( 'particlesjs', get_template_directory_uri() . '/js/particles.js', array('jquery'), '20170402.01', true );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('joint-libs'), '20171217.01', true );

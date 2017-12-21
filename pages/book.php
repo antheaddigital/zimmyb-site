@@ -17,6 +17,9 @@ switch ($post_slug) {
   case 'planet-colors':
     require_once( get_template_directory() . '/pages/books/planet-colors.php' );
     break;
+  case 'flax-vs-santa':
+    require_once( get_template_directory() . '/pages/books/flax-vs-santa.php' );
+    break;
   default:
     break;
 }

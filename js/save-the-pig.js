@@ -483,7 +483,7 @@
     });
     $('.sound-music-effect').on('click', function(e){
       e.preventDefault();
-      $this = $(this);
+      var $this = $(this);
       var soundMusic = $this.attr('data-sound-music');
       var volume = $this.attr('data-volume');
       var soundEffectObj = 'soundEffect'+soundMusic;

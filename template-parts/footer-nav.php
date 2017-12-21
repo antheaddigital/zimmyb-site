@@ -11,7 +11,7 @@
 					<li><a href="<?php //echo esc_url( site_url() ); ?>/news">News</a></li>
 				</ul> -->
 				<div>
-					<a class="footer-mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/zimmy-books-logo-mini.png" alt="Zimmy Boooks! Logo" /></a>
+					<a class="footer-mini-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/logo-temp.svg" alt="Zimmy Boooks! Logo" /></a>
 				</div>
 				<div class="footer-copyright">
 					&copy; <?php echo date("Y"); ?> Zimmy Books<br />property of <a href="http://antheaddigital.com">Anthead Digital</a>
