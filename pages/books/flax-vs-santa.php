@@ -7,132 +7,84 @@
         id: "intro-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/colors.jpg",
-        id: "colors-page"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/title.jpg",
+        id: "title-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/colors.jpg",
-        id: "colors-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/flax.jpg",
+        id: "flax-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/colors.jpg",
-        id: "colors-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/flax.jpg",
+        id: "flax-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/brown.jpg",
-        id: "brown-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/flax.jpg",
+        id: "flax-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/brown.jpg",
-        id: "brown-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/santa.jpg",
+        id: "santa-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/brown.jpg",
-        id: "brown-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/santa.jpg",
+        id: "santa-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/green.jpg",
-        id: "green-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/santa.jpg",
+        id: "santa-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/green.jpg",
-        id: "green-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/cookies.jpg",
+        id: "cookies-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/green.jpg",
-        id: "green-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/cookies.jpg",
+        id: "cookies-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/yellow.jpg",
-        id: "yellow-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/cookies.jpg",
+        id: "cookies-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/yellow.jpg",
-        id: "yellow-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/tree.jpg",
+        id: "tree-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/yellow.jpg",
-        id: "yellow-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/tree.jpg",
+        id: "tree-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/black.jpg",
-        id: "black-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/tree.jpg",
+        id: "tree-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/black.jpg",
-        id: "black-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/present.jpg",
+        id: "present-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/black.jpg",
-        id: "black-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/present.jpg",
+        id: "present-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/purple.jpg",
-        id: "purple-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/present.jpg",
+        id: "present-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/purple.jpg",
-        id: "purple-sign"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/merrychristmas.jpg",
+        id: "merrychristmas-page"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/purple.jpg",
-        id: "purple-signbox"
+        src:  templateDirectoryURI + "/imgs/signs/merrychristmas.jpg",
+        id: "merrychristmas-sign"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/white.jpg",
-        id: "white-page"
+        src:  templateDirectoryURI + "/imgs/books/sign-boxes/merrychristmas.jpg",
+        id: "merrychristmas-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/signs/white.jpg",
-        id: "white-sign"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/white.jpg",
-        id: "white-signbox"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/orange.jpg",
-        id: "orange-page"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/signs/orange.jpg",
-        id: "orange-sign"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/orange.jpg",
-        id: "orange-signbox"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/red.jpg",
-        id: "red-page"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/signs/red.jpg",
-        id: "red-sign"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/red.jpg",
-        id: "red-signbox"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/blue.jpg",
-        id: "blue-page"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/signs/blue.jpg",
-        id: "blue-sign"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/sign-boxes/blue.jpg",
-        id: "blue-signbox"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/credits.jpg",
-        id: "credits-page"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/theend.jpg",
-        id: "theend-page"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/thankyou.jpg",
+        id: "thankyou-page"
       }
     ];
   }
@@ -164,11 +116,20 @@
           <!-- page 05 -->
           <div class="swiper-slide present"></div>
           <!-- page 06 -->
-          <div class="swiper-slide merry-christmas"></div>
-          <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
-          <div class="swiper-slide credits"></div>
-          <!-- the end -->
-          <div class="swiper-slide theend"></div>
+          <div class="swiper-slide merrychristmas"></div>
+          <!-- thank you - after adding credits page apply slide number to window.appSettings.creditsSlide -->
+          <div class="swiper-slide thankyou">
+            <div class="more-things-to-do-wrapper">
+              <a class="more-things-to-do-link more-things-to-do-link-left" href="<?php echo esc_url( site_url() ); ?>/books/planet-colors/">
+          			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/books/more-things-to-do/planet-colors.jpg" />
+                <span class="books-and-games-type">book</span>
+          		</a>
+              <a class="more-things-to-do-link more-things-to-do-link-right" href="<?php echo esc_url( site_url() ); ?>/books/bayme-pants-the-sun-its-broken/">
+          			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/books/more-things-to-do/bayme-pants-the-sun-its-broken.jpg" />
+                <span class="books-and-games-type">book</span>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         <div class="swiper-button-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>

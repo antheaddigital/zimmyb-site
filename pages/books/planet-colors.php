@@ -127,12 +127,8 @@
         id: "blue-signbox"
       },
       {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/credits.jpg",
-        id: "credits-page"
-      },
-      {
-        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/theend.jpg",
-        id: "theend-page"
+        src:  templateDirectoryURI + "/imgs/books/"+bookName+"/thankyou.jpg",
+        id: "thankyou-page"
       }
     ];
   }
@@ -172,9 +168,18 @@
           <!-- page 09 -->
           <div class="swiper-slide blue"></div>
           <!-- credits - after adding credits page apply slide number to window.appSettings.creditsSlide -->
-          <div class="swiper-slide credits"></div>
-          <!-- the end -->
-          <div class="swiper-slide theend"></div>
+          <div class="swiper-slide thankyou">
+            <div class="more-things-to-do-wrapper">
+              <a class="more-things-to-do-link more-things-to-do-link-left" href="<?php echo esc_url( site_url() ); ?>/books/flax-vs-santa/">
+          			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/books/more-things-to-do/flax-vs-santa.jpg" />
+                <span class="books-and-games-type">book</span>
+          		</a>
+              <a class="more-things-to-do-link more-things-to-do-link-right" href="<?php echo esc_url( site_url() ); ?>/books/bayme-pants-the-sun-its-broken/">
+          			<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/books/more-things-to-do/bayme-pants-the-sun-its-broken.jpg" />
+                <span class="books-and-games-type">book</span>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="swiper-button-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         <div class="swiper-button-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>

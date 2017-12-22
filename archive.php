@@ -18,9 +18,29 @@ $obj = get_queried_object();
 	switch($obj->cat_name) {
 		case 'Books':
 			$hero_header_text = 'ASL Books Online';
+			$results_array = [
+				[
+					'link' => esc_url( site_url() ) . '/books/flax-vs-santa/',
+					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/flax-vs-santa.jpg'
+				],
+				[
+					'link' => esc_url( site_url() ) . '/books/planet-colors/',
+					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/planet-colors.jpg'
+				],
+				[
+					'link' => esc_url( site_url() ) . '/books/bayme-pants-the-sun-its-broken/',
+					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/the-sun-its-broken.jpg'
+				]
+			];
 			break;
 		case 'Games':
 			$hero_header_text = 'ASL Games Online';
+			$results_array = [
+				[
+					'link' => esc_url( site_url() )  . '/games/save-the-pig/',
+					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/save-the-pig.jpg'
+				]
+			];
 			break;
 		case 'Printables':
 			$hero_header_text = 'ASL Printables';
@@ -50,19 +70,11 @@ if ( have_posts() ) : ?>
 
 <section class="archive-results">
 
-  <?php while ( have_posts() ) : the_post(); ?>
-
-    <?php if( have_rows('search_results') ): ?>
-      <?php while ( have_rows('search_results') ) : the_row(); ?>
-        <?php if( get_row_layout() == 'content' ): ?>
-          <a class="result result-<?php echo strtolower($obj->cat_name); ?>" href="<?php the_sub_field('link'); ?>">
-						<img class="img-responsive" src="<?php the_sub_field('image'); ?>" />
-					</a>
-        <?php endif; ?>
-      <?php endwhile; ?>
-    <?php endif; ?>
-
-  <?php endwhile; ?>
+	<?php foreach($results_array as $key => $value): ?>
+		<a class="result result-<?php echo strtolower($obj->cat_name); ?>" href="<?php echo $value['link']; ?>">
+			<img class="img-responsive" src="<?php echo $value['thumb'];; ?>" />
+		</a>
+	<?php endforeach; ?>
 
 </section>
 
