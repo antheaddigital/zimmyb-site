@@ -30,18 +30,23 @@
 
   <div class="books-and-games-wrapper">
 
+    <a class="books-and-games-wrapper-book" href="<?php echo esc_url( site_url() ); ?>/books/flax-vs-santa">
+      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/archive-thumbs/flax-vs-santa.jpg" />
+      <span class="books-and-games-type">book</span>
+    </a>
+
     <a class="books-and-games-wrapper-book" href="<?php echo esc_url( site_url() ); ?>/books/planet-colors">
-      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/planet-colors-featured.jpg" />
+      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/archive-thumbs/planet-colors.jpg" />
       <span class="books-and-games-type">book</span>
     </a>
 
     <a class="books-and-games-wrapper-book" href="<?php echo esc_url( site_url() ); ?>/books/bayme-pants-the-sun-its-broken">
-      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/the-sun-its-broken-featured.jpg" />
+      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/archive-thumbs/the-sun-its-broken.jpg" />
       <span class="books-and-games-type">book</span>
     </a>
 
     <a class="books-and-games-wrapper-game" href="<?php echo esc_url( site_url() ); ?>/games/save-the-pig">
-      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/save-the-pig-featured.jpg" />
+      <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/imgs/site/archive-thumbs/save-the-pig.jpg" />
       <span class="books-and-games-type">game</span>
     </a>
 

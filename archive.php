@@ -18,23 +18,25 @@ $obj = get_queried_object();
 	switch($obj->cat_name) {
 		case 'Books':
 			$hero_header_text = 'ASL Books Online';
+			$books_and_games_type = 'book';
 			$results_array = [
 				[
 					'link' => esc_url( site_url() ) . '/books/flax-vs-santa/',
-					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/flax-vs-santa.jpg'
+					'thumb' => get_template_directory_uri() . '/imgs/site/archive-thumbs/flax-vs-santa.jpg'
 				],
 				[
 					'link' => esc_url( site_url() ) . '/books/planet-colors/',
-					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/planet-colors.jpg'
+					'thumb' => get_template_directory_uri() . '/imgs/site/archive-thumbs/planet-colors.jpg'
 				],
 				[
 					'link' => esc_url( site_url() ) . '/books/bayme-pants-the-sun-its-broken/',
-					'thumb' => esc_url( site_url() ) . '/wp-content/themes/zimmyb-site/imgs/site/archive-thumbs/the-sun-its-broken.jpg'
+					'thumb' => get_template_directory_uri() . '/imgs/site/archive-thumbs/the-sun-its-broken.jpg'
 				]
 			];
 			break;
 		case 'Games':
 			$hero_header_text = 'ASL Games Online';
+			$books_and_games_type = 'game';
 			$results_array = [
 				[
 					'link' => esc_url( site_url() )  . '/games/save-the-pig/',
@@ -44,6 +46,7 @@ $obj = get_queried_object();
 			break;
 		case 'Printables':
 			$hero_header_text = 'ASL Printables';
+			$books_and_games_type = 'printables';
 			break;
 	}
 ?>
@@ -73,6 +76,7 @@ if ( have_posts() ) : ?>
 	<?php foreach($results_array as $key => $value): ?>
 		<a class="result result-<?php echo strtolower($obj->cat_name); ?>" href="<?php echo $value['link']; ?>">
 			<img class="img-responsive" src="<?php echo $value['thumb'];; ?>" />
+			<span class="books-and-games-type"><?php echo $books_and_games_type; ?></span>
 		</a>
 	<?php endforeach; ?>
 
