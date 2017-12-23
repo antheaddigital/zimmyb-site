@@ -1,18 +1,3 @@
-      <!-- support-bar -->
-      <?php // require_once( get_template_directory() . '/template-parts/support-bar.php'); ?>
-      <!-- support-bar - end -->
-      <!-- footer-social -->
-      <?php //require_once( get_template_directory() . '/template-parts/footer-social.php'); ?>
-      <!-- footer-social - end -->
-      <!-- footer-nav -->
-    	<?php //require_once( get_template_directory() . '/template-parts/footer-nav.php'); ?>
-    	<!-- footer-nav - end -->
-      <?php //require_once( get_template_directory() . '/template-parts/back-to-top.php'); ?>
-    </div><!-- #site-content -->
-  <!-- </div>#site-content-border -->
-
-<!-- </div>#site-wrapper -->
-
 <!-- JS Libs -->
 <?php
   foreach ($header_libs as $lib) {
@@ -27,10 +12,10 @@
         echo '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.1/velocity.min.js"></script>';
         break;
       case 'preloadjs':
-        echo '<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/PreloadJS/1.0.1/preloadjs.min.js"></script>';
         break;
       case 'soundjs':
-        echo '<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.1/soundjs.min.js"></script>';
         break;
     }
   }
