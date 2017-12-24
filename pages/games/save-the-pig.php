@@ -26,6 +26,7 @@ if( !isset($_GET['mode']) || $_GET['mode'] == '' ){
         <div class="mode-select-requirements-no">
           <span>Oink!! Oink!!!</span>
           <p>Sorry! You need to be on a device that has a width of 1024px or Greater. For example: Desktop, Laptop, and iPad (in landscape view).</p>
+          <a href="<?php echo esc_url( site_url() ) ?>/games/">Back to Games</a>
         </div>
         <div class="mode-select-requirements-yes">
           <h2>Select a Game Mode</h2>

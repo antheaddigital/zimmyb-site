@@ -33,7 +33,7 @@ var templateDirectoryURI = $('.template-directory-uri-value').attr('data-templat
   });
 })(jQuery);
 
-$('.fullscreen-nav .site-nav, .fullscreen-nav .share').on('click', function(e){
+$('.fullscreen-nav-btn').on('click', function(e){
   e.preventDefault();
   var dataMenuOption = $(this).attr('data-menu-option');
   $('.'+dataMenuOption).show();

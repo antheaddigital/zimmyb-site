@@ -8,8 +8,11 @@
     case 'bayme-pants-the-sun-its-broken':
       $title = 'Bayme Pants - The Sun! It\'s Broken! : https://goo.gl/qEFGYc via @ZimmyBooks';
       break;
+    case 'flax-vs-santa':
+      $title = 'Flax vs Santa! : https://goo.gl/BDifnT via @ZimmyBooks';
+      break;
     case 'save-the-pig':
-      $title = 'Save the Pig! :  via @ZimmyBooks';
+      $title = 'Save the Pig! : https://goo.gl/fhYKSe  via @ZimmyBooks';
       $mode_switch = true;
 
       break;
@@ -37,7 +40,7 @@
   </div>
   <div class="fullscreen-nav-popup fullscreen-nav-mode-popup">
     <a href="#" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
-    <a class="fullscreen-nav-popup-btn" href="<?php echo esc_url( site_url() ) ?>"><i class="fa fa-rocket" aria-hidden="true"></i><br />animated</a>
-    <a class="fullscreen-nav-popup-btn" href="<?php echo esc_url( site_url() ) ?>"><i class="fa fa-paper-o" aria-hidden="true"></i><br />still</a>
+    <a class="fullscreen-nav-popup-btn fullscreen-nav-popup-btn-animated" href="<?php echo esc_url( site_url() ) ?>/games/save-the-pig/?mode=animated"><i class="fa fa-rocket" aria-hidden="true"></i><br />animated</a>
+    <a class="fullscreen-nav-popup-btn" href="<?php echo esc_url( site_url() ) ?>/games/save-the-pig/?mode=still"><i class="fa fa-hand-paper-o" aria-hidden="true"></i><br />still</a>
   </div>
 </div>
